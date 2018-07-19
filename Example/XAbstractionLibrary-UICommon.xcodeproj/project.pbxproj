@@ -23,6 +23,11 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		BC233D8020FD89CA004F7304 /* CustomHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC233D7F20FD89CA004F7304 /* CustomHeadView.m */; };
+		BC233D8320FD89ED004F7304 /* CustomFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC233D8220FD89ED004F7304 /* CustomFootView.m */; };
+		BC233D8520FD93E9004F7304 /* CustomHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC233D8420FD93E9004F7304 /* CustomHeadView.xib */; };
+		BC233D8720FD9AB7004F7304 /* CustomFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC233D8620FD9AB7004F7304 /* CustomFootView.xib */; };
+		BC815C7B20FCA5F1009C3E35 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC815C7A20FCA5F1009C3E35 /* BaseTableView.m */; };
 		E8F81E1071835DFB781FCDD1 /* Pods_XAbstractionLibrary_UICommon_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1151F72671B7B7CE002BB87 /* Pods_XAbstractionLibrary_UICommon_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,12 +66,20 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		72B6FE6C1B543E8ACC09073A /* XAbstractionLibrary-UICommon.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = "XAbstractionLibrary-UICommon.podspec"; path = "../XAbstractionLibrary-UICommon.podspec"; sourceTree = "<group>"; };
+		72B6FE6C1B543E8ACC09073A /* XAbstractionLibrary-UICommon.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "XAbstractionLibrary-UICommon.podspec"; path = "../XAbstractionLibrary-UICommon.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7D2B377170D905D86F578A52 /* Pods-XAbstractionLibrary-UICommon_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XAbstractionLibrary-UICommon_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XAbstractionLibrary-UICommon_Tests/Pods-XAbstractionLibrary-UICommon_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1151F72671B7B7CE002BB87 /* Pods_XAbstractionLibrary_UICommon_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XAbstractionLibrary_UICommon_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA3E15AC1059AE4B3253EF4A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		EFD2D8742C3000ADC8358BAB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		BC233D7E20FD89CA004F7304 /* CustomHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomHeadView.h; sourceTree = "<group>"; };
+		BC233D7F20FD89CA004F7304 /* CustomHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomHeadView.m; sourceTree = "<group>"; };
+		BC233D8120FD89ED004F7304 /* CustomFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFootView.h; sourceTree = "<group>"; };
+		BC233D8220FD89ED004F7304 /* CustomFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFootView.m; sourceTree = "<group>"; };
+		BC233D8420FD93E9004F7304 /* CustomHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeadView.xib; sourceTree = "<group>"; };
+		BC233D8620FD9AB7004F7304 /* CustomFootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFootView.xib; sourceTree = "<group>"; };
+		BC815C7920FCA5F1009C3E35 /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		BC815C7A20FCA5F1009C3E35 /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		CA3E15AC1059AE4B3253EF4A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EFD2D8742C3000ADC8358BAB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +145,7 @@
 		6003F593195388D20070C39A /* Example for XAbstractionLibrary-UICommon */ = {
 			isa = PBXGroup;
 			children = (
+				BC815C7820FCA5A1009C3E35 /* ListView */,
 				6003F59C195388D20070C39A /* XAppDelegate.h */,
 				6003F59D195388D20070C39A /* XAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -194,6 +208,21 @@
 				EFD2D8742C3000ADC8358BAB /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		BC815C7820FCA5A1009C3E35 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				BC815C7920FCA5F1009C3E35 /* BaseTableView.h */,
+				BC815C7A20FCA5F1009C3E35 /* BaseTableView.m */,
+				BC233D7E20FD89CA004F7304 /* CustomHeadView.h */,
+				BC233D7F20FD89CA004F7304 /* CustomHeadView.m */,
+				BC233D8420FD93E9004F7304 /* CustomHeadView.xib */,
+				BC233D8120FD89ED004F7304 /* CustomFootView.h */,
+				BC233D8220FD89ED004F7304 /* CustomFootView.m */,
+				BC233D8620FD9AB7004F7304 /* CustomFootView.xib */,
+			);
+			path = ListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				BC233D8720FD9AB7004F7304 /* CustomFootView.xib in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				BC233D8520FD93E9004F7304 /* CustomHeadView.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,10 +350,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XAbstractionLibrary-UICommon_Example/Pods-XAbstractionLibrary-UICommon_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MD5Digest/MD5Digest.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/OpenUDID/OpenUDID.framework",
+				"${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-Base/XAbstractionLibrary_Base.framework",
+				"${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-NetWork/XAbstractionLibrary_NetWork.framework",
+				"${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-Parse/XAbstractionLibrary_Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-UICommon/XAbstractionLibrary_UICommon.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MD5Digest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenUDID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XAbstractionLibrary_Base.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XAbstractionLibrary_NetWork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XAbstractionLibrary_Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XAbstractionLibrary_UICommon.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,9 +400,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC233D8020FD89CA004F7304 /* CustomHeadView.m in Sources */,
+				BC815C7B20FCA5F1009C3E35 /* BaseTableView.m in Sources */,
 				6003F59E195388D20070C39A /* XAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				BC233D8320FD89ED004F7304 /* CustomFootView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

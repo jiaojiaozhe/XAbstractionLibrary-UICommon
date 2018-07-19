@@ -1,0 +1,53 @@
+//
+//  CustomHeadView.m
+//  XAbstractionLibrary-UICommon_Example
+//
+//  Created by lanbiao on 2018/7/17.
+//  Copyright © 2018年 jiaojiaozhe. All rights reserved.
+//
+
+#import "CustomHeadView.h"
+
+@interface CustomHeadView()
+@property (nonatomic,strong) IBOutlet UILabel *stateLabel;
+@end
+
+@implementation CustomHeadView
+@synthesize state = _state;
++ (CustomHeadView *) createHeadView{
+    NSString *className = NSStringFromClass([self class]);
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:className
+                                                   owner:self
+                                                 options:nil];
+    return [views firstObject];
+    
+//    UINib *nib = [UINib nibWithNibName:className bundle:nil];
+//    return [nib instantiateWithOwner:nil options:nil].firstObject;
+}
+
+- (void) setState:(XHeadViewState)state{
+    if(state == XHeadViewStateNormal){
+        _stateLabel.text = @"下拉刷新";
+        [_stateLabel sizeToFit];
+    }else if(state == XHeadViewStatePulling){
+        _stateLabel.text = @"松开即可刷新";
+        [_stateLabel sizeToFit];
+    }else if(state == XHeadViewStateLoading){
+        _stateLabel.text = @"正在刷新...";
+        [_stateLabel sizeToFit];
+    }
+    _state = state;
+}
+
+- (void) pullProgress:(CGFloat) progress{
+    [super pullProgress:progress];
+}
+
+- (void) startLoading{
+    [super startLoading];
+}
+
+- (void) stopLoading{
+    [super stopLoading];
+}
+@end

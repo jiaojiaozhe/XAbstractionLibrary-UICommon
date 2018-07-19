@@ -1,3 +1,6 @@
+source 'https://github.com/jiaojiaozhe/XAbstractionLibrary-Specs'
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
 
 target 'XAbstractionLibrary-UICommon_Example' do

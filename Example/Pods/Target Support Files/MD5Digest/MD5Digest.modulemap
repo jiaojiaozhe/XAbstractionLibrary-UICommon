@@ -1,0 +1,6 @@
+framework module MD5Digest {
+  umbrella header "MD5Digest-umbrella.h"
+
+  export *
+  module * { export * }
+}

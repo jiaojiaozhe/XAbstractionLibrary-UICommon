@@ -1,0 +1,6 @@
+framework module XAbstractionLibrary_UICommon {
+  umbrella header "XAbstractionLibrary-UICommon-umbrella.h"
+
+  export *
+  module * { export * }
+}

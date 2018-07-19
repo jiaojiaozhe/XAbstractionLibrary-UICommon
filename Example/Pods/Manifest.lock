@@ -1,0 +1,65 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
+  - MD5Digest (1.1.0)
+  - OpenUDID (1.0.0)
+  - XAbstractionLibrary-Base (0.0.11):
+    - MD5Digest
+    - OpenUDID
+  - XAbstractionLibrary-NetWork (0.0.7):
+    - AFNetworking
+    - XAbstractionLibrary-Base
+  - XAbstractionLibrary-Parse (0.0.2):
+    - Mantle (~> 2.1.0)
+    - XAbstractionLibrary-Base
+  - XAbstractionLibrary-UICommon (0.1.0):
+    - XAbstractionLibrary-NetWork
+    - XAbstractionLibrary-Parse
+
+DEPENDENCIES:
+  - XAbstractionLibrary-UICommon (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Mantle
+    - MD5Digest
+    - OpenUDID
+  https://github.com/jiaojiaozhe/XAbstractionLibrary-Specs:
+    - XAbstractionLibrary-Base
+    - XAbstractionLibrary-NetWork
+    - XAbstractionLibrary-Parse
+
+EXTERNAL SOURCES:
+  XAbstractionLibrary-UICommon:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  MD5Digest: fea371215507cfcdc3c9633d02cffc7fd075ebc3
+  OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
+  XAbstractionLibrary-Base: 946b7598239ee28ce0edfe4fb58acd7c2752d565
+  XAbstractionLibrary-NetWork: e628a0ff48462c2a3403bcac854977ab31899511
+  XAbstractionLibrary-Parse: 40af2dd9d428091561a985305911636e64565130
+  XAbstractionLibrary-UICommon: d2d3dc4f772c7ce739f0f15068c7f2d5540ef82a
+
+PODFILE CHECKSUM: 39cdef9f0e50f2b3d0615a3ab91c7035997087e6
+
+COCOAPODS: 1.5.0

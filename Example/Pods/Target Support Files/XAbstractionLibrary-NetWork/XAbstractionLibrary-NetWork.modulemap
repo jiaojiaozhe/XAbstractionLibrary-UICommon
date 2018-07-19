@@ -1,0 +1,6 @@
+framework module XAbstractionLibrary_NetWork {
+  umbrella header "XAbstractionLibrary-NetWork-umbrella.h"
+
+  export *
+  module * { export * }
+}

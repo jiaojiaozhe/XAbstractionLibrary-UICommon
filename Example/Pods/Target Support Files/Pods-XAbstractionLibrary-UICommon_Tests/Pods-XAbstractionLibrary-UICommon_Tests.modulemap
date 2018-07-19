@@ -1,0 +1,6 @@
+framework module Pods_XAbstractionLibrary_UICommon_Tests {
+  umbrella header "Pods-XAbstractionLibrary-UICommon_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

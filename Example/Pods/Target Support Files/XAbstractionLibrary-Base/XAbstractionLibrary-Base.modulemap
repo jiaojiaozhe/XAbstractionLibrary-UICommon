@@ -1,0 +1,6 @@
+framework module XAbstractionLibrary_Base {
+  umbrella header "XAbstractionLibrary-Base-umbrella.h"
+
+  export *
+  module * { export * }
+}

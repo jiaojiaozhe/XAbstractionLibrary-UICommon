@@ -1,0 +1,8 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/MD5Digest" "${PODS_CONFIGURATION_BUILD_DIR}/Mantle" "${PODS_CONFIGURATION_BUILD_DIR}/OpenUDID" "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-Base" "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-NetWork" "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-Parse" "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-UICommon"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MD5Digest/MD5Digest.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Mantle/Mantle.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/OpenUDID/OpenUDID.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-Base/XAbstractionLibrary_Base.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-NetWork/XAbstractionLibrary_NetWork.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-Parse/XAbstractionLibrary_Parse.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/XAbstractionLibrary-UICommon/XAbstractionLibrary_UICommon.framework/Headers"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
