@@ -11,7 +11,6 @@
 		04F3BBE71B24770E40CC66A993AD85D1 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9083BFF02F89CC3A70F36D42EE9149 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		063446CD24A4E4E23F7CB960C633119A /* XIBaseNoNetViewRetryDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 19A5BB364EE8F7A5D45AFF60A82B10E5 /* XIBaseNoNetViewRetryDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07DF8C0C8C2FEE707A44D45EF1047217 /* XPermanentStoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E61D14BE8857D84463F7D3C26A4306A /* XPermanentStoreData.m */; };
-		08EA23FFDEB87D66E91E34FF786D87B2 /* XView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D0A4FB4F62BD168E143B6F574A6FF /* XView.xib */; };
 		0957E3CDAB883243DD59CF5121B46D30 /* XKeyValueObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0124D2ADE94371207D8ECF333F5EF5 /* XKeyValueObserver.m */; };
 		09EC74E4AFC1D5951D1F80094D06969A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7859AC183229540F13F03A5FB8266438 /* Foundation.framework */; };
 		0AB884297366137C285D136F6E96624E /* NSArray+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 443478BB685C6ABE9837674A54F4F320 /* NSArray+MTLManipulationAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -475,10 +474,9 @@
 		06DFD2C1F9C3D6801345C39AFF5F2DB3 /* XIBaseNotDataViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = XIBaseNotDataViewDelegate.h; sourceTree = "<group>"; };
 		082D7A19CA0176EE70DD995C6D09481D /* XDataManangerMacro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XDataManangerMacro.h; path = "XAbstractionLibrary-Base/Classes/XMacros/XDataManangerMacro.h"; sourceTree = "<group>"; };
 		08C0D50596500BB85DBB22AB24EF42B5 /* XIBaseNotDataRetryDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = XIBaseNotDataRetryDelegate.h; sourceTree = "<group>"; };
-		0AF3C0B0AFB48D7E3754313D1FFEFAE5 /* XAbstractionLibrary_NetWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XAbstractionLibrary_NetWork.framework; path = "XAbstractionLibrary-NetWork.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D1422B3279235F6BB890CB5D0DDA788 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AF3C0B0AFB48D7E3754313D1FFEFAE5 /* XAbstractionLibrary_NetWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XAbstractionLibrary_NetWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D1422B3279235F6BB890CB5D0DDA788 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D35910886C00B61B839CC0F6C9F50C7 /* MTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTLModel+NSCoding.h"; path = "Mantle/MTLModel+NSCoding.h"; sourceTree = "<group>"; };
-		0E5D0A4FB4F62BD168E143B6F574A6FF /* XView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = XView.xib; sourceTree = "<group>"; };
 		0E5EE3BA69E437445D41B34DC7C53743 /* NSValueTransformer+CustomParseNSArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+CustomParseNSArray.m"; path = "XAbstractionLibrary-Parse/Classes/XParse/NSValueTransformer/NSValueTransformer+CustomParseNSArray.m"; sourceTree = "<group>"; };
 		0E948D1082C09C62A948382DE4E27CB7 /* XAbstractionLibrary_NetWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XAbstractionLibrary_NetWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDD368720E5AA86B0F7D9232A4B6B0C /* XCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = XCollectionView.h; sourceTree = "<group>"; };
@@ -548,7 +546,7 @@
 		44FF3D3F70FCABF1190B5E8EABD22509 /* XAbstractionLibrary-NetWork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XAbstractionLibrary-NetWork-umbrella.h"; sourceTree = "<group>"; };
 		456883D2A0EB9F56EDEDB064CB119960 /* MD5Digest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MD5Digest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F1E0EA46BA51443B2CC9821AC9D4F9 /* XJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XJSONAdapter.h; path = "XAbstractionLibrary-Parse/Classes/XParse/XJSONAdapter.h"; sourceTree = "<group>"; };
-		4879A1937E5C6009E9C8218B09E8B8A7 /* Pods_XAbstractionLibrary_UICommon_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XAbstractionLibrary_UICommon_Tests.framework; path = "Pods-XAbstractionLibrary-UICommon_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4879A1937E5C6009E9C8218B09E8B8A7 /* Pods_XAbstractionLibrary_UICommon_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XAbstractionLibrary_UICommon_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4304840E892A4C0F1E9834960E8C20 /* MD5Digest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MD5Digest-dummy.m"; sourceTree = "<group>"; };
 		4B12DD1A4DFF6FAFAC1466F0157F0F2F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B375F72809BBB3A50DBAAA044DF0B36 /* XMutableArrayTypeValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMutableArrayTypeValidator.h; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XMutableArrayTypeValidator.h"; sourceTree = "<group>"; };
@@ -614,7 +612,7 @@
 		7EA99FAFBECA01D504A7ABCAE89D1089 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		7F1191B03E0AB4C57977F1960D749952 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7399932D82D474E0665C1DEB5446EB /* NSString+MD5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		8007EFE887CAD3CECBAC074EF210EDD2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8007EFE887CAD3CECBAC074EF210EDD2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		802868E795EDC58B51F506E3885F0264 /* XView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = XView.h; sourceTree = "<group>"; };
 		829CE7FBF5A79C53C0A470AE356F50C3 /* NSArray+Crash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Crash.m"; path = "XAbstractionLibrary-Base/Classes/XDataCrash/NSArray+Crash.m"; sourceTree = "<group>"; };
 		8330A864BEB4DE9F51AE7FDA1FC9BA70 /* MTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLJSONAdapter.h; path = Mantle/MTLJSONAdapter.h; sourceTree = "<group>"; };
@@ -632,7 +630,7 @@
 		8CA05850EF6F9FC7DFB4A7383EADBA49 /* XAbstractionLibrary-NetWork.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "XAbstractionLibrary-NetWork.xcconfig"; sourceTree = "<group>"; };
 		8DA42C51F9479B148AA77E0AA8327DB6 /* XIntergerTypeValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XIntergerTypeValidator.m; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XIntergerTypeValidator.m"; sourceTree = "<group>"; };
 		8E0112CC0ED8A3B3795C076955795BD4 /* XCompositeTypeValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCompositeTypeValidator.m; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XCompositeTypeValidator.m"; sourceTree = "<group>"; };
-		8EB4D2C9EF8923528493F0CA6A05EFD2 /* XAbstractionLibrary_UICommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XAbstractionLibrary_UICommon.framework; path = "XAbstractionLibrary-UICommon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EB4D2C9EF8923528493F0CA6A05EFD2 /* XAbstractionLibrary_UICommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XAbstractionLibrary_UICommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F64153FC39A7A10F8861254E3C45D92 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; path = "Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
 		8F91146AAE95ACA2F6CA5BAD8DB733FD /* MD5Digest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MD5Digest.modulemap; sourceTree = "<group>"; };
 		905AFAD9B52FD52D966E5BAA9933639B /* XTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = XTableView.m; sourceTree = "<group>"; };
@@ -640,18 +638,18 @@
 		9108C9232ACB455DD664AE10DECB2CE3 /* Pods-XAbstractionLibrary-UICommon_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XAbstractionLibrary-UICommon_Tests-dummy.m"; sourceTree = "<group>"; };
 		9143AFBA8264E79728F41BF909E31FCD /* XView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = XView.m; sourceTree = "<group>"; };
 		93195F4737C8FB9494B8ABADEDFC404B /* NSString+XCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+XCommon.h"; path = "XAbstractionLibrary-Base/Classes/XCommon/NSString+XCommon.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		950D5D78469D2D309B305BAAD079BB69 /* Pods-XAbstractionLibrary-UICommon_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XAbstractionLibrary-UICommon_Example-umbrella.h"; sourceTree = "<group>"; };
-		963F466A8432A40A0BFAED28425067E5 /* XAbstractionLibrary_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XAbstractionLibrary_Parse.framework; path = "XAbstractionLibrary-Parse.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		963F466A8432A40A0BFAED28425067E5 /* XAbstractionLibrary_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XAbstractionLibrary_Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F20BBA8C45C48E9B4230E9B5086770 /* OpenUDID.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenUDID.xcconfig; sourceTree = "<group>"; };
 		99341BEECC9E6CC33E1C6AAC84D81113 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		995CD2687FCAA4154D61E98E23B9D998 /* NSArray+MTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MTLManipulationAdditions.h"; path = "Mantle/NSArray+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
 		9B2513200DF222E7CBF1544CF08B139F /* Pods-XAbstractionLibrary-UICommon_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XAbstractionLibrary-UICommon_Example-resources.sh"; sourceTree = "<group>"; };
 		9BD674202E59672B7DA3059533FB7B09 /* XLock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLock.h; path = "XAbstractionLibrary-Base/Classes/XLock/XLock.h"; sourceTree = "<group>"; };
 		9C1108269A7771E3D130BE14198C7DE4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E0170D77E77F5720232DD5B7A800269 /* Mantle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Mantle.framework; path = Mantle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E0170D77E77F5720232DD5B7A800269 /* Mantle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mantle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012AE7FD6C64D641BF5D204A76F81ED /* OpenUDID.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
-		A11048647EA9ABB7D649CB90125BF13E /* Pods_XAbstractionLibrary_UICommon_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XAbstractionLibrary_UICommon_Example.framework; path = "Pods-XAbstractionLibrary-UICommon_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11048647EA9ABB7D649CB90125BF13E /* Pods_XAbstractionLibrary_UICommon_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XAbstractionLibrary_UICommon_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A145086F9AFA56389567E8A0F641966F /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		A29730BB49D10B197A857BF2D499A78D /* XUnsignedIntegerTypeValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XUnsignedIntegerTypeValidator.m; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XUnsignedIntegerTypeValidator.m"; sourceTree = "<group>"; };
 		A3BFA4580B3A7822C08F89A8DFDC8D78 /* XIBaseLoadingViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = XIBaseLoadingViewDelegate.h; sourceTree = "<group>"; };
@@ -661,7 +659,7 @@
 		A797FE826F10BE45E0BBD58129395AD9 /* XDataTypeValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XDataTypeValidator.h; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XDataTypeValidator.h"; sourceTree = "<group>"; };
 		A9636CADD3B496CBA4A09D8D41AE38A5 /* Pods-XAbstractionLibrary-UICommon_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XAbstractionLibrary-UICommon_Example-frameworks.sh"; sourceTree = "<group>"; };
 		A976259B918B906A0919C1BC477A5867 /* MTLTransformerErrorHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLTransformerErrorHandling.m; path = Mantle/MTLTransformerErrorHandling.m; sourceTree = "<group>"; };
-		AA6BD3A04E8A70A78F6CFF6FF059399E /* MD5Digest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MD5Digest.framework; path = MD5Digest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6BD3A04E8A70A78F6CFF6FF059399E /* MD5Digest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MD5Digest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF13449C7D75D9F509428DA5447656C /* XFootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = XFootView.h; sourceTree = "<group>"; };
 		AB09B4DAD50B44DBE583ACCF13B8E566 /* XDictionaryTypeValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XDictionaryTypeValidator.h; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XDictionaryTypeValidator.h"; sourceTree = "<group>"; };
 		AC3C2697B7D40E70BB82F09D2E0900A5 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
@@ -718,7 +716,7 @@
 		D432C4F0F5519692EE3B865451701D75 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		D6C93CD67610FD2E1732D47B5FA7FEAF /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		D8AD3FA62FB41D17781E1025EACF5DA0 /* XMessageInterceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = XMessageInterceptor.m; sourceTree = "<group>"; };
-		D93421FA9AE5E0BB2E4219DFA62B7876 /* XAbstractionLibrary-UICommon.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "XAbstractionLibrary-UICommon.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D93421FA9AE5E0BB2E4219DFA62B7876 /* XAbstractionLibrary-UICommon.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = "XAbstractionLibrary-UICommon.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D9ED7826CD835D3CF9C95BF84BAEDC6B /* XMutableStringTypeValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XMutableStringTypeValidator.m; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XMutableStringTypeValidator.m"; sourceTree = "<group>"; };
 		DA624C265A429E354142A0B4883A1D9D /* XPermanentStoreData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XPermanentStoreData.h; path = "XAbstractionLibrary-Base/Classes/XCommon/XPermanentStoreData.h"; sourceTree = "<group>"; };
 		DB3AE4E2A6C35F06AD85FC98853320BA /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AFNetworking.modulemap; sourceTree = "<group>"; };
@@ -727,7 +725,7 @@
 		DDE1E17CD7824E4AFD5717A8484209C8 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		DE7C800FDF734855E5C7257DB1BCAF30 /* XAbstractionLibrary_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XAbstractionLibrary_Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE80EA9F11E4AEBD05EAB650047EA22B /* MD5Digest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MD5Digest.xcconfig; sourceTree = "<group>"; };
-		DF87B05EC6D1B98804800DBACAC3615B /* XAbstractionLibrary-UICommon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "XAbstractionLibrary-UICommon.bundle"; path = "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF87B05EC6D1B98804800DBACAC3615B /* XAbstractionLibrary-UICommon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XAbstractionLibrary-UICommon.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB53257D5D101E7F0790FE4CB30F206 /* NSError+MTLModelException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+MTLModelException.h"; path = "Mantle/NSError+MTLModelException.h"; sourceTree = "<group>"; };
 		DFC4DB8B9319AF85BB16FC0EF5181F57 /* XIBaseNotNetViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = XIBaseNotNetViewDelegate.h; sourceTree = "<group>"; };
 		E041DE056764F155B3B7A14954C3C24D /* XAbstractionLibrary-Parse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "XAbstractionLibrary-Parse.xcconfig"; sourceTree = "<group>"; };
@@ -740,7 +738,7 @@
 		E5093FEED151630017B754BF7D86B2A4 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
 		E53B30BFF27950B86826DEE873E9CAEE /* XDeviceMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XDeviceMacros.h; path = "XAbstractionLibrary-Base/Classes/XMacros/XDeviceMacros.h"; sourceTree = "<group>"; };
 		E56520DF83238AE6ACBFE2E6A3667D45 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
-		E6279B0501E3D57CEFE10282BE26B37E /* OpenUDID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OpenUDID.framework; path = OpenUDID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6279B0501E3D57CEFE10282BE26B37E /* OpenUDID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenUDID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E3938C9BE55263CBC95B0E360C362D /* XCharTypeValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCharTypeValidator.m; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XCharTypeValidator.m"; sourceTree = "<group>"; };
 		E789F9834EC101FA9B1D7D944C3C00E8 /* XBaseValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XBaseValidator.m; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XBaseValidator.m"; sourceTree = "<group>"; };
 		E81100761C1B3DBC6840520B3E3EDCAB /* XConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XConfig.m; path = "XAbstractionLibrary-Base/Classes/XConfig/XConfig.m"; sourceTree = "<group>"; };
@@ -749,7 +747,7 @@
 		E9EBF0F5A6C706B606F5E1ED7FB95BA1 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		ED880040402C8203670A1BFC19D87178 /* NSMutableArray+Crash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Crash.h"; path = "XAbstractionLibrary-Base/Classes/XDataCrash/NSMutableArray+Crash.h"; sourceTree = "<group>"; };
 		EE61555EBFF9CB3CDEA1C827C6AE9526 /* XAbstractionLibrary-UICommon-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XAbstractionLibrary-UICommon-prefix.pch"; sourceTree = "<group>"; };
-		EF3A46E2D6D415EC51215BB08A8AC469 /* XAbstractionLibrary_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XAbstractionLibrary_Base.framework; path = "XAbstractionLibrary-Base.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3A46E2D6D415EC51215BB08A8AC469 /* XAbstractionLibrary_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XAbstractionLibrary_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03F6D5ACE08CC7F12F61A5A38E87D65 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		F21247A1449A028F523D7BEB0F98DBDE /* XMantle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMantle.h; path = "XAbstractionLibrary-Parse/Classes/XParse/XMantle.h"; sourceTree = "<group>"; };
 		F24E4786EC646228096FAF6E8299FD82 /* NSValueTransformer+CustomParseDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+CustomParseDictionary.m"; path = "XAbstractionLibrary-Parse/Classes/XParse/NSValueTransformer/NSValueTransformer+CustomParseDictionary.m"; sourceTree = "<group>"; };
@@ -769,7 +767,7 @@
 		FC51D64DA3B5D1544123E12B1996BE8C /* XHttpRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XHttpRequest.h; path = "XAbstractionLibrary-NetWork/Classes/XHttpRequest/XHttpRequest.h"; sourceTree = "<group>"; };
 		FCF6B7FFC28DC6D085633C97C07FA2BA /* XDictionaryTypeValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XDictionaryTypeValidator.m; path = "XAbstractionLibrary-Parse/Classes/XParse/XValidata/XDictionaryTypeValidator.m"; sourceTree = "<group>"; };
 		FD37CD1A0F6BF73D60A8ABE6523B6DF0 /* NSError+MTLModelException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+MTLModelException.m"; path = "Mantle/NSError+MTLModelException.m"; sourceTree = "<group>"; };
-		FD5207FEEB2B022FA3B3FE097554EA3D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		FD5207FEEB2B022FA3B3FE097554EA3D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FD9083BFF02F89CC3A70F36D42EE9149 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		FE5A4479819FA4CADD9C1B8D92AC9302 /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLInversionAdditions.m"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -893,7 +891,6 @@
 				19A5BB364EE8F7A5D45AFF60A82B10E5 /* XIBaseNoNetViewRetryDelegate.h */,
 				DFC4DB8B9319AF85BB16FC0EF5181F57 /* XIBaseNotNetViewDelegate.h */,
 			);
-			name = XNotNetView;
 			path = XNotNetView;
 			sourceTree = "<group>";
 		};
@@ -950,7 +947,6 @@
 				1AF08E415D5E9BAE3B4667AE6A0C6571 /* extobjc */,
 				6F5F4B00E7D1C5D88E684617FF118775 /* Support Files */,
 			);
-			name = Mantle;
 			path = Mantle;
 			sourceTree = "<group>";
 		};
@@ -1011,7 +1007,6 @@
 				7F7399932D82D474E0665C1DEB5446EB /* NSString+MD5.m */,
 				F7B32AFCFAAFE7BB1CD948871D9F7217 /* Support Files */,
 			);
-			name = MD5Digest;
 			path = MD5Digest;
 			sourceTree = "<group>";
 		};
@@ -1112,7 +1107,6 @@
 				A29730BB49D10B197A857BF2D499A78D /* XUnsignedIntegerTypeValidator.m */,
 				87A54102BB26D71FDC0D1FF7EE650998 /* Support Files */,
 			);
-			name = "XAbstractionLibrary-Parse";
 			path = "XAbstractionLibrary-Parse";
 			sourceTree = "<group>";
 		};
@@ -1123,7 +1117,6 @@
 				A012AE7FD6C64D641BF5D204A76F81ED /* OpenUDID.m */,
 				E54F88527B83771A970FA1258CA6CC81 /* Support Files */,
 			);
-			name = OpenUDID;
 			path = OpenUDID;
 			sourceTree = "<group>";
 		};
@@ -1176,7 +1169,6 @@
 				771869FE8B326A8E64AE0FDCD362C042 /* XWeakMacros.h */,
 				A47A062FA84A16462566CD74EA626E74 /* Support Files */,
 			);
-			name = "XAbstractionLibrary-Base";
 			path = "XAbstractionLibrary-Base";
 			sourceTree = "<group>";
 		};
@@ -1244,7 +1236,6 @@
 				4454547771978C1CBB2664AE54E91C4A /* XUploadHttpRequest.m */,
 				CBE26B8B877AC381648B2C8776949ED3 /* Support Files */,
 			);
-			name = "XAbstractionLibrary-NetWork";
 			path = "XAbstractionLibrary-NetWork";
 			sourceTree = "<group>";
 		};
@@ -1295,7 +1286,6 @@
 				3C4658A6374730EFF4F59FE5153F1D12 /* XAbstractView.h */,
 				802868E795EDC58B51F506E3885F0264 /* XView.h */,
 				9143AFBA8264E79728F41BF909E31FCD /* XView.m */,
-				0E5D0A4FB4F62BD168E143B6F574A6FF /* XView.xib */,
 				7D784F6CBB31CAA95866E28EB469EC39 /* XViewController.h */,
 				881CF58E66016466757F5A581027EB68 /* XViewController.m */,
 				C9633A03453CAB5AD2F42F00E37E9907 /* XErrorView */,
@@ -1385,7 +1375,6 @@
 				AAF13449C7D75D9F509428DA5447656C /* XFootView.h */,
 				78F74BA7B968E910DB3407886901C276 /* XFootView.m */,
 			);
-			name = XFootView;
 			path = XFootView;
 			sourceTree = "<group>";
 		};
@@ -1409,7 +1398,6 @@
 				08C0D50596500BB85DBB22AB24EF42B5 /* XIBaseNotDataRetryDelegate.h */,
 				06DFD2C1F9C3D6801345C39AFF5F2DB3 /* XIBaseNotDataViewDelegate.h */,
 			);
-			name = XNotDataView;
 			path = XNotDataView;
 			sourceTree = "<group>";
 		};
@@ -1419,7 +1407,6 @@
 				B3181DFEDE9C97BA901C4745183AF3FA /* XIBaseErrorViewDelegate.h */,
 				CA49002BFE6043AAC4D4D14A237696E9 /* XIBaseRetryDelegate.h */,
 			);
-			name = XErrorView;
 			path = XErrorView;
 			sourceTree = "<group>";
 		};
@@ -1486,7 +1473,6 @@
 				8790A34255A8331389D1C8A7C54DEEAE /* XHeadView.h */,
 				C50A63FE7861B5418E2B7EFDBE0D5C0E /* XHeadView.m */,
 			);
-			name = XHeadView;
 			path = XHeadView;
 			sourceTree = "<group>";
 		};
@@ -1525,7 +1511,6 @@
 				5E5D151899E3ECFE23A78FDABDFEBB80 /* Support Files */,
 				89CFAD6E87744A9BB67D03814E1B5773 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -1534,7 +1519,6 @@
 			children = (
 				A3BFA4580B3A7822C08F89A8DFDC8D78 /* XIBaseLoadingViewDelegate.h */,
 			);
-			name = XLoadingView;
 			path = XLoadingView;
 			sourceTree = "<group>";
 		};
@@ -2022,7 +2006,6 @@
 				2E6E78BBC834AD45518980CAE9AA2883 /* XMessageInterceptor.m in Sources */,
 				C84190BA82323EF399F330C825778997 /* XTableView.m in Sources */,
 				B533BDFFB9CD196655C4D997E8E0E8BE /* XView.m in Sources */,
-				08EA23FFDEB87D66E91E34FF786D87B2 /* XView.xib in Sources */,
 				C95024A06A99BECBD48EA6F6881DB440 /* XViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

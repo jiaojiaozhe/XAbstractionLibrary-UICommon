@@ -33,7 +33,7 @@ XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、空�
   s.source_files = 'XAbstractionLibrary-UICommon/Classes/**/*'
   
   s.resource_bundles = {
-     'XAbstractionLibrary-UICommon' => ['XAbstractionLibrary-UICommon/Assets/*.png']
+     'XAbstractionLibrary-UICommon' => ['XAbstractionLibrary-UICommon/Assets/*.xib']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
