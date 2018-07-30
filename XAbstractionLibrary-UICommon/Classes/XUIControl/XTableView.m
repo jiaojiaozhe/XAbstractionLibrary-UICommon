@@ -22,7 +22,7 @@
 /**
  *  时间采样间隔
  */
-#define         SAMPLING_RATE           0.1f
+#define         SAMPLING_RATE           0.2f
 
 @interface XTableView()<XHeadViewDelegate,XFootViewDelegate>
 
@@ -116,10 +116,19 @@
             bLoading = [_footView bLoading];
         }
     }
+    
+    if(!bLoading){
+        bLoading = _bLoading;
+    }
     [_lock unlock];
     return bLoading;
 }
 
+- (void) setBLoading:(BOOL)bLoading{
+    [_lock lock];
+    _bLoading = bLoading;
+    [_lock unlock];
+}
 
 - (void) initSetUp{
     _lock = [[XLock alloc] init];
@@ -289,7 +298,7 @@
                                                                                 toItem:self
                                                                              attribute:NSLayoutAttributeBottom
                                                                             multiplier:1.0f
-                                                                              constant:top];
+                                                                              constant:0];
             NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:_footView
                                                                               attribute:NSLayoutAttributeLeft
                                                                               relatedBy:NSLayoutRelationEqual
@@ -384,6 +393,8 @@
                 [weakSelf.footView stopLoading];
         });
     }
+    
+    [self setBLoading:NO];
 }
 
 //当前是否支持下拉刷新
@@ -428,6 +439,18 @@
         return;
     }
     
+    //预加载处理
+    if(VIEW_HEIGHT(self) * [self getPerLoadRate] < self.contentSize.height){
+        if([self bPullToUp]){
+            if(![self bLoading]){
+                if(self.contentOffset.y + VIEW_HEIGHT(self) * [self getPerLoadRate] >= self.contentSize.height){
+                    [self setBLoading:YES];
+                    [self didTriggerLoadMore:_footView];
+                }
+            }
+        }
+    }
+    
     if(CFAbsoluteTimeGetCurrent() - _lastTimeInterval >= SAMPLING_RATE){
         if(scrollView.contentOffset.y <= 0){
             if([self bPullToDown]){
@@ -435,13 +458,10 @@
             }
         }else{
             if([self bPullToUp]){
-                if(scrollView.frame.size.height >= self.contentSize.height){
-                    //内容较少的情况，滚动不可用的情况
-                    
-                }else{
-                    if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-                        [_footView scrollViewDidScroll:scrollView];
-                    }
+                if(VIEW_HEIGHT(self) >= self.contentSize.height){
+                    [_footView scrollViewDidScroll:scrollView];
+                }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
+                    [_footView scrollViewDidScroll:scrollView];
                 }
             }
         }
@@ -467,13 +487,10 @@
     if(scrollView.contentOffset.y <= 0){
         [_headView scrollViewWillBeginDragging:scrollView];
     }else{
-        if(scrollView.frame.size.height >= self.contentSize.height){
-            //内容较少的情况，滚动不可用的情况
-            
-        }else{
-            if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-                [_footView scrollViewWillBeginDragging:scrollView];
-            }
+        if(VIEW_HEIGHT(self) >= self.contentSize.height){
+            [_footView scrollViewWillBeginDragging:scrollView];
+        }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
+            [_footView scrollViewWillBeginDragging:scrollView];
         }
     }
     
@@ -491,17 +508,13 @@
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
     if(scrollView.contentOffset.y <= 0){
         [_headView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
     }else{
-        if(scrollView.frame.size.height >= self.contentSize.height){
-            //内容较少的情况，滚动不可用的情况
-            
-        }else{
-            if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-                [_footView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
-            }
+        if(VIEW_HEIGHT(self) >= self.contentSize.height){
+            [_footView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+        }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
+            [_footView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
         }
     }
     
@@ -523,13 +536,10 @@
     if(scrollView.contentOffset.y <= 0){
         [_headView scrollViewWillBeginDecelerating:scrollView];
     }else{
-        if(scrollView.frame.size.height >= self.contentSize.height){
-            //内容较少的情况，滚动不可用的情况
-            
-        }else{
-            if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-                [_footView scrollViewWillBeginDecelerating:scrollView];
-            }
+        if(VIEW_HEIGHT(self) >= self.contentSize.height){
+            [_footView scrollViewWillBeginDecelerating:scrollView];
+        }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
+            [_footView scrollViewWillBeginDecelerating:scrollView];
         }
     }
     
@@ -551,13 +561,10 @@
     if(scrollView.contentOffset.y <= 0){
         [_headView scrollViewDidEndDecelerating:scrollView];
     }else{
-        if(scrollView.frame.size.height >= self.contentSize.height){
-            //内容较少的情况，滚动不可用的情况
-            
-        }else{
-            if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-                [_footView scrollViewDidEndDecelerating:scrollView];
-            }
+        if(VIEW_HEIGHT(self) >= self.contentSize.height){
+            [_footView scrollViewDidEndDecelerating:scrollView];
+        }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
+            [_footView scrollViewDidEndDecelerating:scrollView];
         }
     }
     

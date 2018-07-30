@@ -76,10 +76,12 @@
 }
 
 - (void) pullProgress:(CGFloat) progress{
+    NSLog(@"%f",progress);
 }
 
 - (void) startLoading{
     [self setBLoading:YES];
+    NSLog(@"startLoading");
 }
 
 - (void) stopLoading{
@@ -100,21 +102,10 @@
             self.state = XHeadViewStatePulling;
             [self pullProgress:1.0f];
             //兼容初次自动刷新
-            [self scrollViewDidScroll:scrollView];
-        }else if(self.state == XHeadViewStatePulling){
-            if(!scrollView.isDragging){
-                self.state = XHeadViewStateLoading;
-                self.scrollView = scrollView;
-                __weak typeof(self) weakSelf = self;
-                [UIView animateWithDuration:0.5f animations:^{
-                    weakSelf.scrollView.contentInset = UIEdgeInsetsMake(VIEW_HEIGHT(self), 0, 0, 0);
-                }];
-                [self startLoading];
-                if([self.delegate respondsToSelector:@selector(didTriggerRefresh:)])
-                    [self.delegate didTriggerRefresh:self];
-            }
+            [self scrollViewDidEndDragging:scrollView willDecelerate:YES];
         }
     }else if(scrollView.contentOffset.y < 0){
+    
         if(self.state != XHeadViewStateLoading){
             if(self.state != XHeadViewStateNormal){
                 self.state = XHeadViewStateNormal;
@@ -132,6 +123,21 @@
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if(scrollView.contentOffset.y < -VIEW_HEIGHT(self)){
+        if(self.state == XHeadViewStatePulling){
+            if(!scrollView.isDragging){
+                self.state = XHeadViewStateLoading;
+                self.scrollView = scrollView;
+                __weak typeof(self) weakSelf = self;
+                [UIView animateWithDuration:0.5f animations:^{
+                    weakSelf.scrollView.contentInset = UIEdgeInsetsMake(VIEW_HEIGHT(self), 0, 0, 0);
+                }];
+                [self startLoading];
+                if([self.delegate respondsToSelector:@selector(didTriggerRefresh:)])
+                    [self.delegate didTriggerRefresh:self];
+            }
+        }
+    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{

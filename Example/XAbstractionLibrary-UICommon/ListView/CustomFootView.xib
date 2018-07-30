@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" misplaced="YES" id="iN0-l3-epB" customClass="CustomFootView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomFootView">
             <rect key="frame" x="0.0" y="0.0" width="354" height="82"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lAk-D0-0Ie">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAk-D0-0Ie">
                     <rect key="frame" x="130" y="21" width="95" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.54265696279999998" green="1" blue="0.61449820830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -25,7 +25,16 @@
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="0.92422495757358614" blue="0.85733773494625387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lAk-D0-0Ie" firstAttribute="top" secondItem="u6r-fS-axp" secondAttribute="top" constant="21" id="1vF-gk-wLn"/>
+                <constraint firstItem="u6r-fS-axp" firstAttribute="trailing" secondItem="lAk-D0-0Ie" secondAttribute="trailing" constant="129" id="R9w-hZ-gdp"/>
+                <constraint firstItem="lAk-D0-0Ie" firstAttribute="leading" secondItem="u6r-fS-axp" secondAttribute="leading" constant="130" id="cgX-jH-11h"/>
+                <constraint firstItem="u6r-fS-axp" firstAttribute="bottom" secondItem="lAk-D0-0Ie" secondAttribute="bottom" constant="20" id="dAQ-bp-QWE"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="u6r-fS-axp"/>
             <connections>
                 <outlet property="stateLabel" destination="lAk-D0-0Ie" id="8jR-xh-2pq"/>
             </connections>

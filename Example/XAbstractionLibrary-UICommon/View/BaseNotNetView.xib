@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BaseNotNetView">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="184"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无网耶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGi-wx-yc0">
+                    <rect key="frame" x="0.0" y="0.0" width="374" height="92"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITP-VE-n4L">
+                    <rect key="frame" x="0.0" y="92" width="374" height="92"/>
+                    <state key="normal" title="重试"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.92422495760000001" blue="0.85733773489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eGi-wx-yc0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="1mp-Oc-UU9"/>
+                <constraint firstItem="ITP-VE-n4L" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="25p-T7-cRH"/>
+                <constraint firstItem="ITP-VE-n4L" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5aa-r8-jM2"/>
+                <constraint firstItem="ITP-VE-n4L" firstAttribute="height" secondItem="eGi-wx-yc0" secondAttribute="height" id="SFn-Kv-ZdV"/>
+                <constraint firstItem="eGi-wx-yc0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="VOt-tU-a9E"/>
+                <constraint firstItem="eGi-wx-yc0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bIm-5T-XS3"/>
+                <constraint firstItem="ITP-VE-n4L" firstAttribute="top" secondItem="eGi-wx-yc0" secondAttribute="bottom" id="qyI-Za-zu8"/>
+                <constraint firstItem="ITP-VE-n4L" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="syi-pU-7Yc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="notNetLabel" destination="eGi-wx-yc0" id="k8L-1n-upR"/>
+                <outlet property="retryBtn" destination="ITP-VE-n4L" id="QMP-bx-pNL"/>
+            </connections>
+            <point key="canvasLocation" x="68" y="-106"/>
+        </view>
+    </objects>
+</document>

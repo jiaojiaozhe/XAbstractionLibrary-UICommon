@@ -6,12 +6,18 @@
 //
 
 #import "XHttpRequestDelegate.h"
+#import "XHttpResponseDelegate.h"
 #import <XAbstractionLibrary_Base/XAbstractionLibrary-Base-umbrella.h>
 
 /**
  *  短连接http请求对象
  */
-@interface XHttpRequest : XData<XHttpRequestDelegate>
+@interface XHttpRequest : XData<XHttpRequestDelegate,NSCopying>
+
+/**
+ *  接口请求唯一ID
+ */
+@property (nonatomic,strong) NSString *authID;
 
 /**
  *  请求命令名
@@ -29,9 +35,19 @@
 @property (nonatomic,weak) id<XHttpResponseDelegate> ownerDelegate;
 
 /**
- *  构造请求对象，用于管理请求
+    业务回调block
  */
-- (instancetype) initWithRequestTask:(id) request;
+@property (nonatomic,weak) XResponseBlock responseBlock;
+
+/**
+ *  设置请求对象，调用方忽略
+ */
+- (void) setRequestObj:(id) request;
+
+/**
+ *  返回请求对象，调用方忽略
+ */
+- (id) requestObj;
 
 /**
  *  取消请求
@@ -54,6 +70,17 @@
  *  添加依赖于该接口的代理
  */
 - (void) addDelegate:(id<XHttpResponseDelegate>) delegate;
+
+/**
+ 添加业务回调block
+ */
+- (void) addResponseReturnBlock:(XResponseBlock) responseBlock;
+
+
+/**
+ 移除业务回调block
+ */
+- (void) removeResponseReturnBlock:(XResponseBlock) responseBlock;
 
 /**
  *  即将开始准备请求

@@ -15,6 +15,11 @@
 @protocol XHttpRequestDelegate <NSObject>
 
 /**
+ *  接口请求唯一ID
+ */
+@property (nonatomic,strong) NSString *authID;
+
+/**
  *  请求命令名
  */
 @property (nonatomic,strong) NSString *command;

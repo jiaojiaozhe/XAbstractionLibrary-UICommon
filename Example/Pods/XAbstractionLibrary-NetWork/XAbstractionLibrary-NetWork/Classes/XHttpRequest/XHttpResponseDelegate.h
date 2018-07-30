@@ -14,6 +14,12 @@ typedef void(^XResponseBlock)(id<XHttpRequestDelegate> httpRequest,id responseOb
  *  请求状态回调代理
  */
 @protocol XHttpResponseDelegate <NSObject>
+
+/**
+ *  取消请求
+ */
+- (void) cancelRequest:(id<XHttpRequestDelegate>) request;
+
 /**
  *  即将开始准备请求
  *

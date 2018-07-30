@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,48 +12,73 @@
         <!--View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="XViewController" sceneMemberID="viewController">
+                <viewController id="whP-gf-Uak" customClass="XYViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cQg-dN-upz"/>
+                        <viewControllerLayoutGuide type="bottom" id="wi7-Ls-n2j"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="nrZ-uG-Eky">
-                                <rect key="frame" x="0.0" y="0.0" width="373" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="6Qk-lM-5JA">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="667"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="dX8-n9-TFA">
-                                                <rect key="frame" x="0.0" y="0.0" width="373" height="667"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jZV-Rg-rUA" customClass="BaseTableView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="667"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <connections>
-                                                            <outlet property="dataSource" destination="whP-gf-Uak" id="GRL-hM-flx"/>
-                                                            <outlet property="delegate" destination="whP-gf-Uak" id="W7Y-fk-3eZ"/>
-                                                        </connections>
-                                                    </tableView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjJ-rH-ugm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                <color key="backgroundColor" red="0.54265696279999998" green="1" blue="0.61449820830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="ndh-np-HFr"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-gW-OcY">
+                                <rect key="frame" x="10" y="510" width="118.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ovb-d8-vhK"/>
+                                </constraints>
+                                <state key="normal" title="开始加载"/>
+                                <connections>
+                                    <action selector="startLoad:" destination="whP-gf-Uak" eventType="touchUpInside" id="EwG-FU-XVd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMp-Fg-4wQ">
+                                <rect key="frame" x="246.5" y="510" width="118.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="S1u-Oi-rQA"/>
+                                </constraints>
+                                <state key="normal" title="加载成功"/>
+                                <connections>
+                                    <action selector="loadSuccess:" destination="whP-gf-Uak" eventType="touchUpInside" id="WFK-mS-h0j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8X4-Hn-pRN">
+                                <rect key="frame" x="128.5" y="510" width="118" height="30"/>
+                                <state key="normal" title="加载失败"/>
+                                <connections>
+                                    <action selector="loadFail:" destination="whP-gf-Uak" eventType="touchUpInside" id="x9d-KT-lTq"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.78870828866653186" green="0.96894420709614815" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jjJ-rH-ugm" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="0OV-Zg-XmL"/>
+                            <constraint firstItem="xMp-Fg-4wQ" firstAttribute="leading" secondItem="8X4-Hn-pRN" secondAttribute="trailing" id="63G-1i-QUe"/>
+                            <constraint firstItem="tR5-gW-OcY" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="7qd-fl-XWq"/>
+                            <constraint firstItem="8X4-Hn-pRN" firstAttribute="width" secondItem="tR5-gW-OcY" secondAttribute="width" id="HrC-jE-lsn"/>
+                            <constraint firstItem="jjJ-rH-ugm" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="L5J-lX-hOu"/>
+                            <constraint firstItem="8X4-Hn-pRN" firstAttribute="top" secondItem="jjJ-rH-ugm" secondAttribute="bottom" constant="10" id="Ryj-RY-fdi"/>
+                            <constraint firstItem="xMp-Fg-4wQ" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailing" constant="-10" id="Vbz-sj-RQs"/>
+                            <constraint firstItem="tR5-gW-OcY" firstAttribute="top" secondItem="jjJ-rH-ugm" secondAttribute="bottom" constant="10" id="cLw-06-nAG"/>
+                            <constraint firstItem="jjJ-rH-ugm" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailing" id="ddh-dn-iqc"/>
+                            <constraint firstItem="xMp-Fg-4wQ" firstAttribute="width" secondItem="tR5-gW-OcY" secondAttribute="width" id="f0W-Fd-D9N"/>
+                            <constraint firstItem="xMp-Fg-4wQ" firstAttribute="top" secondItem="jjJ-rH-ugm" secondAttribute="bottom" constant="10" id="ie8-gS-hOD"/>
+                            <constraint firstItem="8X4-Hn-pRN" firstAttribute="leading" secondItem="tR5-gW-OcY" secondAttribute="trailing" id="shU-KM-ckb"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="jZV-Rg-rUA" id="Q5b-6t-Yoy"/>
+                        <outlet property="contentView" destination="jjJ-rH-ugm" id="L12-Q3-44M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190.5" y="480.5"/>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
         </scene>
     </scenes>
 </document>

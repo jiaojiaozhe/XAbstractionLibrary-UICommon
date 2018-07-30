@@ -19,6 +19,11 @@
     "ios": "8.0"
   },
   "source_files": "XAbstractionLibrary-UICommon/Classes/**/*",
+  "resource_bundles": {
+    "XAbstractionLibrary-UICommon": [
+      "XAbstractionLibrary-UICommon/Assets/*.png"
+    ]
+  },
   "dependencies": {
     "XAbstractionLibrary-NetWork": [
 

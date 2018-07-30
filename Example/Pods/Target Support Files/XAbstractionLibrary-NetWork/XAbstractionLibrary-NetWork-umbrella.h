@@ -15,6 +15,7 @@
 #import "XHttpRequestDelegate.h"
 #import "XHttpRequestManager.h"
 #import "XHttpResponseDelegate.h"
+#import "XNetWorkStatus.h"
 #import "XUploadHttpRequest.h"
 
 FOUNDATION_EXPORT double XAbstractionLibrary_NetWorkVersionNumber;

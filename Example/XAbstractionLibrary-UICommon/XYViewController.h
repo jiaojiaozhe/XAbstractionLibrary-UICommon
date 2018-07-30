@@ -1,5 +1,5 @@
 //
-//  XViewController.h
+//  XYViewController.h
 //  XAbstractionLibrary-UICommon
 //
 //  Created by jiaojiaozhe on 07/16/2018.
@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface XViewController : UIViewController
+@interface XYViewController : UIViewController
 
 @end

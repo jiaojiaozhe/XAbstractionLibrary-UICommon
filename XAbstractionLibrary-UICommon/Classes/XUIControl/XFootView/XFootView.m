@@ -97,12 +97,75 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     CGFloat criticalValueY = scrollView.contentSize.height;
-    if(contentOffsetY + VIEW_HEIGHT(scrollView) > criticalValueY + VIEW_HEIGHT(self)){
-        //松手加载
-        if(self.state == XFootViewStateNormal){
-            self.state = XFootViewStatePulling;
-            [self pullProgress:1.0f];
-        }else if(self.state == XFootViewStatePulling){
+    
+    if(scrollView.frame.size.height >= scrollView.contentSize.height){
+        if(contentOffsetY > VIEW_HEIGHT(self)){
+            //松手加载更多
+            if(self.state == XFootViewStateNormal){
+                self.state = XFootViewStatePulling;
+                [self pullProgress:1.0f];
+            }
+        }else if(contentOffsetY > 0){
+            //上拉加载更多
+            if(self.state != XFootViewStateLoadingMore){
+                if(self.state != XFootViewStateNormal){
+                    self.state = XFootViewStateNormal;
+                }
+            }
+            
+            CGFloat offsetY = contentOffsetY + VIEW_HEIGHT(scrollView) - criticalValueY;
+            CGFloat rate = offsetY / VIEW_HEIGHT(self);
+            NSString *rateValue = [NSString stringWithFormat:@"%.1f",rate];
+            [self pullProgress:[rateValue floatValue]];
+        }else{
+            //正常情况
+        }
+    }else{
+        if(contentOffsetY + VIEW_HEIGHT(scrollView) > criticalValueY + VIEW_HEIGHT(self)){
+            //松手加载
+            if(self.state == XFootViewStateNormal){
+                self.state = XFootViewStatePulling;
+                [self pullProgress:1.0f];
+            }
+        }else if(contentOffsetY + VIEW_HEIGHT(scrollView) > criticalValueY){
+            //上拉加载更多
+            if(self.state != XFootViewStateLoadingMore){
+                if(self.state != XFootViewStateNormal){
+                    self.state = XFootViewStateNormal;
+                }
+            }
+            
+            CGFloat offsetY = contentOffsetY + VIEW_HEIGHT(scrollView) - criticalValueY;
+            CGFloat rate = offsetY / VIEW_HEIGHT(self);
+            NSString *rateValue = [NSString stringWithFormat:@"%.1f",rate];
+            [self pullProgress:[rateValue floatValue]];
+        }else{
+            //正常状况
+        }
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if(scrollView.frame.size.height >= scrollView.contentSize.height){
+        if(self.state == XFootViewStatePulling){
+            if(!scrollView.isDragging){
+                self.state = XFootViewStateLoadingMore;
+                self.scrollView = scrollView;
+                [UIView animateWithDuration:0.5f
+                                 animations:^{
+                                     scrollView.contentInset = UIEdgeInsetsMake(0, 0, VIEW_HEIGHT(scrollView) - 18, 0);
+                                 }];
+                [self startLoading];
+                if([self.delegate respondsToSelector:@selector(didTriggerLoadMore:)])
+                    [self.delegate didTriggerLoadMore:self];
+            }
+        }
+    }else{
+        if(self.state == XFootViewStatePulling){
             if(!scrollView.isDragging){
                 self.state = XFootViewStateLoadingMore;
                 self.scrollView = scrollView;
@@ -115,29 +178,7 @@
                     [self.delegate didTriggerLoadMore:self];
             }
         }
-    }else if(contentOffsetY + VIEW_HEIGHT(scrollView) > criticalValueY){
-        //上拉加载更多
-        if(self.state != XFootViewStateLoadingMore){
-            if(self.state != XFootViewStateNormal){
-                self.state = XFootViewStateNormal;
-            }
-        }
-        
-        CGFloat offsetY = contentOffsetY + VIEW_HEIGHT(scrollView) - criticalValueY;
-        CGFloat rate = offsetY / VIEW_HEIGHT(self);
-        NSString *rateValue = [NSString stringWithFormat:@"%.1f",rate];
-        [self pullProgress:[rateValue floatValue]];
-    }else{
-        //正常状况
     }
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{

@@ -30,8 +30,8 @@
  */
 #define DICT_PUT(dict, key, obj) \
 if(dict != NULL && key != NULL && obj != NULL){\
-if(![dic isKindOfClass:[NSMutableDictionary class]]){\
-if([dic isKindOfClass:[NSDictionary class]]){\
+if(![dict isKindOfClass:[NSMutableDictionary class]]){\
+if([dict isKindOfClass:[NSDictionary class]]){\
 dict = [NSMutableDictionary dictionaryWithDictionary:dict];\
 }\
 }\

@@ -10,7 +10,17 @@
 #endif
 #endif
 
+#import "XAbstractView.h"
+#import "XIBaseErrorViewDelegate.h"
+#import "XIBaseRetryDelegate.h"
+#import "XIBaseLoadingViewDelegate.h"
+#import "XIBaseNotDataRetryDelegate.h"
+#import "XIBaseNotDataViewDelegate.h"
+#import "XIBaseNoNetViewRetryDelegate.h"
+#import "XIBaseNotNetViewDelegate.h"
 #import "XView.h"
+#import "XViewController.h"
+#import "XCollectionView.h"
 #import "XFootView.h"
 #import "XHeadView.h"
 #import "XListViewDelegate.h"

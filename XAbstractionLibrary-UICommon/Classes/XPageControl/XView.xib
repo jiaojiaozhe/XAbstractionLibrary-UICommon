@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="XView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On1-DC-Egj">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBd-n4-1cp">
+                    <rect key="frame" x="-0.5" y="0.0" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="On1-DC-Egj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4OH-XC-q5d"/>
+                <constraint firstItem="On1-DC-Egj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="7E6-iC-sIp"/>
+                <constraint firstItem="qBd-n4-1cp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="E4y-Gk-q2r"/>
+                <constraint firstItem="qBd-n4-1cp" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="EmK-re-beW"/>
+                <constraint firstItem="qBd-n4-1cp" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="IWG-jc-070"/>
+                <constraint firstItem="On1-DC-Egj" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="JXd-i6-WvJ"/>
+                <constraint firstItem="qBd-n4-1cp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Zle-rI-T2U"/>
+                <constraint firstItem="On1-DC-Egj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iEM-ie-jQb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentView" destination="On1-DC-Egj" id="faF-x7-zcv"/>
+                <outlet property="errorContentView" destination="qBd-n4-1cp" id="i0g-xP-wip"/>
+            </connections>
+            <point key="canvasLocation" x="69" y="136"/>
+        </view>
+    </objects>
+</document>
