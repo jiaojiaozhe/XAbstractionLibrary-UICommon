@@ -7,12 +7,19 @@
 //
 
 #import "XAppDelegate.h"
+#import "NavigationControllerManager.h"
+#import <XAbstractionLibrary_UICommon/XAbstractionLibrary-UICommon-umbrella.h>
 
 @implementation XAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[NavigationControllerManager sharePageManager] rootNavigationController];
+    [self.window makeKeyAndVisible];
+    [UIViewController validatePanWithPushTransitionGestureRecognizerType:PushTransitionGestureRecognizerTypePan];
     return YES;
 }
 

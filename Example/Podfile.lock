@@ -28,12 +28,14 @@ PODS:
   - XAbstractionLibrary-Parse (0.0.3):
     - Mantle (~> 2.1.0)
     - XAbstractionLibrary-Base
-  - XAbstractionLibrary-UICommon (0.1.0):
+  - XAbstractionLibrary-UICommon (0.0.2):
     - XAbstractionLibrary-NetWork
     - XAbstractionLibrary-Parse
+  - XXNibBridge (2.3.1)
 
 DEPENDENCIES:
   - XAbstractionLibrary-UICommon (from `../`)
+  - XXNibBridge
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -41,6 +43,7 @@ SPEC REPOS:
     - Mantle
     - MD5Digest
     - OpenUDID
+    - XXNibBridge
   https://github.com/jiaojiaozhe/XAbstractionLibrary-Specs:
     - XAbstractionLibrary-Base
     - XAbstractionLibrary-NetWork
@@ -58,8 +61,9 @@ SPEC CHECKSUMS:
   XAbstractionLibrary-Base: 88d83107f0189173c24c851c502487ac3e053801
   XAbstractionLibrary-NetWork: 210af94c730e4f65edf5bdbc87d4ff723094ccc3
   XAbstractionLibrary-Parse: a36da48d554985035b0e6d4c0f392ff6bdf9d769
-  XAbstractionLibrary-UICommon: fff3e598893b8f378793a8395a430612422bb4eb
+  XAbstractionLibrary-UICommon: 55658a2bacaa056a6dcbaa17501c28aabe6f75a6
+  XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
-PODFILE CHECKSUM: 39cdef9f0e50f2b3d0615a3ab91c7035997087e6
+PODFILE CHECKSUM: 6d20b88b59e2ca262f3e89d7e8d3bebd47ffaad8
 
 COCOAPODS: 1.5.0

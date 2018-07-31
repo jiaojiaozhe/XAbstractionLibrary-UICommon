@@ -1,6 +1,6 @@
 {
   "name": "XAbstractionLibrary-UICommon",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "summary": "XAbstractionLibrary-UICommon是基础的UI相关组件.",
   "description": "XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、空间级的开发效率低下的问题.",
   "homepage": "https://github.com/jiaojiaozhe/XAbstractionLibrary-UICommon",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/jiaojiaozhe/XAbstractionLibrary-UICommon.git",
-    "tag": "0.1.0"
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,7 +21,7 @@
   "source_files": "XAbstractionLibrary-UICommon/Classes/**/*",
   "resource_bundles": {
     "XAbstractionLibrary-UICommon": [
-      "XAbstractionLibrary-UICommon/Assets/*.png"
+      "XAbstractionLibrary-UICommon/Assets/*.xib"
     ]
   },
   "dependencies": {

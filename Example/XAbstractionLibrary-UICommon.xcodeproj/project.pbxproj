@@ -27,6 +27,26 @@
 		BC233D8320FD89ED004F7304 /* CustomFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC233D8220FD89ED004F7304 /* CustomFootView.m */; };
 		BC233D8520FD93E9004F7304 /* CustomHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC233D8420FD93E9004F7304 /* CustomHeadView.xib */; };
 		BC233D8720FD9AB7004F7304 /* CustomFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC233D8620FD9AB7004F7304 /* CustomFootView.xib */; };
+		BC36C0B32110422E00D49ADA /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC36C0B22110422E00D49ADA /* TabBarItem.m */; };
+		BC36C0B6211043CC00D49ADA /* TabBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC36C0B4211043CC00D49ADA /* TabBarItem.xib */; };
+		BC36C0B7211043CC00D49ADA /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC36C0B5211043CC00D49ADA /* TabBar.xib */; };
+		BC803EBA210EF91800388A75 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EB9210EF91800388A75 /* NavigationController.m */; };
+		BC803EBD210EFA2A00388A75 /* NavigationControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EBC210EFA2A00388A75 /* NavigationControllerManager.m */; };
+		BC803EC0210EFB3000388A75 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EBF210EFB3000388A75 /* MainViewController.m */; };
+		BC803ECA210F058000388A75 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EC9210F058000388A75 /* TabBarViewController.m */; };
+		BC803ECD210F085900388A75 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803ECC210F085900388A75 /* TabBar.m */; };
+		BC803ED1210F090800388A75 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803ECF210F090800388A75 /* ViewController1.m */; };
+		BC803ED2210F090800388A75 /* ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC803ED0210F090800388A75 /* ViewController1.xib */; };
+		BC803ED9210F093E00388A75 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803ED7210F093E00388A75 /* ViewController2.m */; };
+		BC803EDA210F093E00388A75 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC803ED8210F093E00388A75 /* ViewController2.xib */; };
+		BC803EDE210F094D00388A75 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EDC210F094D00388A75 /* ViewController3.m */; };
+		BC803EDF210F094D00388A75 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC803EDD210F094D00388A75 /* ViewController3.xib */; };
+		BC803EE3210F096000388A75 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EE1210F096000388A75 /* ViewController4.m */; };
+		BC803EE4210F096000388A75 /* ViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC803EE2210F096000388A75 /* ViewController4.xib */; };
+		BC803EE8210F097200388A75 /* ViewController6.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EE6210F097200388A75 /* ViewController6.m */; };
+		BC803EE9210F097200388A75 /* ViewController6.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC803EE7210F097200388A75 /* ViewController6.xib */; };
+		BC803EED210F098800388A75 /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = BC803EEB210F098800388A75 /* ViewController5.m */; };
+		BC803EEE210F098800388A75 /* ViewController5.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC803EEC210F098800388A75 /* ViewController5.xib */; };
 		BC815C7B20FCA5F1009C3E35 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC815C7A20FCA5F1009C3E35 /* BaseTableView.m */; };
 		BC82EA4B2105889C0097971A /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82EA4A2105889C0097971A /* BaseView.m */; };
 		BC82EA4E210588DA0097971A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82EA4D210588DA0097971A /* BaseLoadingView.m */; };
@@ -88,6 +108,38 @@
 		BC233D8220FD89ED004F7304 /* CustomFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFootView.m; sourceTree = "<group>"; };
 		BC233D8420FD93E9004F7304 /* CustomHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeadView.xib; sourceTree = "<group>"; };
 		BC233D8620FD9AB7004F7304 /* CustomFootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFootView.xib; sourceTree = "<group>"; };
+		BC36C0B12110422E00D49ADA /* TabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
+		BC36C0B22110422E00D49ADA /* TabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
+		BC36C0B4211043CC00D49ADA /* TabBarItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarItem.xib; sourceTree = "<group>"; };
+		BC36C0B5211043CC00D49ADA /* TabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
+		BC803EB8210EF91800388A75 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		BC803EB9210EF91800388A75 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		BC803EBB210EFA2A00388A75 /* NavigationControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationControllerManager.h; sourceTree = "<group>"; };
+		BC803EBC210EFA2A00388A75 /* NavigationControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerManager.m; sourceTree = "<group>"; };
+		BC803EBE210EFB3000388A75 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		BC803EBF210EFB3000388A75 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		BC803EC8210F058000388A75 /* TabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		BC803EC9210F058000388A75 /* TabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		BC803ECB210F085900388A75 /* TabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
+		BC803ECC210F085900388A75 /* TabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
+		BC803ECE210F090800388A75 /* ViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		BC803ECF210F090800388A75 /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		BC803ED0210F090800388A75 /* ViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
+		BC803ED6210F093E00388A75 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		BC803ED7210F093E00388A75 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		BC803ED8210F093E00388A75 /* ViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
+		BC803EDB210F094D00388A75 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		BC803EDC210F094D00388A75 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		BC803EDD210F094D00388A75 /* ViewController3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
+		BC803EE0210F096000388A75 /* ViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		BC803EE1210F096000388A75 /* ViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
+		BC803EE2210F096000388A75 /* ViewController4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController4.xib; sourceTree = "<group>"; };
+		BC803EE5210F097200388A75 /* ViewController6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController6.h; sourceTree = "<group>"; };
+		BC803EE6210F097200388A75 /* ViewController6.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController6.m; sourceTree = "<group>"; };
+		BC803EE7210F097200388A75 /* ViewController6.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController6.xib; sourceTree = "<group>"; };
+		BC803EEA210F098800388A75 /* ViewController5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
+		BC803EEB210F098800388A75 /* ViewController5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
+		BC803EEC210F098800388A75 /* ViewController5.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController5.xib; sourceTree = "<group>"; };
 		BC815C7920FCA5F1009C3E35 /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
 		BC815C7A20FCA5F1009C3E35 /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		BC82EA492105889C0097971A /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -176,6 +228,8 @@
 		6003F593195388D20070C39A /* Example for XAbstractionLibrary-UICommon */ = {
 			isa = PBXGroup;
 			children = (
+				BC803EC1210EFCA800388A75 /* TabBar */,
+				BC803EB7210EF83000388A75 /* Navigation */,
 				BC82EA652105BCAA0097971A /* ViewDemo */,
 				BC82EA482105887A0097971A /* View */,
 				BC815C7820FCA5A1009C3E35 /* ListView */,
@@ -241,6 +295,52 @@
 				EFD2D8742C3000ADC8358BAB /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		BC803EB7210EF83000388A75 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BC803EB8210EF91800388A75 /* NavigationController.h */,
+				BC803EB9210EF91800388A75 /* NavigationController.m */,
+				BC803EBB210EFA2A00388A75 /* NavigationControllerManager.h */,
+				BC803EBC210EFA2A00388A75 /* NavigationControllerManager.m */,
+				BC803EBE210EFB3000388A75 /* MainViewController.h */,
+				BC803EBF210EFB3000388A75 /* MainViewController.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		BC803EC1210EFCA800388A75 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BC803EC8210F058000388A75 /* TabBarViewController.h */,
+				BC803EC9210F058000388A75 /* TabBarViewController.m */,
+				BC803ECB210F085900388A75 /* TabBar.h */,
+				BC803ECC210F085900388A75 /* TabBar.m */,
+				BC36C0B5211043CC00D49ADA /* TabBar.xib */,
+				BC803ECE210F090800388A75 /* ViewController1.h */,
+				BC803ECF210F090800388A75 /* ViewController1.m */,
+				BC803ED0210F090800388A75 /* ViewController1.xib */,
+				BC803ED6210F093E00388A75 /* ViewController2.h */,
+				BC803ED7210F093E00388A75 /* ViewController2.m */,
+				BC803ED8210F093E00388A75 /* ViewController2.xib */,
+				BC803EDB210F094D00388A75 /* ViewController3.h */,
+				BC803EDC210F094D00388A75 /* ViewController3.m */,
+				BC803EDD210F094D00388A75 /* ViewController3.xib */,
+				BC803EE0210F096000388A75 /* ViewController4.h */,
+				BC803EE1210F096000388A75 /* ViewController4.m */,
+				BC803EE2210F096000388A75 /* ViewController4.xib */,
+				BC803EEA210F098800388A75 /* ViewController5.h */,
+				BC803EEB210F098800388A75 /* ViewController5.m */,
+				BC803EEC210F098800388A75 /* ViewController5.xib */,
+				BC803EE5210F097200388A75 /* ViewController6.h */,
+				BC803EE6210F097200388A75 /* ViewController6.m */,
+				BC803EE7210F097200388A75 /* ViewController6.xib */,
+				BC36C0B12110422E00D49ADA /* TabBarItem.h */,
+				BC36C0B22110422E00D49ADA /* TabBarItem.m */,
+				BC36C0B4211043CC00D49ADA /* TabBarItem.xib */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		BC815C7820FCA5A1009C3E35 /* ListView */ = {
@@ -371,17 +471,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC803ED2210F090800388A75 /* ViewController1.xib in Resources */,
+				BC36C0B7211043CC00D49ADA /* TabBar.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				BC233D8720FD9AB7004F7304 /* CustomFootView.xib in Resources */,
+				BC803EE4210F096000388A75 /* ViewController4.xib in Resources */,
 				BC82EA6A2105BD250097971A /* CustomContentView1.xib in Resources */,
 				BC82EA5B2105A9B20097971A /* BaseErrorView.xib in Resources */,
 				BC82EA5D2105A9C80097971A /* BaseNotDataView.xib in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				BC803EEE210F098800388A75 /* ViewController5.xib in Resources */,
 				BC82EA5F2105A9DB0097971A /* BaseNotNetView.xib in Resources */,
+				BC803EE9210F097200388A75 /* ViewController6.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				BC233D8520FD93E9004F7304 /* CustomHeadView.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				BC36C0B6211043CC00D49ADA /* TabBarItem.xib in Resources */,
 				BC82EA592105A99C0097971A /* BaseLoadingView.xib in Resources */,
+				BC803EDF210F094D00388A75 /* ViewController3.xib in Resources */,
+				BC803EDA210F093E00388A75 /* ViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +537,7 @@
 				"${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-NetWork/XAbstractionLibrary_NetWork.framework",
 				"${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-Parse/XAbstractionLibrary_Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-UICommon/XAbstractionLibrary_UICommon.framework",
+				"${BUILT_PRODUCTS_DIR}/XXNibBridge/XXNibBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -440,6 +549,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XAbstractionLibrary_NetWork.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XAbstractionLibrary_Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XAbstractionLibrary_UICommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XXNibBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -471,19 +581,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC36C0B32110422E00D49ADA /* TabBarItem.m in Sources */,
 				BC82EA4E210588DA0097971A /* BaseLoadingView.m in Sources */,
 				BC233D8020FD89CA004F7304 /* CustomHeadView.m in Sources */,
+				BC803ECA210F058000388A75 /* TabBarViewController.m in Sources */,
 				BC815C7B20FCA5F1009C3E35 /* BaseTableView.m in Sources */,
+				BC803EC0210EFB3000388A75 /* MainViewController.m in Sources */,
 				BC82EA4B2105889C0097971A /* BaseView.m in Sources */,
+				BC803EBD210EFA2A00388A75 /* NavigationControllerManager.m in Sources */,
+				BC803ED1210F090800388A75 /* ViewController1.m in Sources */,
+				BC803EED210F098800388A75 /* ViewController5.m in Sources */,
 				6003F59E195388D20070C39A /* XAppDelegate.m in Sources */,
 				BC82EA542105891A0097971A /* BaseNotDataView.m in Sources */,
+				BC803ECD210F085900388A75 /* TabBar.m in Sources */,
 				BC82EA572105892A0097971A /* BaseNotNetView.m in Sources */,
 				6003F5A7195388D20070C39A /* XYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				BC82EA51210589090097971A /* BaseErrorView.m in Sources */,
 				BC233D8320FD89ED004F7304 /* CustomFootView.m in Sources */,
 				BC82EA682105BD060097971A /* CustomContentView1.m in Sources */,
+				BC803EE3210F096000388A75 /* ViewController4.m in Sources */,
+				BC803EE8210F097200388A75 /* ViewController6.m in Sources */,
+				BC803ED9210F093E00388A75 /* ViewController2.m in Sources */,
 				BC82EA622105BAB80097971A /* CustomView1.m in Sources */,
+				BC803EBA210EF91800388A75 /* NavigationController.m in Sources */,
+				BC803EDE210F094D00388A75 /* ViewController3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

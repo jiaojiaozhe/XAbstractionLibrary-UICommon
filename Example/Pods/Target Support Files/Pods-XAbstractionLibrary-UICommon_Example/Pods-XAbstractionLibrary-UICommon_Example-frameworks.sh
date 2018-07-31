@@ -151,6 +151,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-NetWork/XAbstractionLibrary_NetWork.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-Parse/XAbstractionLibrary_Parse.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-UICommon/XAbstractionLibrary_UICommon.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XXNibBridge/XXNibBridge.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
@@ -161,6 +162,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-NetWork/XAbstractionLibrary_NetWork.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-Parse/XAbstractionLibrary_Parse.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-UICommon/XAbstractionLibrary_UICommon.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XXNibBridge/XXNibBridge.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
