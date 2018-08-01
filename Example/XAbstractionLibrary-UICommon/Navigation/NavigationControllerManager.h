@@ -10,7 +10,7 @@
 #import "TabBarViewController.h"
 #import <XAbstractionLibrary_Base/XAbstractionLibrary-Base-umbrella.h>
 
-@interface NavigationControllerManager : XData<XNavigationControllerDelegate,TabBarControllerDelegate>
+@interface NavigationControllerManager : XData<XNavigationControllerDelegate,XTabBarControllerDelegate>
 
 + (instancetype) sharePageManager;
 
