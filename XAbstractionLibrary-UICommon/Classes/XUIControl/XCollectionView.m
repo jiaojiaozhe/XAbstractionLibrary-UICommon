@@ -56,12 +56,42 @@
 /**
  *  处理底部控件位置的问题
  */
-@property (nonatomic,weak) NSLayoutConstraint *topConstraint;
+@property (nonatomic,weak) NSLayoutConstraint *footTopConstraint;
+/**
+ *  处理底部控件位置的问题
+ */
+@property (nonatomic,weak) NSLayoutConstraint *footWidthConstraint;
+/**
+ *  处理底部控件位置的问题
+ */
+@property (nonatomic,weak) NSLayoutConstraint *footHeightConstraint;
+/**
+ *  处理底部控件位置的问题
+ */
+@property (nonatomic,weak) NSLayoutConstraint *footLeftConstraint;
+/**
+ *  处理顶部控件位置的问题
+ */
+@property (nonatomic,weak) NSLayoutConstraint *headTopConstraint;
+/**
+ *  处理顶部控件位置的问题
+ */
+@property (nonatomic,weak) NSLayoutConstraint *headLeftConstraint;
+/**
+ *  处理顶部控件位置的问题
+ */
+@property (nonatomic,weak) NSLayoutConstraint *headHeightConstraint;
+/**
+ *  处理顶部控件位置的问题
+ */
+@property (nonatomic,weak) NSLayoutConstraint *headWidthConstraint;
 
 
 @end
 
 @implementation XCollectionView
+@synthesize headView = _headView;
+@synthesize footView = _footView;
 @synthesize bLoading = _bLoading;
 @synthesize bAutoLoading = _bAutoLoading;
 
@@ -145,7 +175,6 @@
             }
         }
     });
-    
 }
 
 - (XMessageInterceptor* ) messageInterceotor{
@@ -204,19 +233,19 @@
     _listStyle = listStyle;
     
     if(_listStyle == XListViewStyleStandard){
-        [self removeRefreshView];
-        [self removeFootView];
+        //[self removeRefreshView];
+        //[self removeFootView];
         [self loadRefreshView];
         [self loadFootView];
     }
     else if(_listStyle == XListViewStyleHeader){
-        [self removeRefreshView];
-        [self removeFootView];
+        //[self removeRefreshView];
+        //[self removeFootView];
         [self loadRefreshView];
     }
     else if(_listStyle == XListViewStyleFooter){
-        [self removeRefreshView];
-        [self removeFootView];
+        //[self removeRefreshView];
+        //[self removeFootView];
         [self loadFootView];
     }
     else{
@@ -226,122 +255,195 @@
 }
 
 - (void) loadRefreshView{
-    if(!_headView){
-        _headView = [self getListHeadView];
-        _headView.delegate = self;
-        CGFloat height = VIEW_HEIGHT(_headView);
-        if(self.constraints.count > 0 || !self.translatesAutoresizingMaskIntoConstraints){
-            _headView.translatesAutoresizingMaskIntoConstraints = NO;
-            NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:_headView
-                                                                             attribute:NSLayoutAttributeTop
-                                                                             relatedBy:NSLayoutRelationEqual
-                                                                                toItem:self
-                                                                             attribute:NSLayoutAttributeTop
-                                                                            multiplier:1.0f
-                                                                              constant:-(height)];
-            NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:_headView
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                              relatedBy:NSLayoutRelationEqual
-                                                                                 toItem:self
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                             multiplier:1.0
-                                                                               constant:0.0f];
-            NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:_headView
-                                                                                attribute:NSLayoutAttributeHeight
-                                                                                relatedBy:NSLayoutRelationEqual
-                                                                                   toItem:nil
-                                                                                attribute:NSLayoutAttributeNotAnAttribute
-                                                                               multiplier:1.0f
-                                                                                 constant:height];
-            NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:_headView
-                                                                               attribute:NSLayoutAttributeWidth
-                                                                               relatedBy:NSLayoutRelationEqual
-                                                                                  toItem:self
-                                                                               attribute:NSLayoutAttributeWidth
-                                                                              multiplier:1.0f
-                                                                                constant:0.0];
-            [self addSubview:_headView];
-            [self addConstraint:topConstraint];
-            [self addConstraint:leftConstraint];
-            [self addConstraint:heightConstraint];
-            [self addConstraint:widthConstraint];
-            [_headView setNeedsLayout];
-            [_headView layoutIfNeeded];
-        }else{
-            [self addSubview:_headView];
-            SET_VIEW_TOP(_headView, -(VIEW_HEIGHT(_headView)));
-            SET_VIEW_LEFT(_headView, 0);
-            SET_VIEW_WIDTH(_headView, VIEW_WIDTH(self));
-            SET_VIEW_HEIGHT(_headView, VIEW_HEIGHT(_headView));
+    if(![self headView]){
+        if(![self getListHeadView]){
+            return;
         }
+        
+        [self setHeadView:[self getListHeadView]];
     }
+    
+    [[self headView] setDelegate:self];
+    CGFloat height = VIEW_HEIGHT([self headView]);
+    if(self.constraints.count > 0 || !self.translatesAutoresizingMaskIntoConstraints){
+        [self headView].translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:[self headView]];
+        if(!_headTopConstraint){
+            _headTopConstraint = [NSLayoutConstraint constraintWithItem:[self headView]
+                                                              attribute:NSLayoutAttributeTop
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self
+                                                              attribute:NSLayoutAttributeTop
+                                                             multiplier:1.0f
+                                                               constant:-(height)];
+            [self addConstraint:_headTopConstraint];
+        }
+        
+        if(!_headLeftConstraint){
+            _headLeftConstraint = [NSLayoutConstraint constraintWithItem:[self headView]
+                                                               attribute:NSLayoutAttributeLeft
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self
+                                                               attribute:NSLayoutAttributeLeft
+                                                              multiplier:1.0
+                                                                constant:0.0f];
+            [self addConstraint:_headLeftConstraint];
+        }
+        
+        if(!_headHeightConstraint){
+            _headHeightConstraint = [NSLayoutConstraint constraintWithItem:[self headView]
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:nil
+                                                                 attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:1.0f
+                                                                  constant:height];
+            [self addConstraint:_headWidthConstraint];
+        }
+        
+        if(!_headWidthConstraint){
+            _headWidthConstraint = [NSLayoutConstraint constraintWithItem:[self headView]
+                                                                attribute:NSLayoutAttributeWidth
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self
+                                                                attribute:NSLayoutAttributeWidth
+                                                               multiplier:1.0f
+                                                                 constant:0.0];
+            [self addConstraint:_headHeightConstraint];
+        }
+        
+        [[self headView] setNeedsLayout];
+        [[self headView] layoutIfNeeded];
+    }else{
+            [self addSubview:[self headView]];
+            SET_VIEW_TOP([self headView], -(VIEW_HEIGHT([self headView])));
+            SET_VIEW_LEFT([self headView], 0);
+            SET_VIEW_WIDTH([self headView], VIEW_WIDTH(self));
+            SET_VIEW_HEIGHT([self headView], VIEW_HEIGHT([self headView]));
+        }
 }
 
 - (void) removeRefreshView{
-    if(_headView){
-        [_headView removeFromSuperview];
-        _headView = nil;
+    if([self headView]){
+        [[self headView] removeFromSuperview];
+        if(_headTopConstraint){
+            [self  removeConstraint:_headTopConstraint];
+            _headTopConstraint = nil;
+        }
+        
+        if(_headLeftConstraint){
+            [self removeConstraint:_headLeftConstraint];
+            _headLeftConstraint = nil;
+        }
+        
+        if(_headWidthConstraint){
+            [self removeConstraint:_headWidthConstraint];
+            _headWidthConstraint = nil;
+        }
+        
+        if(_headHeightConstraint){
+            [self removeConstraint:_headHeightConstraint];
+            _headHeightConstraint = nil;
+        }
+        [self setHeadView:nil];
     }
 }
 
 - (void) loadFootView{
-    if(!_footView){
-        _footView = [self getListMoreView];
-        _footView.delegate = self;
-        CGFloat height = VIEW_HEIGHT(_footView);
-        CGFloat top = MAX(self.frame.size.height, self.contentSize.height);
-        if(self.constraints.count > 0 || !self.translatesAutoresizingMaskIntoConstraints){
-            _footView.translatesAutoresizingMaskIntoConstraints = NO;
-            _topConstraint = [NSLayoutConstraint constraintWithItem:_footView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0f
-                                                           constant:0];
-            NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:_footView
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                              relatedBy:NSLayoutRelationEqual
-                                                                                 toItem:self
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                             multiplier:1.0
-                                                                               constant:0.0f];
-            NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:_footView
-                                                                                attribute:NSLayoutAttributeHeight
-                                                                                relatedBy:NSLayoutRelationEqual
-                                                                                   toItem:nil
-                                                                                attribute:NSLayoutAttributeNotAnAttribute
-                                                                               multiplier:1.0f
-                                                                                 constant:height];
-            NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:_footView
-                                                                               attribute:NSLayoutAttributeWidth
-                                                                               relatedBy:NSLayoutRelationEqual
-                                                                                  toItem:nil
-                                                                               attribute:NSLayoutAttributeNotAnAttribute
-                                                                              multiplier:1.0f
-                                                                                constant:VIEW_WIDTH(self)];
-            [self addSubview:_footView];
-            [self addConstraint:_topConstraint];
-            [self addConstraint:leftConstraint];
-            [self addConstraint:widthConstraint];
-            [self addConstraint:heightConstraint];
-            [_footView setNeedsLayout];
-            [_footView layoutIfNeeded];
-        }else{
-            [self addSubview:_footView];
-            SET_VIEW_TOP(_footView, top);
-            SET_VIEW_LEFT(_footView, 0);
-            SET_VIEW_WIDTH(_footView, VIEW_WIDTH(self));
-            SET_VIEW_HEIGHT(_footView, height);
+    
+    if(![self footView]){
+        if(![self getListMoreView]){
+            return;
         }
+        
+        [self setFootView:[self getListMoreView]];
     }
+    
+    [[self footView] setDelegate:self];
+    CGFloat height = VIEW_HEIGHT([self footView]);
+    CGFloat top = MAX(self.frame.size.height, self.contentSize.height);
+    if(self.constraints.count > 0 || !self.translatesAutoresizingMaskIntoConstraints){
+        [self footView].translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:[self footView]];
+        if(!_footTopConstraint){
+            _footTopConstraint = [NSLayoutConstraint constraintWithItem:[self footView]
+                                                              attribute:NSLayoutAttributeTop
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self
+                                                              attribute:NSLayoutAttributeBottom
+                                                             multiplier:1.0f
+                                                               constant:0];
+            [self addConstraint:_footTopConstraint];
+        }
+        
+        if(!_footLeftConstraint){
+            _footLeftConstraint = [NSLayoutConstraint constraintWithItem:[self footView]
+                                                               attribute:NSLayoutAttributeLeft
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self
+                                                               attribute:NSLayoutAttributeLeft
+                                                              multiplier:1.0
+                                                                constant:0.0f];
+            [self addConstraint:_footLeftConstraint];
+        }
+        
+        if(!_footWidthConstraint){
+            _footWidthConstraint = [NSLayoutConstraint constraintWithItem:[self footView]
+                                                                attribute:NSLayoutAttributeWidth
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self
+                                                                attribute:NSLayoutAttributeWidth
+                                                               multiplier:1.0f
+                                                                 constant:0];
+            [self addConstraint:_footWidthConstraint];
+        }
+        
+        if(!_footHeightConstraint){
+            _footHeightConstraint = [NSLayoutConstraint constraintWithItem:[self footView]
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:nil
+                                                                 attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:1.0f
+                                                                  constant:height];
+            [self addConstraint:_footHeightConstraint];
+        }
+        
+        [[self footView] setNeedsLayout];
+        [[self footView] layoutIfNeeded];
+    }else{
+            [self addSubview:[self footView]];
+            SET_VIEW_TOP([self footView], top);
+            SET_VIEW_LEFT([self footView], 0);
+            SET_VIEW_WIDTH([self footView], VIEW_WIDTH(self));
+            SET_VIEW_HEIGHT([self footView], height);
+        }
 }
 
 - (void) removeFootView{
-    if(_footView){
-        [_footView removeFromSuperview];
-        _footView = nil;
-        _topConstraint = nil;
+    if([self footView]){
+        [[self footView] removeFromSuperview];
+        if(_footTopConstraint){
+            [self removeConstraint:_footTopConstraint];
+            _footTopConstraint = nil;
+        }
+        
+        if(_footLeftConstraint){
+            [self removeConstraint:_footLeftConstraint];
+            _footLeftConstraint = nil;
+        }
+        
+        if(_footWidthConstraint){
+            [self removeConstraint:_footWidthConstraint];
+            _footWidthConstraint = nil;
+        }
+        
+        if(_footHeightConstraint){
+            [self removeConstraint:_footHeightConstraint];
+            _footHeightConstraint = nil;
+        }
+        
+        [self setFootView:nil];
     }
 }
 
@@ -349,24 +451,52 @@
     [super layoutSubviews];
     
     //设置顶部区域
-    SET_VIEW_TOP(self.headView, -VIEW_HEIGHT(self.headView));
-    SET_VIEW_LEFT(self.headView, 0);
-    SET_VIEW_WIDTH(self.headView, VIEW_WIDTH(self));
+    SET_VIEW_TOP([self headView], -VIEW_HEIGHT([self headView]));
+    SET_VIEW_LEFT([self headView], 0);
+    SET_VIEW_WIDTH([self headView], VIEW_WIDTH(self));
     
     //设置底部区域
     CGFloat footerViewTop = MAX(self.frame.size.height, self.contentSize.height);
-    if(_topConstraint)
-        _topConstraint.constant = footerViewTop;
+    if(_footTopConstraint)
+        _footTopConstraint.constant = footerViewTop;
     else
-        SET_VIEW_TOP(self.footView, footerViewTop);
+        SET_VIEW_TOP([self footView], footerViewTop);
+}
+
+- (void) setHeadView:(XHeadView *)headView{
+    [_lock lock];
+    _headView = headView;
+    [_lock unlock];
+}
+
+- (XHeadView *)headView{
+    XHeadView *headView = nil;
+    [_lock lock];
+    headView = _headView;
+    [_lock unlock];
+    return headView;
+}
+
+- (void)setFootView:(XFootView *)footView{
+    [_lock lock];
+    _footView = footView;
+    [_lock unlock];
+}
+
+- (XFootView *)footView{
+    XFootView *footView = nil;
+    [_lock lock];
+    footView = _footView;
+    [_lock unlock];
+    return footView;
 }
 
 - (XHeadView *) getListHeadView{
-    return nil;
+    return [self headView];
 }
 
 - (XFootView *) getListMoreView{
-    return nil;
+    return [self footView];
 }
 
 - (CGFloat) getPerLoadRate{
@@ -378,19 +508,19 @@
 }
 
 - (void) finishLoad{
-    if(_headView && [_headView bLoading]){
+    if([self headView] && [[self headView] bLoading]){
         __weak typeof(self) weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            if(weakSelf.headView)
-                [weakSelf.headView stopLoading];
+            if([weakSelf headView])
+                [[weakSelf headView] stopLoading];
         });
     }
     
-    if(_footView && [_footView bLoading]){
+    if([self footView] && [[self footView] bLoading]){
         __weak typeof(self) weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            if(weakSelf.footView)
-                [weakSelf.footView stopLoading];
+            if([weakSelf footView])
+                [[weakSelf footView] stopLoading];
         });
     }
     
@@ -454,14 +584,14 @@
     if(CFAbsoluteTimeGetCurrent() - _lastTimeInterval >= SAMPLING_RATE){
         if(scrollView.contentOffset.y <= 0){
             if([self bPullToDown]){
-                [_headView scrollViewDidScroll:scrollView];
+                [[self headView] scrollViewDidScroll:scrollView];
             }
         }else{
             if([self bPullToUp]){
                 if(VIEW_HEIGHT(self) >= self.contentSize.height){
-                    [_footView scrollViewDidScroll:scrollView];
+                    [[self footView] scrollViewDidScroll:scrollView];
                 }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-                    [_footView scrollViewDidScroll:scrollView];
+                    [[self footView] scrollViewDidScroll:scrollView];
                 }
             }
         }
@@ -485,12 +615,12 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     if(scrollView.contentOffset.y <= 0){
-        [_headView scrollViewWillBeginDragging:scrollView];
+        [[self headView] scrollViewWillBeginDragging:scrollView];
     }else{
         if(VIEW_HEIGHT(self) >= self.contentSize.height){
-            [_footView scrollViewWillBeginDragging:scrollView];
+            [[self footView] scrollViewWillBeginDragging:scrollView];
         }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-            [_footView scrollViewWillBeginDragging:scrollView];
+            [[self footView] scrollViewWillBeginDragging:scrollView];
         }
     }
     
@@ -509,12 +639,12 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if(scrollView.contentOffset.y <= 0){
-        [_headView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+        [[self headView] scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
     }else{
         if(VIEW_HEIGHT(self) >= self.contentSize.height){
-            [_footView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+            [[self footView] scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
         }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-            [_footView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+            [[self footView] scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
         }
     }
     
@@ -534,12 +664,12 @@
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     if(scrollView.contentOffset.y <= 0){
-        [_headView scrollViewWillBeginDecelerating:scrollView];
+        [[self headView] scrollViewWillBeginDecelerating:scrollView];
     }else{
         if(VIEW_HEIGHT(self) >= self.contentSize.height){
-            [_footView scrollViewWillBeginDecelerating:scrollView];
+            [[self footView] scrollViewWillBeginDecelerating:scrollView];
         }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-            [_footView scrollViewWillBeginDecelerating:scrollView];
+            [[self footView] scrollViewWillBeginDecelerating:scrollView];
         }
     }
     
@@ -559,12 +689,12 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     if(scrollView.contentOffset.y <= 0){
-        [_headView scrollViewDidEndDecelerating:scrollView];
+        [[self headView] scrollViewDidEndDecelerating:scrollView];
     }else{
         if(VIEW_HEIGHT(self) >= self.contentSize.height){
-            [_footView scrollViewDidEndDecelerating:scrollView];
+            [[self footView] scrollViewDidEndDecelerating:scrollView];
         }else if(scrollView.contentOffset.y + VIEW_HEIGHT(scrollView) >= scrollView.contentSize.height){
-            [_footView scrollViewDidEndDecelerating:scrollView];
+            [[self footView] scrollViewDidEndDecelerating:scrollView];
         }
     }
     

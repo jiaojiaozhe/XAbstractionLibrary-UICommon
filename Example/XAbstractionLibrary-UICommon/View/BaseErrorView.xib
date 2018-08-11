@@ -25,6 +25,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wt-G5-Bzy">
                     <rect key="frame" x="0.0" y="64" width="341" height="64"/>
                     <state key="normal" title="重试"/>
+                    <connections>
+                        <action selector="retryClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="4lY-Lb-C0m"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.92422495760000001" blue="0.85733773489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

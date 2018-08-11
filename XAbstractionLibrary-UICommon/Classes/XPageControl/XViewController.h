@@ -6,7 +6,40 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XView.h"
+#import <XAbstractionLibrary_NetWork/XAbstractionLibrary-NetWork-umbrella.h>
 
-@interface XViewController : UIViewController
+/**
+ 基础的试图控制器，自身不支持滑动，但天然支持无网、加载过程、加载失败、无数据等的支持
+ */
+@interface XViewController : UIViewController<XHttpResponseDelegate>
 
+/**
+ 加载顶部导航区，不存在就返回nil,需要业务工程师实现
+
+ @return 返回顶部导航区
+ */
+- (UIView *) loadNavigationBar;
+
+/**
+ 加载内容区，原则上不能为nil，需要业务工程师实现
+
+ @return 返回内容区
+ */
+- (XView *) loadContentView;
+
+/**
+ 发送UI全局广播
+
+ @param action 广播标识
+ @param dataInfo 该广播对应的数据
+ */
+- (void) onSendMyBroadcast:(XNotification_Action) action dataInfo:(id) dataInfo;
+
+/**
+ 全局消息处理方法
+
+ @param notification 接收到待处理的消息
+ */
+- (void) onMyBroadcastReceiver:(NSNotification *) notification;
 @end

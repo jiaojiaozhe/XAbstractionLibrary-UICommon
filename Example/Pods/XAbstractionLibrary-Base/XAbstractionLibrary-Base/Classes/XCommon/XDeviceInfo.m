@@ -40,8 +40,12 @@
 
 @implementation XDeviceInfo
 
++ (void) removeAllCache{
+    [XPermanentStoreData removeCache:IDFA_CHAIN_KEY];
+    [XPermanentStoreData removeCache:IDFV_CHAIN_KEY];
+}
+
 + (NSString *) getDeviceIDFA{
-    
     NSString *idfa = [XPermanentStoreData valueFromCache:IDFA_CHAIN_KEY];
     if(idfa.length <= 0){
         if([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]){

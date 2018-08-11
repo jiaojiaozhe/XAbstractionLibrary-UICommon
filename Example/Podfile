@@ -10,6 +10,6 @@ target 'XAbstractionLibrary-UICommon_Example' do
   target 'XAbstractionLibrary-UICommon_Tests' do
     inherit! :search_paths
 
-    
+
   end
 end

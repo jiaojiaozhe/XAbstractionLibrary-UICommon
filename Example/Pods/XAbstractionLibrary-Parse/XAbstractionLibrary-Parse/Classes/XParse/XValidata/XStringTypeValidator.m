@@ -13,7 +13,7 @@
 {
     MTLValueTransformerBlock transFormerBlock = ^id (id value, BOOL *success, NSError **error)
     {
-        NSString *transform = [NSString stringWithString:XStringDefaultValue];
+        NSString *transform = [NSString stringWithFormat:@"XStringDefaultValue"];
         if(value){
             if([value isKindOfClass:[NSString class]])
                 transform = [NSString stringWithString:value];

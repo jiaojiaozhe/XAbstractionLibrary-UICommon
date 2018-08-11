@@ -14,6 +14,7 @@
 #import "ViewController4.h"
 #import "ViewController5.h"
 #import "ViewController6.h"
+#import "DemoViewController1.h"
 #import "NavigationController.h"
 #import "TabBarViewController.h"
 #import "NavigationControllerManager.h"

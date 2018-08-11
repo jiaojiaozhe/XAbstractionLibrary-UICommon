@@ -37,7 +37,8 @@
     if(self.requestObj){
         if([self.requestObj isKindOfClass:[NSURLSessionTask class]]){
             NSURLSessionTask *sessionTask = (NSURLSessionTask*)self.requestObj;
-            if([sessionTask state] != NSURLSessionTaskStateCompleted){
+            if([sessionTask state] != NSURLSessionTaskStateCompleted &&
+               [sessionTask state] != NSURLSessionTaskStateCanceling){
                 [sessionTask cancel];
             }
         }

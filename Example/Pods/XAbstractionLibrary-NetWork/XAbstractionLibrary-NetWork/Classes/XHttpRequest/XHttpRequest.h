@@ -37,7 +37,7 @@
 /**
     业务回调block
  */
-@property (nonatomic,weak) XResponseBlock responseBlock;
+@property (nonatomic,strong) XResponseBlock responseBlock;
 
 /**
  *  设置请求对象，调用方忽略

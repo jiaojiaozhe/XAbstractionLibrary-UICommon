@@ -9,7 +9,7 @@
 #define XDefaultValue_h
 
 //int解析默认值
-#define         XIntDefaultValue                2147683647
+#define         XIntDefaultValue                2147483647
 
 //NSInterge解析默认值
 #define         XIntergeDefaultValue            2147483647

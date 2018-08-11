@@ -42,6 +42,20 @@
 @property (nonatomic,assign) BOOL bPerLoad;
 
 /**
+ 设置滑动控件头部
+
+ @param headView 待设置的控件头部
+ */
+- (void) setHeadView:(XHeadView *)headView;
+
+/**
+ 设置滑动控件底部
+
+ @param footView 待设置的控件底部
+ */
+- (void)setFootView:(XFootView *)footView;
+
+/**
  *  构造新的页眉
  */
 - (XHeadView *) getListHeadView;

@@ -24,6 +24,13 @@
     return errorView;
 }
 
+- (IBAction) retryClick:(id) sender{
+    if(self.retryDelegate &&
+       [self.retryDelegate respondsToSelector:@selector(retryError)]){
+        [self.retryDelegate retryError];
+    }
+}
+
 - (void) initView{
     //ToDo:业务实现
 }

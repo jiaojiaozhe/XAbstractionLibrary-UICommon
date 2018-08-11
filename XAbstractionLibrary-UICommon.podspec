@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XAbstractionLibrary-UICommon'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'XAbstractionLibrary-UICommon是基础的UI相关组件.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、空间级的开发效率低下的问题.
+XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、控件级的开发效率低下的问题.
                        DESC
 
   s.homepage         = 'https://github.com/jiaojiaozhe/XAbstractionLibrary-UICommon'
@@ -42,4 +42,5 @@ XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、空�
 
     s.dependency 'XAbstractionLibrary-NetWork'
     s.dependency 'XAbstractionLibrary-Parse'
+    s.dependency 'XXNibBridge'
 end

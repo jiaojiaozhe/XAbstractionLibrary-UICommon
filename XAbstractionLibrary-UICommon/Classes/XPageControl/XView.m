@@ -6,18 +6,38 @@
 //
 
 #import "XView.h"
+#import "XXNibBridge.h"
 #import <XAbstractionLibrary_NetWork/XAbstractionLibrary-NetWork-umbrella.h>
 
 
-@interface XView()<XIBaseNoNetViewRetryDelegate,XIBaseRetryDelegate,XIBaseNotDataRetryDelegate,XHttpResponseDelegate>
+@interface XView()<XXNibBridge>
 @property (nonatomic,strong) IBOutlet UIView *contentView;
 @property (nonatomic,strong) IBOutlet UIView *errorContentView;
 
-@property (nonatomic,assign) BOOL bIgnoreShowError;
+/**
+ 是否存在网络状态
+ */
 @property (nonatomic,assign) BOOL bNotNet;
+
+/**
+ 是否无数据
+ */
 @property (nonatomic,assign) BOOL bNotData;
+
+/**
+ 是否正在加载中
+ */
 @property (nonatomic,assign) BOOL bLoading;
+
+/**
+ 是否存在加载错误
+ */
 @property (nonatomic,assign) BOOL bError;
+
+/**
+ 是否最终忽略上述各状态，一般用于成功加载后
+ */
+@property (nonatomic,assign) BOOL bIgnoreShowError;
 
 @property (nonatomic,strong) XLock *lock;
 @property (nonatomic,strong) XLock *uiLock;
@@ -40,7 +60,7 @@
 @synthesize notNetViewDelegate = _notNetViewDelegate;
 @synthesize notDataViewDelegate = _notDataViewDelegate;
 
-+ (XView *) createView{
++ (instancetype) createView{
 //    NSString *className = NSStringFromClass([self class]);
 //    NSBundle *bundle = [NSBundle bundleForClass:[XView class]];
 //    XView *view = [[bundle loadNibNamed:className
@@ -55,128 +75,177 @@
 - (instancetype) init{
     if(self = [super init]){
         self.requests = [NSMutableDictionary dictionary];
-        self.contentView = [[UIView alloc] init];
-        self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self addSubview:self.contentView];
-        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                         attribute:NSLayoutAttributeTop
-                                                                         relatedBy:NSLayoutRelationEqual
-                                                                            toItem:self
-                                                                         attribute:NSLayoutAttributeTop
-                                                                        multiplier:1.0f
-                                                                          constant:0];
-        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                          attribute:NSLayoutAttributeLeft
-                                                                          relatedBy:NSLayoutRelationEqual
-                                                                             toItem:self
-                                                                          attribute:NSLayoutAttributeLeft
-                                                                         multiplier:1.0
-                                                                           constant:0.0f];
-        NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                           attribute:NSLayoutAttributeRight
-                                                                           relatedBy:NSLayoutRelationEqual
-                                                                              toItem:self
-                                                                           attribute:NSLayoutAttributeRight
-                                                                          multiplier:1.0f
-                                                                            constant:0];
-        NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                            attribute:NSLayoutAttributeBottom
-                                                                            relatedBy:NSLayoutRelationEqual
-                                                                               toItem:self
-                                                                            attribute:NSLayoutAttributeBottom
-                                                                           multiplier:1.0f
-                                                                             constant:0];
-        [self addConstraint:leftConstraint];
-        [self addConstraint:bottomConstraint];
-        [self addConstraint:rightConstraint];
-        [self addConstraint:topConstraint];
-        [self.contentView setNeedsLayout];
-        [self.contentView layoutIfNeeded];
         
+        if(!self.contentView){
+            self.contentView = [[UIView alloc] init];
+            self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+            [self addSubview:self.contentView];
+            NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+                                                                             attribute:NSLayoutAttributeTop
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:self
+                                                                             attribute:NSLayoutAttributeTop
+                                                                            multiplier:1.0f
+                                                                              constant:0];
+            NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+                                                                              attribute:NSLayoutAttributeLeft
+                                                                              relatedBy:NSLayoutRelationEqual
+                                                                                 toItem:self
+                                                                              attribute:NSLayoutAttributeLeft
+                                                                             multiplier:1.0
+                                                                               constant:0.0f];
+            NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+                                                                               attribute:NSLayoutAttributeRight
+                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                  toItem:self
+                                                                               attribute:NSLayoutAttributeRight
+                                                                              multiplier:1.0f
+                                                                                constant:0];
+            NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                                relatedBy:NSLayoutRelationEqual
+                                                                                   toItem:self
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                               multiplier:1.0f
+                                                                                 constant:0];
+            [self addConstraint:leftConstraint];
+            [self addConstraint:bottomConstraint];
+            [self addConstraint:rightConstraint];
+            [self addConstraint:topConstraint];
+            [self.contentView setNeedsLayout];
+            [self.contentView layoutIfNeeded];
+        }
         
-        self.errorContentView = [[UIView alloc] init];
-        [self addSubview:self.errorContentView];
-        self.errorContentView.translatesAutoresizingMaskIntoConstraints = NO;
-        topConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
-                                                     attribute:NSLayoutAttributeTop
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeTop
-                                                    multiplier:1.0f
-                                                      constant:0];
-        leftConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
-                                                      attribute:NSLayoutAttributeLeft
-                                                      relatedBy:NSLayoutRelationEqual
-                                                         toItem:self
-                                                      attribute:NSLayoutAttributeLeft
-                                                     multiplier:1.0
-                                                       constant:0.0f];
-        rightConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
-                                                       attribute:NSLayoutAttributeRight
-                                                       relatedBy:NSLayoutRelationEqual
-                                                          toItem:self
-                                                       attribute:NSLayoutAttributeRight
-                                                      multiplier:1.0f
-                                                        constant:0];
-        bottomConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
-                                                        attribute:NSLayoutAttributeBottom
-                                                        relatedBy:NSLayoutRelationEqual
-                                                           toItem:self
-                                                        attribute:NSLayoutAttributeBottom
-                                                       multiplier:1.0f
-                                                         constant:0];
-        [self addConstraint:leftConstraint];
-        [self addConstraint:bottomConstraint];
-        [self addConstraint:rightConstraint];
-        [self addConstraint:topConstraint];
-        [self.errorContentView setNeedsLayout];
-        [self.errorContentView layoutIfNeeded];
-        [self.errorContentView setHidden:YES];
+        if(!self.errorContentView){
+            self.errorContentView = [[UIView alloc] init];
+            [self addSubview:self.errorContentView];
+            self.errorContentView.translatesAutoresizingMaskIntoConstraints = NO;
+            NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
+                                                                             attribute:NSLayoutAttributeTop
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:self
+                                                                             attribute:NSLayoutAttributeTop
+                                                                            multiplier:1.0f
+                                                                              constant:0];
+            NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
+                                                                              attribute:NSLayoutAttributeLeft
+                                                                              relatedBy:NSLayoutRelationEqual
+                                                                                 toItem:self
+                                                                              attribute:NSLayoutAttributeLeft
+                                                                             multiplier:1.0
+                                                                               constant:0.0f];
+            NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
+                                                                               attribute:NSLayoutAttributeRight
+                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                  toItem:self
+                                                                               attribute:NSLayoutAttributeRight
+                                                                              multiplier:1.0f
+                                                                                constant:0];
+            NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.errorContentView
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                                relatedBy:NSLayoutRelationEqual
+                                                                                   toItem:self
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                               multiplier:1.0f
+                                                                                 constant:0];
+            [self addConstraint:leftConstraint];
+            [self addConstraint:bottomConstraint];
+            [self addConstraint:rightConstraint];
+            [self addConstraint:topConstraint];
+            [self.errorContentView setNeedsLayout];
+            [self.errorContentView layoutIfNeeded];
+            [self.errorContentView setHidden:YES];
+        }
     }
     return self;
+}
+
+- (void) awakeFromNib{
+    [super awakeFromNib];
+    [self initData];
+    [self.contentView setHidden:NO];
+    [self.errorContentView setHidden:YES];
+    
+    [self setContentView];
+    [self setNotNetView];
+    [self setLoadingView];
+    [self setErrorView];
+    [self setNotDataView];
+    
+    if(![self notNetViewDelegate] &&
+       ![self loadingViewDelegate] &&
+       ![self errorViewDelegate] &&
+       ![self notDataViewDelegate]){
+        if(self.errorContentView){
+            [self.errorContentView removeFromSuperview];
+            self.errorContentView = NULL;
+        }
+    }
+    
+    [self initView];
+    
+    if(![[XNetWorkStatus shareNetkStatus] bGoodNet]){
+        //显示无网页面
+        [self setBNotNet:YES];
+    }else{
+        //开始加载
+        [self setBNotNet:NO];
+        [self loadPage];
+    }
+    [self refreshStatusView];
 }
 
 - (void) initData{
     _lock = [[XLock alloc] init];
     _uiLock = [[XLock alloc] init];
     [self initState];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(netWorkChange:)
-                                                 name:NETWORK_CHANGE_NOTIFICATION
-                                               object:nil];
-    
 }
 
-- (void) dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:NETWORK_CHANGE_NOTIFICATION
-                                                  object:nil];
+- (void) onSendMyBroadcast:(XNotification_Action) action dataInfo:(id) dataInfo{
+    NSMutableDictionary *data = [NSMutableDictionary dictionaryWithDictionary:dataInfo];
+    [data setObject:@(action) forKey:NOTIFICATION_ACTION];
+    [[NSNotificationCenter defaultCenter] postNotificationName:GLOBAL_UI_ACTION_NOTIFICATION
+                                                        object:data];
 }
 
-- (void) netWorkChange:(NSNotification *) notification{
-    if(notification && [notification.name isEqualToString:NETWORK_CHANGE_NOTIFICATION]){
+- (void) onMyBroadcastReceiver:(NSNotification *) notification{
+    if(notification && [notification.name isEqualToString:GLOBAL_UI_ACTION_NOTIFICATION]){
+        XNotification_Action action = [[[notification userInfo] objectForKey:NOTIFICATION_ACTION] integerValue];
+        if(action != XNotification_Action_NetWork){
+            return;
+        }
+        
         if([XNetWorkStatus shareNetkStatus].bGoodNet){
             if([XNetWorkStatus shareNetkStatus].netWorkStatus == NetworkReachabilityStatusReachableViaWWAN){
                 if(![self bIgnoreShowError] && [self bNotNet]){
                     [self retryNotNet:NO];
                 }else{
                     [self setBNotNet:NO];
-                    [self refreshView];
+                    [self refreshStatusView];
                 }
             }else if([XNetWorkStatus shareNetkStatus].netWorkStatus == NetworkReachabilityStatusReachableViaWiFi){
                 if(![self bIgnoreShowError] && [self bNotNet]){
                     [self retryNotNet:NO];
                 }else{
                     [self setBNotNet:NO];
-                    [self refreshView];
+                    [self refreshStatusView];
                 }
             }else{
                 [self setBNotNet:YES];
-                [self refreshView];
+                [self refreshStatusView];
             }
         }else{
             [self setBNotNet:YES];
-            [self refreshView];
+            [self refreshStatusView];
+            
+            for(NSInteger index = [self.requests count] - 1; index >= 0 ; index--){
+                NSString *key = [[self.requests allKeys] objectAtIndex:index];
+                id<XHttpRequestDelegate> request = [self.requests objectForKey:key];
+                if(request && [request isKindOfClass:[XHttpRequest class]]){
+                    XHttpRequest *httpRequest = (XHttpRequest*)request;
+                    [httpRequest cancel];
+                }
+            }
         }
     }
 }
@@ -305,42 +374,6 @@
     notDataView = _notDataViewDelegate;
     [_lock unlock];
     return notDataView;
-}
-
-
-- (void) awakeFromNib{
-    [super awakeFromNib];
-    [self initData];
-    [self.contentView setHidden:NO];
-    [self.errorContentView setHidden:YES];
-    
-    [self setContentView];
-    [self setNotNetView];
-    [self setLoadingView];
-    [self setErrorView];
-    [self setNotDataView];
-    
-    if(![self notNetViewDelegate] &&
-       ![self loadingViewDelegate] &&
-       ![self errorViewDelegate] &&
-       ![self notDataViewDelegate]){
-        if(self.errorContentView){
-            [self.errorContentView removeFromSuperview];
-            self.errorContentView = NULL;
-        }
-    }
-    
-    [self initView];
-    
-    if(![[XNetWorkStatus shareNetkStatus] bGoodNet]){
-        //显示无网页面
-        [self setBNotNet:YES];
-    }else{
-        //开始加载
-        [self setBNotNet:NO];
-        [self loadPage];
-    }
-    [self refreshView];
 }
 
 - (void) setNotNetView{
@@ -707,11 +740,11 @@
     }
 }
 
-- (void) refreshView{
+- (void) refreshStatusView{
     __weak typeof(self) weakSelf = self;
     [_uiLock lock:^{
         if([weakSelf bIgnoreShowError]){
-            [self showContentView];
+            [weakSelf showContentView];
             return ;
         }
         
@@ -746,6 +779,8 @@
         [weakSelf showContentView];
     }];
 }
+
+
 
 #pragma mark --
 #pragma mark XAbstractView
@@ -783,28 +818,43 @@
     if(!bNotNet){
         [self initState];
         [self loadPage];
-        [self refreshView];
+        [self refreshStatusView];
     }else{
         //手动点击无网重试,暂时未定义,可以跳转到系统设置
+//        [self initState];
+//        [self loadPage];
+//        [self refreshView];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
     }
 }
 
 #pragma mark --
 #pragma mark --XIBaseRetryDelegate
 - (void) retryError{
-    
+    [self initState];
+    [self loadPage];
+    [self refreshStatusView];
 }
 
 #pragma mark --
 #pragma mark --XIBaseNotDataRetryDelegate
 - (void) retryNotData{
-    
+    [self initState];
+    [self loadPage];
+    [self refreshStatusView];
 }
 
 #pragma mark --
 #pragma mark --XHttpResponseDelegate
 - (void) cancelRequest:(id<XHttpRequestDelegate>) request{
-    
+    if(request){
+        if([request isKindOfClass:[XHttpRequest class]]){
+            XHttpRequest *httpRequest = (XHttpRequest*)request;
+            if([httpRequest.ID length] > 0){
+                [_requests removeObjectForKey:httpRequest.ID];
+            }
+        }
+    }
 }
 
 - (void) willStartRequest:(id<XHttpRequestDelegate>) request{
@@ -814,7 +864,7 @@
             [_requests setObject:httpRequest forKey:httpRequest.ID];
         
             [self setBLoading:YES];
-            [self refreshView];
+            [self refreshStatusView];
             if([self loadingViewDelegate]){
                 [[self loadingViewDelegate] startLoad];
             }
@@ -837,7 +887,7 @@
     }
     
     [self setBLoading:YES];
-    [self refreshView];
+    [self refreshStatusView];
     if([self loadingViewDelegate]){
         [[self loadingViewDelegate] startLoad];
     }
@@ -849,7 +899,7 @@
     if(request){
         if([request isKindOfClass:[XHttpRequest class]]){
             [self setBLoading:YES];
-            [self refreshView];
+            [self refreshStatusView];
             if([self loadingViewDelegate]){
                 [[self loadingViewDelegate] loadProgress:progress totalProgress:totalProgress];
             }
@@ -869,7 +919,7 @@
         
         [self setBLoading:NO];
         [self setBError:error ? YES : NO];
-        [self refreshView];
+        [self refreshStatusView];
         if([self loadingViewDelegate]){
             [[self loadingViewDelegate] completeLoad:!error ? YES : NO];
         }

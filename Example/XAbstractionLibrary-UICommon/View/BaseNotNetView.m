@@ -24,6 +24,13 @@
     return notNetView;
 }
 
+- (IBAction) retryClick:(id) sender{
+    if(self.retryDelegate &&
+       [self.retryDelegate respondsToSelector:@selector(retryNotNet:)]){
+        [self.retryDelegate retryNotNet:YES];
+    }
+}
+
 - (void) initView{
     //ToDO:业务实现
 }

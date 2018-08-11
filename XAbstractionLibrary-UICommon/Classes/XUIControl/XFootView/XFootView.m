@@ -155,9 +155,10 @@
             if(!scrollView.isDragging){
                 self.state = XFootViewStateLoadingMore;
                 self.scrollView = scrollView;
+                __weak typeof(self) weakSelf = self;
                 [UIView animateWithDuration:0.5f
                                  animations:^{
-                                     scrollView.contentInset = UIEdgeInsetsMake(0, 0, VIEW_HEIGHT(scrollView) - 18, 0);
+                                     scrollView.contentInset = UIEdgeInsetsMake(0, 0, VIEW_HEIGHT(scrollView) - scrollView.contentSize.height + VIEW_HEIGHT(weakSelf), 0);
                                  }];
                 [self startLoading];
                 if([self.delegate respondsToSelector:@selector(didTriggerLoadMore:)])

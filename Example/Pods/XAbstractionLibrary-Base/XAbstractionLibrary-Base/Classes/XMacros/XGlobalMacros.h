@@ -13,7 +13,7 @@
 #import "XWeakMacros.h"
 #import "XDeviceMacros.h"
 #import "XDataManangerMacro.h"
-
+#import "XNotification_Action.h"
 
 /**
  *  日志打印

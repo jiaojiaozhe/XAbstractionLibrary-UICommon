@@ -8,11 +8,6 @@
 #import <XAbstractionLibrary_Base/XAbstractionLibrary-Base-umbrella.h>
 
 /**
- *  网络状态变化的全局消息，默认XView和XViewController的注册了该消息
- */
-#define                 NETWORK_CHANGE_NOTIFICATION     @"NetWork_Change_Notifition"
-
-/**
  *  网络状态
  */
 typedef NS_ENUM(NSInteger, NetworkReachabilityStatus) {

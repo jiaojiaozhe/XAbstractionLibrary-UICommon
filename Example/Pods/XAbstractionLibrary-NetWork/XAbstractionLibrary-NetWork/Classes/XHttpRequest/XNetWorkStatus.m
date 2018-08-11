@@ -109,9 +109,12 @@
                 weakSelf.bGoodNet = NO;
             }
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:NETWORK_CHANGE_NOTIFICATION
+            NSMutableDictionary *dataInfo = [NSMutableDictionary dictionary];
+            DICT_PUT(dataInfo, NOTIFICATION_ACTION, @(XNotification_Action_NetWork));
+            DICT_PUT(dataInfo, @"NetworkReachabilityStatus", @(netStatus));
+            [[NSNotificationCenter defaultCenter] postNotificationName:GLOBAL_UI_ACTION_NOTIFICATION
                                                                 object:nil
-                                                              userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:netStatus],@"NetworkReachabilityStatus", nil]];
+                                                              userInfo:dataInfo];
         }];
     }
     return self;

@@ -32,6 +32,7 @@
 #import "XDataManangerMacro.h"
 #import "XDeviceMacros.h"
 #import "XGlobalMacros.h"
+#import "XNotification_Action.h"
 #import "XViewMacros.h"
 #import "XWeakMacros.h"
 

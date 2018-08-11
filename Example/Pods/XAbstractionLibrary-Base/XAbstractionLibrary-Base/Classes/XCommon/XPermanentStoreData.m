@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 lanbiao. All rights reserved.
 //
 
+//#import "XAppInfo.h"
 #import "KeychainItemWrapper.h"
 #import "XPermanentStoreData.h"
 
@@ -16,33 +17,25 @@
         return NO;
     }
     
-#if TARGET_IPHONE_SIMULATOR
-    
-#else
-    //不定义SIMULATOR_TEST这个宏
-    KeychainItemWrapper *keyChainItemWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:cacheKey accessGroup:NULL];
+    NSString *group = nil;//[XAppInfo getAppBundleIdentifier];
+    KeychainItemWrapper *keyChainItemWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:cacheKey accessGroup:group];
     if(value != NULL)
-        [keyChainItemWrapper setObject:value forKey:cacheKey];
+        [keyChainItemWrapper setObject:value forKey:(id)kSecValueData];
     else
         [keyChainItemWrapper resetKeychainItem];
-#endif
-    
     
     return YES;
 }
 
 + (id) dataFromKey:(id) cacheKey{
-    if(cacheKey != NULL){
+    if(cacheKey == NULL){
         return NULL;
     }
     
     id value = NULL;
-#if TARGET_IPHONE_SIMULATOR
-    
-#else
-    KeychainItemWrapper *keyChainItemWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:cacheKey accessGroup:NULL];
-    value = [keyChainItemWrapper objectForKey:cacheKey];
-#endif
+    NSString *group = nil;//[XAppInfo getAppBundleIdentifier];
+    KeychainItemWrapper *keyChainItemWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:cacheKey accessGroup:group];
+    value = [keyChainItemWrapper objectForKey:(id)kSecValueData];
     
     return value;
 }

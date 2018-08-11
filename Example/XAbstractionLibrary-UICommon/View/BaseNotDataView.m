@@ -24,6 +24,13 @@
     return notDataView;
 }
 
+- (IBAction) retryClick:(id) sender{
+    if(self.retryDelegate &&
+       [self.retryDelegate respondsToSelector:@selector(retryNotData)]){
+        [self.retryDelegate retryNotData];
+    }
+}
+
 - (void) initView{
     //ToDo:业务实现
 }

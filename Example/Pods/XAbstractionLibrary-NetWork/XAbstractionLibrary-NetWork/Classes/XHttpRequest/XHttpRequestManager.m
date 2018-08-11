@@ -325,22 +325,25 @@
             return;
         }
         
-        if([_allAuthRequests.allKeys containsObject:httpRequest.authID]){
-            @synchronized(_lock){
-                NSMutableDictionary *authRequests = [_allAuthRequests objectForKey:httpRequest.authID];
-                NSArray *allValue = [authRequests allValues];
-                int index = (int)[allValue count] - 1;
-                for(; index >= 0; index --){
-                    id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
-                    if([request isKindOfClass:[XHttpRequest class]]){
-                        XHttpRequest *httpRequest = (XHttpRequest *)request;
-                        if([httpRequest respondsToSelector:@selector(execWithRequest:progress:totalProgress:)]){
-                            [httpRequest execWithRequest:httpRequest progress:progress totalProgress:totalProgress];
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([weakSelf.allAuthRequests.allKeys containsObject:httpRequest.authID]){
+                @synchronized(weakSelf.lock){
+                    NSMutableDictionary *authRequests = [weakSelf.allAuthRequests objectForKey:httpRequest.authID];
+                    NSArray *allValue = [authRequests allValues];
+                    int index = (int)[allValue count] - 1;
+                    for(; index >= 0; index --){
+                        id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
+                        if([request isKindOfClass:[XHttpRequest class]]){
+                            XHttpRequest *httpRequest = (XHttpRequest *)request;
+                            if([httpRequest respondsToSelector:@selector(execWithRequest:progress:totalProgress:)]){
+                                [httpRequest execWithRequest:httpRequest progress:progress totalProgress:totalProgress];
+                            }
                         }
                     }
                 }
             }
-        }
+        });
     }
 }
 
@@ -367,22 +370,25 @@
             return;
         }
         
-        if([_allAuthRequests.allKeys containsObject:httpRequest.authID]){
-            @synchronized(_lock){
-                NSMutableDictionary *authRequests = [_allAuthRequests objectForKey:httpRequest.authID];
-                NSArray *allValue = [authRequests allValues];
-                int index = (int)[allValue count] - 1;
-                for(; index >= 0; index --){
-                    id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
-                    if([request isKindOfClass:[XHttpRequest class]]){
-                        XHttpRequest *httpRequest = (XHttpRequest *)request;
-                        if([httpRequest respondsToSelector:@selector(willRetryRequest:newRequest:)]){
-                            [httpRequest willRetryRequest:httpRequest newRequest:newRequest];
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([weakSelf.allAuthRequests.allKeys containsObject:httpRequest.authID]){
+                @synchronized(weakSelf.lock){
+                    NSMutableDictionary *authRequests = [weakSelf.allAuthRequests objectForKey:httpRequest.authID];
+                    NSArray *allValue = [authRequests allValues];
+                    int index = (int)[allValue count] - 1;
+                    for(; index >= 0; index --){
+                        id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
+                        if([request isKindOfClass:[XHttpRequest class]]){
+                            XHttpRequest *httpRequest = (XHttpRequest *)request;
+                            if([httpRequest respondsToSelector:@selector(willRetryRequest:newRequest:)]){
+                                [httpRequest willRetryRequest:httpRequest newRequest:newRequest];
+                            }
                         }
                     }
                 }
             }
-        }
+        });
     }
 }
 
@@ -406,31 +412,34 @@
             return;
         }
         
-        if([_allAuthRequests.allKeys containsObject:httpRequest.authID]){
-            @synchronized(_lock){
-                NSMutableDictionary *authRequests = [_allAuthRequests objectForKey:httpRequest.authID];
-                NSArray *allValue = [authRequests allValues];
-                int index = (int)[allValue count] - 1;
-                for(; index >= 0; index --){
-                    id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
-                    if([request isKindOfClass:[XHttpRequest class]]){
-                        XHttpRequest *httpRequest = (XHttpRequest *)request;
-                        if([httpRequest respondsToSelector:@selector(completeDidRequest:responseDic:error:)]){
-                            [httpRequest completeDidRequest:httpRequest responseDic:responseObject error:error];
-                        }
-                        
-                        if(httpRequest.responseBlock){
-                            httpRequest.responseBlock(httpRequest, responseObject, error);
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([weakSelf.allAuthRequests.allKeys containsObject:httpRequest.authID]){
+                @synchronized(weakSelf.lock){
+                    NSMutableDictionary *authRequests = [weakSelf.allAuthRequests objectForKey:httpRequest.authID];
+                    NSArray *allValue = [authRequests allValues];
+                    int index = (int)[allValue count] - 1;
+                    for(; index >= 0; index --){
+                        id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
+                        if([request isKindOfClass:[XHttpRequest class]]){
+                            XHttpRequest *httpRequest = (XHttpRequest *)request;
+                            if(httpRequest.responseBlock){
+                                httpRequest.responseBlock(httpRequest, responseObject, error);
+                            }
+                            
+                            if([httpRequest respondsToSelector:@selector(completeDidRequest:responseDic:error:)]){
+                                [httpRequest completeDidRequest:httpRequest responseDic:responseObject error:error];
+                            }
                         }
                     }
                 }
+                
+                if([request isKindOfClass:[XHttpRequest class]]){
+                    XHttpRequest *httpRequest = (XHttpRequest*)request;
+                    [self removeRequestWithAuthID:httpRequest.authID];
+                }
             }
-            
-            if([request isKindOfClass:[XHttpRequest class]]){
-                XHttpRequest *httpRequest = (XHttpRequest*)request;
-                [self removeRequestWithAuthID:httpRequest.authID];
-            }
-        }
+        });
     }
 }
 
@@ -455,10 +464,13 @@
                                                                                                     responseObject:responseObject
                                                                                                              error:error];
                                                                         }else{
-                                                                            NSURLSessionDataTask *newTaskData = [self startRequest:urlRequest
+                                                                            NSURLSessionDataTask *newTaskData = [weakSelf startRequest:urlRequest
                                                                                                                            request:httpRequest uploadProgress:uploadProgress downloadProgress:downloadProgress completionHandle:completionHandle];
                                                                             [weakSelf processRequestRetryCallBack:httpRequest
                                                                                                        newRequest:newRequest];
+                                                                            [weakSelf processRequestLoadingCallBack:newRequest
+                                                                                                           progress:0
+                                                                                                      totalProgress:100];
                                                                             
                                                                             if([newRequest isKindOfClass:[XHttpRequest class]]){
                                                                                 XHttpRequest *newHttpRequest = (XHttpRequest *)newRequest;

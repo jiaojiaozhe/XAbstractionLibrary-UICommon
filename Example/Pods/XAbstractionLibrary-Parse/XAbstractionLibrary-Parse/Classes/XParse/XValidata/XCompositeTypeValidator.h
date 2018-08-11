@@ -22,7 +22,7 @@
 /**
  *  用于对合并类型进行的解析，具体点说就是对对象类型的各继承子类的解析支持
  *
- *  @param cls 组合类类型
+ *  @param modelClass 组合类类型
  *
  *  @return 返回解析和逆解析的Transformer
  */

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On1-DC-Egj">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On1-DC-Egj" customClass="XView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -37,8 +37,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="contentView" destination="On1-DC-Egj" id="faF-x7-zcv"/>
-                <outlet property="errorContentView" destination="qBd-n4-1cp" id="i0g-xP-wip"/>
+                <outlet property="contentView" destination="On1-DC-Egj" id="qJC-0m-2aT"/>
+                <outlet property="errorContentView" destination="qBd-n4-1cp" id="Ydx-MR-zG9"/>
             </connections>
             <point key="canvasLocation" x="69" y="136"/>
         </view>
