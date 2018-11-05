@@ -13,7 +13,7 @@
 @property (nonatomic,strong) XView *contentView;
 
 /**
- 内容区，一般是XView的子孙类即可
+ 内容区
  */
 @property (nonatomic,strong) IBOutlet UIView *mContentView;
 

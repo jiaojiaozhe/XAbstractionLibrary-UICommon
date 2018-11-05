@@ -24,19 +24,19 @@
  */
 #define         SAMPLING_RATE           0.2f
 
-@interface XCollectionView()<XHeadViewDelegate,XFootViewDelegate>
+@interface XCollectionView()<XListHeadViewDelegate,XListFootViewDelegate>
 
 @property (nonatomic,strong) XLock *lock;
 
 /**
  *  头部控件
  */
-@property (nonatomic,strong) XHeadView *headView;
+@property (nonatomic,strong) XListHeadView *headView;
 
 /**
  *  底部控件
  */
-@property (nonatomic,strong) XFootView *footView;
+@property (nonatomic,strong) XListFootView *footView;
 
 /**
  *  消息转发器
@@ -463,39 +463,39 @@
         SET_VIEW_TOP([self footView], footerViewTop);
 }
 
-- (void) setHeadView:(XHeadView *)headView{
+- (void) setHeadView:(XListHeadView *)headView{
     [_lock lock];
     _headView = headView;
     [_lock unlock];
 }
 
-- (XHeadView *)headView{
-    XHeadView *headView = nil;
+- (XListHeadView *)headView{
+    XListHeadView *headView = nil;
     [_lock lock];
     headView = _headView;
     [_lock unlock];
     return headView;
 }
 
-- (void)setFootView:(XFootView *)footView{
+- (void)setFootView:(XListFootView *)footView{
     [_lock lock];
     _footView = footView;
     [_lock unlock];
 }
 
-- (XFootView *)footView{
-    XFootView *footView = nil;
+- (XListFootView *)footView{
+    XListFootView *footView = nil;
     [_lock lock];
     footView = _footView;
     [_lock unlock];
     return footView;
 }
 
-- (XHeadView *) getListHeadView{
+- (XListHeadView *) getListHeadView{
     return [self headView];
 }
 
-- (XFootView *) getListMoreView{
+- (XListFootView *) getListMoreView{
     return [self footView];
 }
 
@@ -542,8 +542,8 @@
 }
 
 #pragma mark --
-#pragma mark --XHeadViewDelegate
-- (void)didTriggerRefresh:(XHeadView *) refreshView{
+#pragma mark --XListHeadViewDelegate
+- (void)didTriggerRefresh:(XListHeadView *) refreshView{
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(LOAD_TIMEOUT);
@@ -553,7 +553,7 @@
 
 #pragma mark --
 #pragma mark --XFootViewDelegate
-- (void)didTriggerLoadMore:(XFootView *)loadMoreView{
+- (void)didTriggerLoadMore:(XListFootView *)loadMoreView{
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(LOAD_TIMEOUT);

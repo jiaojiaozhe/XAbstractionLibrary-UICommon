@@ -29,7 +29,7 @@
 /**
  *  是否开启预加载
  */
-@property (nonatomic,assign) BOOL bPerLoad;
+@property (nonatomic,assign) BOOL bPreLoad;
 
 /**
  *  预加载率,默认为2，表明当滚动到距离下边缘小于2倍tableView的时候开始预加载
@@ -56,12 +56,12 @@
 /**
  *  构造新的页眉
  */
-- (XHeadView *) getListHeadView;
+- (XListHeadView *) getListHeadView;
 
 /**
  *  构造新的页脚
  */
-- (XFootView *) getListMoreView;
+- (XListFootView *) getListMoreView;
 
 
 @end

@@ -1,5 +1,5 @@
 //
-//  XHeadView.h
+//  XListHeadView.h
 //  XAbstractionLibrary-UICommon
 //
 //  Created by lanbiao on 2018/7/16.
@@ -10,31 +10,31 @@
 /**
  *  当前下拉控件所出的状态
  */
-typedef NS_ENUM(NSInteger, XHeadViewState){
+typedef NS_ENUM(NSInteger, XListHeadViewState){
     /**
      *  默认
      */
-    XHeadViewStateNormal,
+    XListHeadViewStateNormal,
     /**
      *  拉动
      */
-    XHeadViewStatePulling,
+    XListHeadViewStatePulling,
     /**
      *  正在加载
      */
-    XHeadViewStateLoading
+    XListHeadViewStateLoading
 };
 
-@class XHeadView;
-@protocol XHeadViewDelegate <NSObject>
+@class XListHeadView;
+@protocol XListHeadViewDelegate <NSObject>
 @optional
-- (void)didTriggerRefresh:(XHeadView *) refreshView;
+- (void)didTriggerRefresh:(XListHeadView *) refreshView;
 @end
 
 /**
  *  滑动控件头
  */
-@interface XHeadView : UIView<UIScrollViewDelegate>
+@interface XListHeadView : UIView<UIScrollViewDelegate>
 
 /**
  *  是否正在加载过程中
@@ -44,12 +44,12 @@ typedef NS_ENUM(NSInteger, XHeadViewState){
 /**
  *  下拉控件状态
  */
-@property (nonatomic,assign) XHeadViewState state;
+@property (nonatomic,assign) XListHeadViewState state;
 
 /**
  *  回调代理
  */
-@property (nonatomic,weak) id<XHeadViewDelegate> delegate;
+@property (nonatomic,weak) id<XListHeadViewDelegate> delegate;
 
 /**
  *  下拉过程中，到达临界点的进度，实现层实现关于它的动画

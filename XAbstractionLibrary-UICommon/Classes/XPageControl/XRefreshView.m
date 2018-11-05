@@ -43,11 +43,11 @@
     return _tableView;
 }
 
-- (void) setHeadView:(XHeadView *) headView{
+- (void) setHeadView:(XListHeadView *) headView{
     [self.tableView setHeadView:headView];
 }
 
-- (void) setFootView:(XFootView *) footView{
+- (void) setFootView:(XListFootView *) footView{
     [self.tableView setFootView:footView];
 }
 
@@ -69,5 +69,14 @@
 
 - (void) finishLoad{
     [self.tableView finishLoad];
+    [self.tableView reloadData];
+}
+
+- (void) setBAutoLoading:(BOOL) bAutoLoading{
+    [self.tableView setBAutoLoading:bAutoLoading];
+}
+
+- (void) setBPreLoadMore:(BOOL) bPreLoadMore{
+    [self.tableView setBPreLoad:bPreLoadMore];
 }
 @end

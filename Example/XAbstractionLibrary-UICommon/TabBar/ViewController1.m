@@ -34,17 +34,8 @@
 }
 
 - (IBAction) click1:(id) sender{
-    DemoViewController3 *controller3 = [[DemoViewController3 alloc] init];
-    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:controller3 animated:YES];
-    
-//    DemoViewController1 *controller1 = [[DemoViewController1 alloc] init];
-//    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:controller1 animated:YES];
-    
-//    DemoViewController2 *controller2 = [[DemoViewController2 alloc] init];
-//    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:controller2 animated:YES];
-    
-//    ViewController6 *viewController = [[ViewController6 alloc] init];
-//    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:viewController animated:YES];
+    ViewController6 *viewController = [[ViewController6 alloc] init];
+    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:viewController animated:YES];
 }
 
 - (IBAction) click2:(id) sender{
@@ -52,5 +43,19 @@
     [[NavigationControllerManager sharePageManager] pushViewControllerOnTab:viewController animated:YES];
 }
 
+- (IBAction) onDemo1:(id) sender{
+    DemoViewController1 *controller1 = [[DemoViewController1 alloc] init];
+    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:controller1 animated:YES];
+}
+
+- (IBAction) onDemo2:(id) sender{
+    DemoViewController2 *controller2 = [[DemoViewController2 alloc] init];
+    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:controller2 animated:YES];
+}
+
+- (IBAction) onDemo3:(id) sender{
+    DemoViewController3 *controller3 = [[DemoViewController3 alloc] init];
+    [[NavigationControllerManager sharePageManager] pushViewControllerOnMain:controller3 animated:YES];
+}
 
 @end

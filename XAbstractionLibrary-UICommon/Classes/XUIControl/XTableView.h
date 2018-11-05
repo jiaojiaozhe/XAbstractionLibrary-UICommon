@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XHeadView.h"
-#import "XFootView.h"
+#import "XListHeadView.h"
+#import "XListFootView.h"
 #import "XListViewDelegate.h"
 
 /**
@@ -39,31 +39,31 @@
 /**
  *  是否开启预加载
  */
-@property (nonatomic,assign) BOOL bPerLoad;
+@property (nonatomic,assign) BOOL bPreLoad;
 
 /**
  设置滑动控件头部
 
  @param headView 待设置的控件头部
  */
-- (void) setHeadView:(XHeadView *)headView;
+- (void) setHeadView:(XListHeadView *)headView;
 
 /**
  设置滑动控件底部
 
  @param footView 待设置的控件底部
  */
-- (void)setFootView:(XFootView *)footView;
+- (void)setFootView:(XListFootView *)footView;
 
 /**
  *  构造新的页眉
  */
-- (XHeadView *) getListHeadView;
+- (XListHeadView *) getListHeadView;
 
 /**
  *  构造新的页脚
  */
-- (XFootView *) getListMoreView;
+- (XListFootView *) getListMoreView;
 
 /**
  *  加载完成
@@ -74,4 +74,5 @@
  *  刷新列表
  */
 - (void) reloadData;
+
 @end

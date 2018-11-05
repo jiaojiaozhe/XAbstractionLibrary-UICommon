@@ -42,4 +42,18 @@
  @param bError 是否存在错误
  */
 - (void) loadFinish:(NSArray *) dataList bError:(BOOL) bError;
+
+/**
+ 是否自动下拉加载
+ 
+ @param bAutoLoading YES进入页面自动加载 否则不自动加载
+ */
+- (void) setBAutoLoading:(BOOL) bAutoLoading;
+
+/**
+ 是否支持预加载
+ 
+ @param bPreLoadMore YES支持预加载 否则不支持预加载
+ */
+- (void) setBPreLoadMore:(BOOL) bPreLoadMore;
 @end

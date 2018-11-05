@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XHeadView.h"
-#import "XFootView.h"
+#import "XListHeadView.h"
+#import "XListFootView.h"
 #import "XListViewDelegate.h"
 
 /**
@@ -39,17 +39,17 @@
 /**
  *  是否开启预加载
  */
-@property (nonatomic,assign) BOOL bPerLoad;
+@property (nonatomic,assign) BOOL bPreLoad;
 
 /**
  *  构造新的页眉
  */
-- (XHeadView *) getListHeadView;
+- (XListHeadView *) getListHeadView;
 
 /**
  *  构造新的页脚
  */
-- (XFootView *) getListMoreView;
+- (XListFootView *) getListMoreView;
 
 /**
  *  加载完成

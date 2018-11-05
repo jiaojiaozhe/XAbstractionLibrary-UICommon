@@ -67,23 +67,23 @@
  }
 
 - (void) listViewDidTriggerRefresh:(UIScrollView *) listView{
-//    if(![self bRefreshing]){
-//        [self setBRefreshing:YES];
-//        [self setBLoading:YES];
-//        [self refreshStatusView];
-//        
-//        [self refreshToDown:listView];
-//    }
+    if(![self bRefreshing]){
+        [self setBRefreshing:YES];
+        [self setBLoading:YES];
+        [self refreshStatusView];
+        
+        [self refreshToDown:listView];
+    }
 }
 
 - (void) listViewDidTriggerLoadMore:(UIScrollView *) listView{
-//    if(![self bRefreshing]){
-//        [self setBRefreshing:YES];
-//        [self setBLoading:YES];
-//        [self refreshStatusView];
-//
-//        [self loadToMore:listView];
-//    }
+    if(![self bRefreshing]){
+        [self setBRefreshing:YES];
+        [self setBLoading:YES];
+        [self refreshStatusView];
+
+        [self loadToMore:listView];
+    }
 }
 
 - (void) initView{
@@ -102,11 +102,11 @@
     return XListViewStyleNone;
 }
 
-- (XHeadView *) loadHeadView{
+- (XListHeadView *) loadHeadView{
     return nil;
 }
 
-- (XFootView *) loadFootView{
+- (XListFootView *) loadFootView{
     return nil;
 }
 
@@ -147,5 +147,13 @@
     [self setBLoading:NO];
     [self refreshStatusView];
     [_refreshView finishLoad];
+}
+
+- (void) setBAutoLoading:(BOOL) bAutoLoading{
+    [_refreshView setBAutoLoading:bAutoLoading];
+}
+
+- (void) setBPreLoadMore:(BOOL) bPreLoadMore{
+    [_refreshView setBPreLoadMore:bPreLoadMore];
 }
 @end

@@ -1,19 +1,19 @@
 //
-//  XHeadView.m
+//  XListHeadView.m
 //  XAbstractionLibrary-UICommon
 //
 //  Created by lanbiao on 2018/7/16.
 //
 
-#import "XHeadView.h"
+#import "XListHeadView.h"
 #import <XAbstractionLibrary_Base/XAbstractionLibrary-Base-umbrella.h>
 
-@interface XHeadView()
+@interface XListHeadView()
 @property (nonatomic,strong) XLock *lock;
 @property (nonatomic,weak) UIScrollView *scrollView;
 @end
 
-@implementation XHeadView
+@implementation XListHeadView
 @synthesize state = _state;
 @synthesize bLoading = _bLoading;
 
@@ -45,7 +45,7 @@
 
 - (void) initSetUp{
     self.lock = [[XLock alloc] init];
-    self.state = XHeadViewStateNormal;
+    self.state = XListHeadViewStateNormal;
 }
 
 - (void) setBLoading:(BOOL)bLoading{
@@ -62,13 +62,13 @@
     return bOldLoading;
 }
 
-- (void) setState:(XHeadViewState)state{
+- (void) setState:(XListHeadViewState)state{
     [_lock lock];
-    if(state == XHeadViewStateNormal){
+    if(state == XListHeadViewStateNormal){
         
-    }else if(state == XHeadViewStatePulling){
+    }else if(state == XListHeadViewStatePulling){
         
-    }else if(state == XHeadViewStateLoading){
+    }else if(state == XListHeadViewStateLoading){
         
     }
     _state = state;
@@ -90,7 +90,7 @@
         [UIView animateWithDuration:0.5f animations:^{
             [weakSelf.scrollView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
         } completion:^(BOOL finished) {
-            weakSelf.state = XHeadViewStateNormal;
+            weakSelf.state = XListHeadViewStateNormal;
             [weakSelf setBLoading:NO];
         }];
     }
@@ -98,17 +98,17 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(scrollView.contentOffset.y < -VIEW_HEIGHT(self)){
-        if(self.state == XHeadViewStateNormal){
-            self.state = XHeadViewStatePulling;
+        if(self.state == XListHeadViewStateNormal){
+            self.state = XListHeadViewStatePulling;
             [self pullProgress:1.0f];
             //兼容初次自动刷新
             [self scrollViewDidEndDragging:scrollView willDecelerate:YES];
         }
     }else if(scrollView.contentOffset.y < 0){
     
-        if(self.state != XHeadViewStateLoading){
-            if(self.state != XHeadViewStateNormal){
-                self.state = XHeadViewStateNormal;
+        if(self.state != XListHeadViewStateLoading){
+            if(self.state != XListHeadViewStateNormal){
+                self.state = XListHeadViewStateNormal;
             }
             
             CGFloat contentY = scrollView.contentOffset.y;
@@ -124,9 +124,9 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if(scrollView.contentOffset.y < -VIEW_HEIGHT(self)){
-        if(self.state == XHeadViewStatePulling){
+        if(self.state == XListHeadViewStatePulling){
             if(!scrollView.isDragging){
-                self.state = XHeadViewStateLoading;
+                self.state = XListHeadViewStateLoading;
                 self.scrollView = scrollView;
                 __weak typeof(self) weakSelf = self;
                 [UIView animateWithDuration:0.5f animations:^{

@@ -8,6 +8,10 @@
 
 #import <XAbstractionLibrary_Parse/XAbstractionLibrary-Parse-umbrella.h>
 
+@protocol AIBaseModel<NSObject>
+
+@end
+
 @interface AIBaseModel : XBaseModel
 
 @end

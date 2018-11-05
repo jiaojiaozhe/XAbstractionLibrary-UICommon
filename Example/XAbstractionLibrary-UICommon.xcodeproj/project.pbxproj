@@ -61,6 +61,7 @@
 		BC82EA622105BAB80097971A /* CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82EA612105BAB80097971A /* CustomView1.m */; };
 		BC82EA682105BD060097971A /* CustomContentView1.m in Sources */ = {isa = PBXBuildFile; fileRef = BC82EA672105BD060097971A /* CustomContentView1.m */; };
 		BC82EA6A2105BD250097971A /* CustomContentView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC82EA692105BD250097971A /* CustomContentView1.xib */; };
+		BC86D543213157E8007BDF7D /* AIRefreshBaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BC86D542213157E8007BDF7D /* AIRefreshBaseResult.m */; };
 		BCB210CD2117FE790071E59A /* DemoViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB210CB2117FE790071E59A /* DemoViewController1.m */; };
 		BCB210D12117FFB40071E59A /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB210D02117FFB40071E59A /* DemoView.m */; };
 		BCEF32B4211D45680060FAAF /* DemoView2.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEF32B3211D45680060FAAF /* DemoView2.m */; };
@@ -179,6 +180,8 @@
 		BC82EA662105BD060097971A /* CustomContentView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomContentView1.h; sourceTree = "<group>"; };
 		BC82EA672105BD060097971A /* CustomContentView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomContentView1.m; sourceTree = "<group>"; };
 		BC82EA692105BD250097971A /* CustomContentView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomContentView1.xib; sourceTree = "<group>"; };
+		BC86D541213157E8007BDF7D /* AIRefreshBaseResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIRefreshBaseResult.h; sourceTree = "<group>"; };
+		BC86D542213157E8007BDF7D /* AIRefreshBaseResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIRefreshBaseResult.m; sourceTree = "<group>"; };
 		BCB210CA2117FE790071E59A /* DemoViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController1.h; sourceTree = "<group>"; };
 		BCB210CB2117FE790071E59A /* DemoViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController1.m; sourceTree = "<group>"; };
 		BCB210CF2117FFB40071E59A /* DemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 				BCEF32C5211D84840060FAAF /* DemoViewController3.m */,
 				BCEF32C7211D850C0060FAAF /* DemoView3.h */,
 				BCEF32C8211D850C0060FAAF /* DemoView3.m */,
+				BC86D541213157E8007BDF7D /* AIRefreshBaseResult.h */,
+				BC86D542213157E8007BDF7D /* AIRefreshBaseResult.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -713,6 +718,7 @@
 				BCFC9E3C2116926A00353BC3 /* AIJSONAdapter.m in Sources */,
 				BCFC9E30211691FC00353BC3 /* AIHttpRequestManager.m in Sources */,
 				BC82EA542105891A0097971A /* BaseNotDataView.m in Sources */,
+				BC86D543213157E8007BDF7D /* AIRefreshBaseResult.m in Sources */,
 				BC803ECD210F085900388A75 /* TabBar.m in Sources */,
 				BC82EA572105892A0097971A /* BaseNotNetView.m in Sources */,
 				6003F5A7195388D20070C39A /* XYViewController.m in Sources */,

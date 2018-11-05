@@ -18,14 +18,14 @@
 
  @param headView 待设置的滑动控件头
  */
-- (void) setHeadView:(XHeadView *) headView;
+- (void) setHeadView:(XListHeadView *) headView;
 
 /**
  设置滑动控件底部
 
  @param footView 待设置的滑动控件底部
  */
-- (void) setFootView:(XFootView *) footView;
+- (void) setFootView:(XListFootView *) footView;
 
 /**
  设置请滑动控件风格
@@ -59,4 +59,18 @@
  加载结束回调,上拉下拉公用
  */
 - (void) finishLoad;
+
+/**
+ 是否自动下拉加载
+ 
+ @param bAutoLoading YES进入页面自动加载 否则不自动加载
+ */
+- (void) setBAutoLoading:(BOOL) bAutoLoading;
+
+/**
+ 是否支持预加载
+ 
+ @param bPreLoadMore YES支持预加载 否则不支持预加载
+ */
+- (void) setBPreLoadMore:(BOOL) bPreLoadMore;
 @end

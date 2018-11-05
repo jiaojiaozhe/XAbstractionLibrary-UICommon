@@ -13,12 +13,12 @@
 /**
  *  自定义的页眉
  */
-- (XHeadView *) getListHeadView;
+- (XListHeadView *) getListHeadView;
 
 
 /**
  *  自定义的页脚
  */
-- (XFootView *) getListMoreView;
+- (XListFootView *) getListMoreView;
 
 @end

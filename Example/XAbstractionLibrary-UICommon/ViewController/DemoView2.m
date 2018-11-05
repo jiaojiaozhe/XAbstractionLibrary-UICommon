@@ -14,6 +14,10 @@
 #import "CustomHeadView.h"
 #import "CustomFootView.h"
 
+@interface DemoView2()
+@property (nonatomic,strong) NSMutableArray *dataList;
+@end
+
 @implementation DemoView2
 
 - (id<XIBaseLoadingViewDelegate>) loadLoadingView{
@@ -62,7 +66,9 @@
 
 - (void)initView{
     [super initView];
-    
+    _dataList = [NSMutableArray array];
+    [self setBAutoLoading:YES];
+    [self setBPreLoadMore:YES];
 }
 
 - (void)loadPage{
@@ -73,33 +79,54 @@
     return XListViewStyleStandard;
 }
 
-- (XHeadView *) loadHeadView{
+- (XListHeadView *) loadHeadView{
     return [CustomHeadView createHeadView];
 }
 
-- (XFootView *) loadFootView{
+- (XListFootView *) loadFootView{
     return [CustomFootView createFootView];
 }
 
 - (void) refreshToDown:(UIScrollView *) scrollView{
     XLOG(@"下拉刷新");
-//    [self refreshFinish:@[@"",@""] bError:NO];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        sleep(3.0f);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_dataList removeAllObjects];
+            for(int index = 1; index <= 20; index++){
+                [_dataList addObject:@(index)];
+            }
+            [weakSelf refreshFinish:_dataList bError:NO];
+        });
+    });
 }
 
 - (void) loadToMore:(UIScrollView *) scrollView{
     XLOG(@"上拉加载更多");
-//    [self loadFinish:@[@"1",@"2"] bError:YES];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        sleep(3.0f);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for(int index = 1; index <= 20; index++){
+                [_dataList addObject:@(index)];
+            }
+            [weakSelf loadFinish:_dataList bError:NO];
+        });
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return [_dataList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSNumber *number = [_dataList objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if(!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    cell.textLabel.text = [number stringValue];
     return cell;
 }
 

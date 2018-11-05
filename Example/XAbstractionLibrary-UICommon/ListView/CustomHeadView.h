@@ -11,7 +11,7 @@
 /**
  *  自定义头部
  */
-@interface CustomHeadView : XHeadView
+@interface CustomHeadView : XListHeadView
 
 /**
  *  创建默认的头部区域
