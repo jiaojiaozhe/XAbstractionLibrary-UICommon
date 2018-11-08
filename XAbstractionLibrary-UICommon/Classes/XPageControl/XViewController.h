@@ -5,8 +5,9 @@
 //  Created by lanbiao on 2018/7/20.
 //
 
-#import <UIKit/UIKit.h>
 #import "XView.h"
+#import "XHeadViewDelegate.h"
+#import <UIKit/UIKit.h>
 #import <XAbstractionLibrary_NetWork/XAbstractionLibrary-NetWork-umbrella.h>
 
 /**
