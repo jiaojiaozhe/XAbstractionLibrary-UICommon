@@ -22,6 +22,7 @@
 #import "XIBaseNotDataViewDelegate.h"
 #import "XIBaseNoNetViewRetryDelegate.h"
 #import "XIBaseNotNetViewDelegate.h"
+#import "XHeadView.h"
 #import "XPushTransitionAnimation.h"
 #import "XRefreshContentView.h"
 #import "XRefreshView.h"

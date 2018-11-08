@@ -76,23 +76,19 @@
     return idfv;
 }
 
-+ (NSString *) getOSVersion
-{
++ (NSString *) getOSVersion{
     return [UIDevice currentDevice].systemVersion;
 }
 
-+ (NSNumber *) screenWidth
-{
++ (NSNumber *) screenWidth{
     return [NSNumber numberWithFloat:SCREEN_WIDTH];
 }
 
-+(NSNumber *) screenHeight
-{
++(NSNumber *) screenHeight{
     return [NSNumber numberWithFloat:SCREEN_HEIGHT];
 }
 
-+ (NSString *)macAddress
-{
++ (NSString *)macAddress{
     int                 mib[6];
     size_t              len;
     char                *buf;
@@ -175,8 +171,7 @@
     return deviceIP;
 }
 
-+(NSString *)deviceWANIPAddress
-{
++(NSString *)deviceWANIPAddress{
     NSURL *ipURL = [NSURL URLWithString:@"http://ip.taobao.com/service/getIpInfo.php?ip=myip"];
     NSData *data = [NSData dataWithContentsOfURL:ipURL];
     NSDictionary *ipDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];

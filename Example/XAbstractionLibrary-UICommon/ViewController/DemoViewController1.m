@@ -25,13 +25,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIView *)loadNavigationBar{
-    UIView *navigationBar = [[UIView alloc] init];
-    navigationBar.backgroundColor = RGB_COLOR(255, 0, 0);
-    SET_VIEW_HEIGHT(navigationBar, 100);
-    return navigationBar;
-}
-
 - (XView *)loadContentView{
     DemoView *demoView = [DemoView createView];
     return demoView;

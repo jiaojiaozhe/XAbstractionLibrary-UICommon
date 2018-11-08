@@ -13,7 +13,7 @@
 
 - (UIView *) getContentView{
     UIView *contentView = [[UIView alloc] init];
-    contentView.backgroundColor = RGB_COLOR(0, 255, 0);
+    contentView.backgroundColor = RGB_COLOR(0, 0, 255);
     return contentView;
 }
 

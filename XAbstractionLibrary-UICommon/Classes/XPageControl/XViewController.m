@@ -6,26 +6,35 @@
 //
 
 #import "XView.h"
+#import "XHeadView.h"
 #import "XViewController.h"
 
 @interface XViewController ()
 
-@property (nonatomic,strong) XView *contentView;
+/**
+ 页面头部区
+ */
+@property (nonatomic,strong) XHeadView *headView;
 
 /**
  内容区
  */
-@property (nonatomic,strong) IBOutlet UIView *mContentView;
+@property (nonatomic,strong) XView *mContentView;
 
 /**
- 顶部NavigationBar
+ 当前页面是否是作为其他视图控制器的子控制器存在
  */
-@property (nonatomic,strong) IBOutlet UIView *mNavigationBarView;
+@property (nonatomic,assign) BOOL bContainer;
 
 /**
- navigationBar高度约束
+ 顶部headView的高度约束
  */
-@property (nonatomic,strong) IBOutlet NSLayoutConstraint *mHeightConstraint;
+
+
+@property (nonatomic,strong) NSLayoutConstraint *leftConstraint;
+@property (nonatomic,strong) NSLayoutConstraint *topConstraint;
+@property (nonatomic,strong) NSLayoutConstraint *rightConstraint;
+@property (nonatomic,strong) NSLayoutConstraint *heightConstraint;
 
 /**
  请求对象的集合
@@ -37,12 +46,17 @@
 
 + (instancetype) createViewController{
     XViewController *viewController = [[[self class] alloc] init];
-    
     return viewController;
 }
 
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    NSBundle *bundle = [NSBundle bundleForClass:[XViewController class]];
+    NSBundle *bundle = nil;
+    if(nibBundleOrNil){
+        bundle = nibBundleOrNil;
+    }else{
+        bundle = [NSBundle bundleForClass:[XViewController class]];
+    }
+    
     if(self = [super initWithNibName:nibNameOrNil bundle:bundle]){
         
     }
@@ -52,140 +66,66 @@
 - (instancetype) init{
     if(self = [super init]){
         self.requests = [NSMutableDictionary dictionary];
-        
-        if(!self.mNavigationBarView){
-            self.mNavigationBarView = [[UIView alloc] init];
-            self.mNavigationBarView.translatesAutoresizingMaskIntoConstraints = NO;
-            [self.view addSubview:self.mNavigationBarView];
-            NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.mNavigationBarView
-                                                                             attribute:NSLayoutAttributeTop
-                                                                             relatedBy:NSLayoutRelationEqual
-                                                                                toItem:self.view
-                                                                             attribute:NSLayoutAttributeTop
-                                                                            multiplier:1.0f
-                                                                              constant:0];
-            NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.mNavigationBarView
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                              relatedBy:NSLayoutRelationEqual
-                                                                                 toItem:self.view
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                             multiplier:1.0
-                                                                               constant:0.0f];
-            NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.mNavigationBarView
-                                                                               attribute:NSLayoutAttributeRight
-                                                                               relatedBy:NSLayoutRelationEqual
-                                                                                  toItem:self.view
-                                                                               attribute:NSLayoutAttributeRight
-                                                                              multiplier:1.0f
-                                                                                constant:0];
-            _mHeightConstraint = [NSLayoutConstraint constraintWithItem:self.mNavigationBarView
-                                                              attribute:NSLayoutAttributeHeight
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:nil
-                                                              attribute:NSLayoutAttributeNotAnAttribute
-                                                             multiplier:1.0f
-                                                               constant:0];
-            [self.view addConstraint:leftConstraint];
-            [self.view addConstraint:_mHeightConstraint];
-            [self.view addConstraint:rightConstraint];
-            [self.view addConstraint:topConstraint];
-            [self.mNavigationBarView setNeedsLayout];
-            [self.mNavigationBarView layoutIfNeeded];
-        }
-        
-        if(!self.mContentView){
-            self.mContentView = [[UIView alloc] init];
-            self.mContentView.translatesAutoresizingMaskIntoConstraints = NO;
-            [self.view addSubview:self.mContentView];
-            NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
-                                                                             attribute:NSLayoutAttributeTop
-                                                                             relatedBy:NSLayoutRelationEqual
-                                                                                toItem:self.mNavigationBarView
-                                                                             attribute:NSLayoutAttributeBottom
-                                                                            multiplier:1.0f
-                                                                              constant:0];
-            NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                              relatedBy:NSLayoutRelationEqual
-                                                                                 toItem:self.view
-                                                                              attribute:NSLayoutAttributeLeft
-                                                                             multiplier:1.0
-                                                                               constant:0.0f];
-            NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
-                                                                               attribute:NSLayoutAttributeRight
-                                                                               relatedBy:NSLayoutRelationEqual
-                                                                                  toItem:self.view
-                                                                               attribute:NSLayoutAttributeRight
-                                                                              multiplier:1.0f
-                                                                                constant:0];
-            NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
-                                                             attribute:NSLayoutAttributeBottom
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:self.view
-                                                             attribute:NSLayoutAttributeBottom
-                                                            multiplier:1.0f
-                                                              constant:0];
-            [self.view addConstraint:leftConstraint];
-            [self.view addConstraint:bottomConstraint];
-            [self.view addConstraint:rightConstraint];
-            [self.view addConstraint:topConstraint];
-            [self.mContentView setNeedsLayout];
-            [self.mContentView layoutIfNeeded];
-        }
+        [self registerBroadcastReceiver];
     }
-    
-    [self setNavigationBar];
-    [self setContentView];
-    [self registerBroadcastReceiver];
     return self;
 }
 
-- (UIView *) loadNavigationBar{
-    return NULL;
-}
-
-- (void) setNavigationBar{
-    UIView *navigationBar = [self loadNavigationBar];
-    if(navigationBar){
-        navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
-        if(_mHeightConstraint){
-            _mHeightConstraint.constant = VIEW_HEIGHT(navigationBar);
+- (void) setHeadView{
+    if(!self.headView){
+        CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
+        CGFloat headerTop = -statusRect.size.height;
+        if(self.bContainer){
+            headerTop = 0;
         }
-        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:navigationBar
-                                                                         attribute:NSLayoutAttributeTop
-                                                                         relatedBy:NSLayoutRelationEqual
-                                                                            toItem:self.mNavigationBarView
-                                                                         attribute:NSLayoutAttributeTop
-                                                                        multiplier:1.0f
-                                                                          constant:0];
-        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:navigationBar
+        
+        self.headView = [XHeadView createHeadViewWithDelegate:self];
+        if(![self getHeadLeftView] &&
+           ![self getHeadCenterView] &&
+           ![self getHeadRightView]){
+            headerTop -=  VIEW_HEIGHT(self.headView);
+        }
+        
+        [self.view addSubview:self.headView];
+        CGFloat height = VIEW_HEIGHT(self.headView);
+        self.headView.translatesAutoresizingMaskIntoConstraints = NO;
+        _leftConstraint = [NSLayoutConstraint constraintWithItem:self.headView
                                                                           attribute:NSLayoutAttributeLeft
                                                                           relatedBy:NSLayoutRelationEqual
-                                                                             toItem:self.mNavigationBarView
+                                                                             toItem:self.view
                                                                           attribute:NSLayoutAttributeLeft
                                                                          multiplier:1.0
-                                                                           constant:0.0f];
-        NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:navigationBar
-                                                                            attribute:NSLayoutAttributeRight
-                                                                            relatedBy:NSLayoutRelationEqual
-                                                                               toItem:self.mNavigationBarView
-                                                                            attribute:NSLayoutAttributeRight
-                                                                           multiplier:1.0f
-                                                                             constant:0];
-        NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:navigationBar
-                                                                           attribute:NSLayoutAttributeBottom
+                                                                           constant:0.0];
+        [self.view addConstraint:_leftConstraint];
+        
+        _topConstraint = [NSLayoutConstraint constraintWithItem:self.headView
+                                                                         attribute:NSLayoutAttributeTop
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.topLayoutGuide
+                                                                         attribute:NSLayoutAttributeBottom
+                                                                        multiplier:1.0
+                                                                          constant:headerTop];
+        [self.view addConstraint:_topConstraint];
+        _rightConstraint = [NSLayoutConstraint constraintWithItem:self.headView
+                                                                           attribute:NSLayoutAttributeRight
                                                                            relatedBy:NSLayoutRelationEqual
-                                                                              toItem:self.mNavigationBarView
-                                                                           attribute:NSLayoutAttributeBottom
-                                                                          multiplier:1.0f
-                                                                            constant:0];
-        [self.mNavigationBarView addSubview:navigationBar];
-        [self.mNavigationBarView addConstraint:leftConstraint];
-        [self.mNavigationBarView addConstraint:topConstraint];
-        [self.mNavigationBarView addConstraint:rightConstraint];
-        [self.mNavigationBarView addConstraint:bottomConstraint];
-        [navigationBar setNeedsLayout];
-        [navigationBar layoutIfNeeded];
+                                                                              toItem:self.view
+                                                                           attribute:NSLayoutAttributeRight
+                                                                          multiplier:1.0
+                                                                            constant:0.0];
+        [self.view addConstraint:_rightConstraint];
+        
+        _heightConstraint = [NSLayoutConstraint constraintWithItem:self.headView
+                                                               attribute:NSLayoutAttributeHeight
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:nil
+                                                               attribute:NSLayoutAttributeNotAnAttribute
+                                                              multiplier:1.0
+                                                                constant:height];
+        [self.view addConstraint:_heightConstraint];
+        
+        [self.headView setNeedsLayout];
+        [self.headView layoutIfNeeded];
     }
 }
 
@@ -194,50 +134,105 @@
 }
 
 - (void) setContentView{
-    _contentView = [self loadContentView];
-    if(_contentView){
-        _contentView.translatesAutoresizingMaskIntoConstraints = NO;
-        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:_contentView
-                                                                         attribute:NSLayoutAttributeTop
-                                                                         relatedBy:NSLayoutRelationEqual
-                                                                            toItem:self.mContentView
-                                                                         attribute:NSLayoutAttributeTop
-                                                                        multiplier:1.0f
-                                                                          constant:0];
-        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:_contentView
-                                                                          attribute:NSLayoutAttributeLeft
-                                                                          relatedBy:NSLayoutRelationEqual
-                                                                             toItem:self.mContentView
-                                                                          attribute:NSLayoutAttributeLeft
-                                                                         multiplier:1.0
-                                                                           constant:0.0f];
-        NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:_contentView
-                                                                           attribute:NSLayoutAttributeRight
-                                                                           relatedBy:NSLayoutRelationEqual
-                                                                              toItem:self.mContentView
-                                                                           attribute:NSLayoutAttributeRight
-                                                                          multiplier:1.0f
-                                                                            constant:0];
-        NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:_contentView
-                                                                            attribute:NSLayoutAttributeBottom
-                                                                            relatedBy:NSLayoutRelationEqual
-                                                                               toItem:self.mContentView
-                                                                            attribute:NSLayoutAttributeBottom
-                                                                           multiplier:1.0f
-                                                                             constant:0];
-        [self.mContentView addSubview:_contentView];
-        [self.mContentView addConstraint:leftConstraint];
-        [self.mContentView addConstraint:topConstraint];
-        [self.mContentView addConstraint:rightConstraint];
-        [self.mContentView addConstraint:bottomConstraint];
-        [_contentView setNeedsLayout];
-        [_contentView layoutIfNeeded];
+    if(!self.mContentView){
+        self.mContentView = [self loadContentView];
+        [self.view addSubview:self.mContentView];
+    }else{
+        //通过xib或其他途径创建了对应的内容页
     }
+    
+    self.mContentView.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *topLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
+                                                                           attribute:NSLayoutAttributeTop
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.headView
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                          multiplier:1.0f
+                                                                            constant:0.0f];
+    [self.view addConstraint:topLayoutConstraint];
+    
+    NSLayoutConstraint *leftLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
+                                                                            attribute:NSLayoutAttributeLeft
+                                                                            relatedBy:NSLayoutRelationEqual
+                                                                               toItem:self.view
+                                                                            attribute:NSLayoutAttributeLeft
+                                                                           multiplier:1.0f
+                                                                             constant:0.0f];
+    [self.view addConstraint:leftLayoutConstraint];
+    
+    NSLayoutConstraint *bottomLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
+                                                                              attribute:NSLayoutAttributeBottom
+                                                                              relatedBy:NSLayoutRelationEqual
+                                                                                 toItem:self.bottomLayoutGuide
+                                                                              attribute:NSLayoutAttributeBottom
+                                                                             multiplier:1.0f
+                                                                               constant:0.0f];
+    [self.view addConstraint:bottomLayoutConstraint];
+    
+    NSLayoutConstraint *rightLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
+                                                                             attribute:NSLayoutAttributeRight
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:self.view
+                                                                             attribute:NSLayoutAttributeRight
+                                                                            multiplier:1.0f
+                                                                              constant:0.0f];
+    [self.view addConstraint:rightLayoutConstraint];
+    [self.mContentView setNeedsLayout];
+    [self.mContentView layoutIfNeeded];
+}
+
+- (void) willMoveToParentViewController:(UIViewController *)parent{
+    [super willMoveToParentViewController:parent];
+    
+    if([parent isKindOfClass:[UIPageViewController class]]){
+        self.bContainer = YES;
+    }
+}
+
+- (void) addChildViewController:(UIViewController *)childController{
+    if(!childController){
+        return;
+    }
+    
+    [super addChildViewController:childController];
+    if([childController isKindOfClass:[UIPageViewController class]]){
+        UIPageViewController *pageViewController = (UIPageViewController*)childController;
+        NSArray *viewControllers = [pageViewController childViewControllers];
+        for(UIViewController *controller in viewControllers){
+            XViewController *baseViewController = (XViewController *) controller;
+            baseViewController.bContainer = YES;
+        }
+    }else if([childController isKindOfClass:[XViewController class]]){
+        XViewController *baseViewController = (XViewController *) childController;
+        baseViewController.bContainer = YES;
+    }
+}
+
+- (void) viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    
+    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat headerTop = -statusRect.size.height;
+    if(self.bContainer){
+        headerTop = 0;
+    }
+    
+    if(![self getHeadLeftView] &&
+       ![self getHeadCenterView] &&
+       ![self getHeadRightView]){
+        headerTop -=  VIEW_HEIGHT(self.headView);
+    }
+    CGFloat height = VIEW_HEIGHT(self.headView);
+    
+    _topConstraint.constant = headerTop;
+    _heightConstraint.constant = height;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setHeadView];
+    [self setContentView];
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -272,7 +267,7 @@
 }
 
 - (void) onMyBroadcastReceiver:(NSNotification *) notification{
-    [self broadcastReceiver:notification view:self.contentView];
+    [self broadcastReceiver:notification view:self.mContentView];
 }
 
 - (void) onSendMyBroadcast:(XNotification_Action) action dataInfo:(NSDictionary *) dataInfo{
@@ -299,9 +294,9 @@
 #pragma mark --
 #pragma mark --XHttpResponseDelegate
 - (void) cancelRequest:(id<XHttpRequestDelegate>) request{
-    if(self.contentView &&
-       [self.contentView respondsToSelector:@selector(cancelRequest:)]){
-        [self.contentView cancelRequest:request];
+    if(self.mContentView &&
+       [self.mContentView respondsToSelector:@selector(cancelRequest:)]){
+        [self.mContentView cancelRequest:request];
     }
     
     if(request && [request isKindOfClass:[XHttpRequest class]]){
@@ -313,9 +308,9 @@
 }
 
 - (void) willStartRequest:(id<XHttpRequestDelegate>) request{
-    if(self.contentView &&
-       [self.contentView respondsToSelector:@selector(willStartRequest:)]){
-        [self.contentView willStartRequest:request];
+    if(self.mContentView &&
+       [self.mContentView respondsToSelector:@selector(willStartRequest:)]){
+        [self.mContentView willStartRequest:request];
     }
     
     if(request && [request isKindOfClass:[XHttpRequest class]]){
@@ -328,9 +323,9 @@
 
 - (void) willRetryRequest:(id<XHttpRequestDelegate>) oldRequest
                newRequest:(id<XHttpRequestDelegate>) newRequest{
-    if(self.contentView &&
-       [self.contentView respondsToSelector:@selector(willRetryRequest:newRequest:)]){
-        [self.contentView willRetryRequest:oldRequest newRequest:newRequest];
+    if(self.mContentView &&
+       [self.mContentView respondsToSelector:@selector(willRetryRequest:newRequest:)]){
+        [self.mContentView willRetryRequest:oldRequest newRequest:newRequest];
     }
     
     if(oldRequest &&
@@ -349,9 +344,9 @@
 - (void) execWithRequest:(id<XHttpRequestDelegate>) request
                 progress:(long long) progress
            totalProgress:(long long) totalProgress{
-    if(self.contentView &&
-       [self.contentView respondsToSelector:@selector(execWithRequest:progress:totalProgress:)]){
-        [self.contentView execWithRequest:request
+    if(self.mContentView &&
+       [self.mContentView respondsToSelector:@selector(execWithRequest:progress:totalProgress:)]){
+        [self.mContentView execWithRequest:request
                                  progress:progress
                             totalProgress:totalProgress];
     }
@@ -361,9 +356,9 @@
 - (void) completeDidRequest:(id<XHttpRequestDelegate>) request
                 responseDic:(id) responseDic
                       error:(NSError *) error{
-    if(self.contentView &&
-       [self.contentView respondsToSelector:@selector(completeDidRequest:responseDic:error:)]){
-        [self.contentView completeDidRequest:request
+    if(self.mContentView &&
+       [self.mContentView respondsToSelector:@selector(completeDidRequest:responseDic:error:)]){
+        [self.mContentView completeDidRequest:request
                                  responseDic:responseDic
                                        error:error];
     }
@@ -376,4 +371,17 @@
     }
 }
 
+#pragma mark --
+#pragma mark --XHeadViewDelegate
+- (UIView *) getHeadLeftView{
+    return nil;
+}
+
+- (UIView *) getHeadRightView{
+    return nil;
+}
+
+- (UIView *) getHeadCenterView{
+    return nil;
+}
 @end

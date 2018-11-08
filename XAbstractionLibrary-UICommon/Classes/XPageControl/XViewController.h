@@ -12,14 +12,7 @@
 /**
  基础的试图控制器，自身不支持滑动，但天然支持无网、加载过程、加载失败、无数据等的支持
  */
-@interface XViewController : UIViewController<XHttpResponseDelegate>
-
-/**
- 加载顶部导航区，不存在就返回nil,需要业务工程师实现
-
- @return 返回顶部导航区
- */
-- (UIView *) loadNavigationBar;
+@interface XViewController : UIViewController<XHttpResponseDelegate,XHeadViewDelegate>
 
 /**
  加载内容区，原则上不能为nil，需要业务工程师实现
