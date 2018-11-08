@@ -50,8 +50,16 @@
 - (UIView *) getContentView{
     if(_refreshView)
         return _refreshView;
-    NSBundle *bundle = [NSBundle bundleForClass:[XRefreshView class]];
-    NSArray *viewList = [bundle loadNibNamed:@"XRefreshView"
+    
+    Class class = [XRefreshView class];
+    NSString *className = NSStringFromClass(class);
+    NSBundle *frameWorkBundle = [NSBundle bundleForClass: class];
+    NSString *projectName = [[[[frameWorkBundle bundlePath] lastPathComponent] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
+    NSString *frameWorkBundlePath = [frameWorkBundle pathForResource:projectName
+                                                              ofType:@"bundle"];
+    NSBundle *xibBundle = [NSBundle bundleWithPath:frameWorkBundlePath];
+    
+    NSArray *viewList = [xibBundle loadNibNamed:className
                                        owner:self
                                      options:nil];
     if([viewList count] > 0){

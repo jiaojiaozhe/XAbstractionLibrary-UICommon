@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XAbstractionLibrary-UICommon'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'XAbstractionLibrary-UICommon是基础的UI相关组件.'
 
 # This description is used to generate tags and improve search results.

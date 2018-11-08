@@ -54,7 +54,15 @@
     if(nibBundleOrNil){
         bundle = nibBundleOrNil;
     }else{
-        bundle = [NSBundle bundleForClass:[XViewController class]];
+        Class class = [XViewController class];
+        NSString *className = NSStringFromClass(class);
+        NSBundle *frameWorkBundle = [NSBundle bundleForClass: class];
+        NSString *projectName = [[[[frameWorkBundle bundlePath] lastPathComponent] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
+        NSString *frameWorkBundlePath = [frameWorkBundle pathForResource:projectName
+                                                                  ofType:@"bundle"];
+        bundle = [NSBundle bundleWithPath:frameWorkBundlePath];
+        
+        //bundle = [NSBundle bundleForClass:[XViewController class]];
     }
     
     if(self = [super initWithNibName:nibNameOrNil bundle:bundle]){

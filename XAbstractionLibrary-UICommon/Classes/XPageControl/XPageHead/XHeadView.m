@@ -29,10 +29,15 @@
 @implementation XHeadView
 
 + (XHeadView *) createHeadViewWithDelegate:(id<XHeadViewDelegate>) delegate{
+    Class class = [XHeadView class];
+    NSString *className = NSStringFromClass(class);
+    NSBundle *frameWorkBundle = [NSBundle bundleForClass: class];
+    NSString *projectName = [[[[frameWorkBundle bundlePath] lastPathComponent] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
+    NSString *frameWorkBundlePath = [frameWorkBundle pathForResource:projectName
+                                                              ofType:@"bundle"];
+    NSBundle *xibBundle = [NSBundle bundleWithPath:frameWorkBundlePath];
     
-    NSString *className = NSStringFromClass([XHeadView class]);
-    NSBundle *bundle = [NSBundle bundleForClass:[XHeadView class]];
-    XHeadView *headView = [[bundle loadNibNamed:className
+    XHeadView *headView = [[xibBundle loadNibNamed:className
                                                       owner:nil
                                                     options:nil] firstObject];
     
