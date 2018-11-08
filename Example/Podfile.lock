@@ -28,7 +28,7 @@ PODS:
   - XAbstractionLibrary-Parse (0.0.6):
     - Mantle (~> 2.1.0)
     - XAbstractionLibrary-Base
-  - XAbstractionLibrary-UICommon (0.0.6):
+  - XAbstractionLibrary-UICommon (0.0.7):
     - XAbstractionLibrary-NetWork
     - XAbstractionLibrary-Parse
     - XXNibBridge
@@ -62,7 +62,7 @@ SPEC CHECKSUMS:
   XAbstractionLibrary-Base: 8ed875c85ee70cab688bdc7ac3e13cf73ceba6ff
   XAbstractionLibrary-NetWork: 9681310c96a9d194d999d97d6ec4a67641d7bc3b
   XAbstractionLibrary-Parse: 8243ceeec3d01fb1d7f8b4e25da49152d9b9e737
-  XAbstractionLibrary-UICommon: 0d1e1c9582f827537fccbb237c4129ee746a8e11
+  XAbstractionLibrary-UICommon: 3774521a99045057cba506ae333d1d5d483bfed9
   XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
 PODFILE CHECKSUM: 533fb7d97b3ca6d23e13f65533e5fbd3b8c63806
