@@ -25,9 +25,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (XView *)loadContentView{
-    DemoView *demoView = [DemoView createView];
-    return demoView;
+//- (XView *)loadContentView{
+//    DemoView *demoView = [DemoView createView];
+//    return demoView;
+//}
+
+- (UIView *)getHeadLeftView {
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
+    //    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    backBtn.frame = CGRectMake(0, 0, 16, 16);
+    //    [backBtn setCenterFromView:leftView];
+    //    [backBtn setEnlargeEdge:20];
+    //    [backBtn addTarget:self action:@selector(onBackPage) forControlEvents:UIControlEventTouchUpInside];
+    //    [backBtn setBackgroundImage:[UIImage imageNamed:@"back_black"] forState:UIControlStateNormal];
+    //    [leftView addSubview:backBtn];
+    leftView.backgroundColor = [UIColor redColor];
+    return leftView;
+}
+
+- (UIView *)getHeadCenterView{
+    UIView *centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+    centerView.backgroundColor = [UIColor yellowColor];
+    return centerView;
+}
+
+- (UIView *)getHeadRightView{
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
+    rightView.backgroundColor = [UIColor blueColor];
+    return rightView;
 }
 
 @end

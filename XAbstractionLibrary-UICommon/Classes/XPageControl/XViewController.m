@@ -61,8 +61,6 @@
         NSString *frameWorkBundlePath = [frameWorkBundle pathForResource:projectName
                                                                   ofType:@"bundle"];
         bundle = [NSBundle bundleWithPath:frameWorkBundlePath];
-        
-        //bundle = [NSBundle bundleForClass:[XViewController class]];
     }
     
     if(self = [super initWithNibName:nibNameOrNil bundle:bundle]){
@@ -143,7 +141,12 @@
 
 - (void) setContentView{
     if(!self.mContentView){
-        self.mContentView = [self loadContentView];
+        XView *contentView = [self loadContentView];
+        if(!contentView){
+            contentView = [[XView alloc] init];
+            [contentView setBackgroundColor:[UIColor whiteColor]];
+        }
+        self.mContentView = contentView;
         [self.view addSubview:self.mContentView];
     }else{
         //通过xib或其他途径创建了对应的内容页
