@@ -17,9 +17,7 @@
     return contentView;
 }
 
-- (void) initView{
-    
-}
+
 
 - (void)loadPage{
     NSMutableDictionary *cityParamsDic = [NSMutableDictionary dictionary];

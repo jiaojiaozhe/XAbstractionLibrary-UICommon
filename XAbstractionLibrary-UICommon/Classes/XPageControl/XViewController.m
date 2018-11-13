@@ -135,13 +135,13 @@
     }
 }
 
-- (XView *) loadContentView{
+- (XView *) loadViewPresenter{
     return NULL;
 }
 
 - (void) setContentView{
     if(!self.mContentView){
-        XView *contentView = [self loadContentView];
+        XView *contentView = [self loadViewPresenter];
         if(!contentView){
             contentView = [[XView alloc] init];
             [contentView setBackgroundColor:[UIColor whiteColor]];

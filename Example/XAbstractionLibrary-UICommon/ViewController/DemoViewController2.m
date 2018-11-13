@@ -31,7 +31,7 @@
 //    return navigationBar;
 //}
 
-- (XView *)loadContentView{
+- (XView *) loadViewPresenter{
     DemoView2 *demoView2 = [DemoView2 createView];
     return demoView2;
 }

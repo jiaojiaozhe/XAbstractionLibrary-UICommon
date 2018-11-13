@@ -164,4 +164,17 @@
 - (void) setBPreLoadMore:(BOOL) bPreLoadMore{
     [_refreshView setBPreLoadMore:bPreLoadMore];
 }
+
+#pragma mark --
+#pragma mark UITableViewDelegate
+
+#pragma mark --
+#pragma mark UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
 @end

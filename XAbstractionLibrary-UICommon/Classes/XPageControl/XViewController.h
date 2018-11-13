@@ -20,7 +20,7 @@
 
  @return 返回内容区
  */
-- (XView *) loadContentView;
+- (XView *) loadViewPresenter;
 
 /**
  发送UI全局广播

@@ -25,10 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (XView *)loadContentView{
-//    DemoView *demoView = [DemoView createView];
-//    return demoView;
-//}
+- (XView *) loadViewPresenter{
+    DemoView *demoView = [DemoView createView];
+    return demoView;
+}
 
 - (UIView *)getHeadLeftView {
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];

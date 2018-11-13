@@ -23,8 +23,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (XView *)loadContentView{
-//    XRefreshContentView *refreshContentView = [XRefreshContentView createView];
-//    return refreshContentView;
-//}
 @end
