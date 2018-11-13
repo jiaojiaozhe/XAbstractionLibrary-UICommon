@@ -256,11 +256,12 @@
 
 - (void) loadRefreshView{
     if(![self headView]){
-        if(![self getListHeadView]){
+        XListHeadView *listHeadView = [self getListHeadView];
+        if(!listHeadView){
             return;
         }
         
-        [self setHeadView:[self getListHeadView]];
+        [self setHeadView:listHeadView];
     }
     
     [[self headView] setDelegate:self];
@@ -352,11 +353,12 @@
 - (void) loadFootView{
     
     if(![self footView]){
-        if(![self getListMoreView]){
+        XListFootView *listFoodView = [self getListMoreView];
+        if(!listFoodView){
             return;
         }
         
-        [self setFootView:[self getListMoreView]];
+        [self setFootView:listFoodView];
     }
     
     [[self footView] setDelegate:self];
