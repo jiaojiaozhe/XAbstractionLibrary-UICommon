@@ -171,10 +171,11 @@
                                                                              constant:0.0f];
     [self.view addConstraint:leftLayoutConstraint];
     
+    
     NSLayoutConstraint *bottomLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
                                                                               attribute:NSLayoutAttributeBottom
                                                                               relatedBy:NSLayoutRelationEqual
-                                                                                 toItem:self.bottomLayoutGuide
+                                                                                 toItem:self.view.safeAreaLayoutGuide
                                                                               attribute:NSLayoutAttributeBottom
                                                                              multiplier:1.0f
                                                                                constant:0.0f];

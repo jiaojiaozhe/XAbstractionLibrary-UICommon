@@ -39,11 +39,18 @@
     [self initTabBar];
 }
 
+- (XTabBar *)systemTabBarItemsView{
+    if(!_systemTabBarItemsView){
+        _systemTabBarItemsView = [self tabBarView];
+    }
+    return _systemTabBarItemsView;
+}
+
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     if(!([[self.systemTabBar subviews] count] <= 0)){
         CGFloat bottom = self.bottomLayoutGuide.length;
-        XTabBar *tabBar = [self tabBarView];
+        XTabBar *tabBar = [self systemTabBarItemsView];
         CGFloat tabBarHeight = VIEW_HEIGHT(tabBar) + bottom;
         SET_VIEW_HEIGHT(tabBar, tabBarHeight);
         
@@ -61,7 +68,7 @@
         SET_VIEW_HEIGHT(systemTabBarSuper, VIEW_HEIGHT(self.systemTabBar))
         [self.systemTabBar addSubview:systemTabBarSuper];
         
-        self.systemTabBarItemsView = [self tabBarView];
+        self.systemTabBarItemsView = [self systemTabBarItemsView];
         if(self.systemTabBarItemsView){
             SET_VIEW_WIDTH(self.systemTabBarItemsView, VIEW_WIDTH(systemTabBarSuper));
             SET_VIEW_HEIGHT(self.systemTabBarItemsView, VIEW_HEIGHT(systemTabBarSuper));

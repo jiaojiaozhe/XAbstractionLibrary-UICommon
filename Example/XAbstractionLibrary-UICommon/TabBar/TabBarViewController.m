@@ -77,7 +77,8 @@
 }
 
 - (CGFloat) tabBarHeight{
-    return 49.0f;
+    XTabBar *tabBar = [TabBar createTabBar];
+    return VIEW_HEIGHT(tabBar);
 }
 
 - (XTabBar *)tabBarView{
