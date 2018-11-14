@@ -23,7 +23,7 @@
         if(version >= 7.0){
             self.edgesForExtendedLayout = UIRectEdgeNone;
             if(version <= 11.0){
-                self.automaticallyAdjustsScrollViewInsets = NO;
+                //self.automaticallyAdjustsScrollViewInsets = NO;
             }else{
                 //11.0以后的OS需要设置ScrollView的contentInsetAdjustmentBehavior
             }
@@ -42,7 +42,12 @@
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     if(!([[self.systemTabBar subviews] count] <= 0)){
-        CGFloat tabBarHeight = [self tabBarHeight];
+        CGFloat bottom = self.bottomLayoutGuide.length;
+        XTabBar *tabBar = [self tabBarView];
+        CGFloat tabBarHeight = VIEW_HEIGHT(tabBar) + bottom;
+        SET_VIEW_HEIGHT(tabBar, tabBarHeight);
+        
+        //CGFloat tabBarHeight = [self tabBarHeight];
         CGFloat space = VIEW_HEIGHT(self.systemTabBar) - tabBarHeight;
         
         SET_VIEW_TOP(self.systemTabBar, VIEW_TOP(self.systemTabBar) + space);

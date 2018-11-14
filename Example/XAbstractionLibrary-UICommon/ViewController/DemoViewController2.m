@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if(version >= 7.0){
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        if(@available(iOS 11.0, *)){
+            //self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }else{
+            //11.0以后的OS需要设置ScrollView的contentInsetAdjustmentBehavior
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

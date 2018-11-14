@@ -15,6 +15,8 @@
 #import "ViewController5.h"
 #import "ViewController6.h"
 #import "DemoViewController1.h"
+#import "DemoViewController2.h"
+#import "DemoViewController3.h"
 #import "NavigationController.h"
 #import "TabBarViewController.h"
 #import "NavigationControllerManager.h"
@@ -50,21 +52,32 @@
     nav3.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
     [controllers addObject:nav3];
     
-    ViewController4 *controller4 = [[ViewController4 alloc] init];
-    NavigationController *nav4 = [[NavigationController alloc] initWithRootViewController:controller4];
+    DemoViewController2 *demoController4 = [[DemoViewController2 alloc] init];
+    NavigationController *nav4 = [[NavigationController alloc] initWithRootViewController:demoController4];
     nav4.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
     [controllers addObject:nav4];
     
-    ViewController5 *controller5 = [[ViewController5 alloc] init];
-    NavigationController *nav5 = [[NavigationController alloc] initWithRootViewController:controller5];
+    DemoViewController3 *demoController5 = [[DemoViewController3 alloc] init];
+    NavigationController *nav5 = [[NavigationController alloc] initWithRootViewController:demoController5];
     nav5.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
     [controllers addObject:nav5];
+    
+    
+//    ViewController4 *controller4 = [[ViewController4 alloc] init];
+//    NavigationController *nav4 = [[NavigationController alloc] initWithRootViewController:controller4];
+//    nav4.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
+//    [controllers addObject:nav4];
+//
+//    ViewController5 *controller5 = [[ViewController5 alloc] init];
+//    NavigationController *nav5 = [[NavigationController alloc] initWithRootViewController:controller5];
+//    nav5.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
+//    [controllers addObject:nav5];
     
     return controllers;
 }
 
 - (CGFloat) tabBarHeight{
-    return 66.0f;
+    return 49.0f;
 }
 
 - (XTabBar *)tabBarView{

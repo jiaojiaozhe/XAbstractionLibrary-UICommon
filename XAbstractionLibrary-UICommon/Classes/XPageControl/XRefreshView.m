@@ -33,7 +33,9 @@
 }
 
 - (void) initControl{
-    
+    if(@available(iOS 11.0, *)){
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
 }
 
 - (XTableView *) tableView{

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,8 +17,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS6-p7-I7t">
-                    <rect key="frame" x="0.5" y="0.5" width="330" height="178"/>
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="178"/>
                     <color key="backgroundColor" red="1" green="0.92422495760000001" blue="0.85733773489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="底部" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTo-W3-2V4">
+                    <rect key="frame" x="147.5" y="157" width="35" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="顶部" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEY-Fw-vJP">
+                    <rect key="frame" x="147.5" y="0.0" width="35" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -27,7 +39,11 @@
             <color key="backgroundColor" red="1" green="0.92422495760000001" blue="0.85733773489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xS6-p7-I7t" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="AkY-hY-A8h"/>
+                <constraint firstItem="PEY-Fw-vJP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BJc-nP-4Bd"/>
+                <constraint firstItem="UTo-W3-2V4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="L2r-9k-2M1"/>
+                <constraint firstItem="UTo-W3-2V4" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="NAI-dB-76j"/>
                 <constraint firstItem="xS6-p7-I7t" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="VZY-Dk-MVu"/>
+                <constraint firstItem="PEY-Fw-vJP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bfE-1B-BMP"/>
                 <constraint firstItem="xS6-p7-I7t" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="j4o-Eh-jB7"/>
                 <constraint firstItem="xS6-p7-I7t" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="kXu-ys-GZ1"/>
             </constraints>
