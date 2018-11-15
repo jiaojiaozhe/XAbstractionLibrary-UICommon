@@ -1,18 +1,18 @@
 //
-//  DemoViewController2.m
-//  XAbstractionLibrary-UICommon_Example
+//  AIBaseRefreshViewController.m
+//  AiParkToC
 //
-//  Created by lanbiao on 2018/8/9.
-//  Copyright © 2018年 jiaojiaozhe. All rights reserved.
+//  Created by lanbiao on 2018/8/11.
+//  Copyright © 2018年 lanbiao. All rights reserved.
 //
-#import "DemoView2.h"
-#import "DemoViewController2.h"
 
-@interface DemoViewController2 ()
+#import "AIBaseRefreshViewController.h"
+
+@interface AIBaseRefreshViewController ()
 
 @end
 
-@implementation DemoViewController2
+@implementation AIBaseRefreshViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,27 +35,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (UIView *)loadNavigationBar{
-//    UIView *navigationBar = [[UIView alloc] init];
-//    navigationBar.backgroundColor = RGB_COLOR(255, 0, 0);
-//    SET_VIEW_HEIGHT(navigationBar, 100);
-//    return navigationBar;
-//}
-
-- (XView *) loadViewPresenter{
-    DemoView2 *demoView2 = [DemoView2 createView];
-    return demoView2;
-}
-
 - (UIView *)getHeadLeftView {
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
-    //    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    backBtn.frame = CGRectMake(0, 0, 16, 16);
-    //    [backBtn setCenterFromView:leftView];
-    //    [backBtn setEnlargeEdge:20];
-    //    [backBtn addTarget:self action:@selector(onBackPage) forControlEvents:UIControlEventTouchUpInside];
-    //    [backBtn setBackgroundImage:[UIImage imageNamed:@"back_black"] forState:UIControlStateNormal];
-    //    [leftView addSubview:backBtn];
     leftView.backgroundColor = [UIColor redColor];
     return leftView;
 }

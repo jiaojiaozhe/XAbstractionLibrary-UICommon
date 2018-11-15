@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AIBaseErrorView">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="134"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载错误!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7T-sw-J0K">
+                    <rect key="frame" x="123" y="43" width="75" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="R3M-dh-Pg6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.031054650039175291" blue="0.057169474871284209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbq-Jb-WhX">
+                    <rect key="frame" x="129" y="84" width="62" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="THp-Ib-pfX"/>
+                    </constraints>
+                    <state key="normal" title="点我重试"/>
+                    <connections>
+                        <action selector="retryClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="uy6-i0-CdA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jbq-Jb-WhX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="129" id="4Tb-BW-m7W"/>
+                <constraint firstItem="jbq-Jb-WhX" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-20" id="Ese-0X-uRp"/>
+                <constraint firstItem="x7T-sw-J0K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="123" id="Zat-dO-ORH"/>
+                <constraint firstItem="x7T-sw-J0K" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="43" id="rWi-bo-xgE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="errorTipLabel" destination="x7T-sw-J0K" id="iq9-uo-yf9"/>
+                <outlet property="retryBtn" destination="jbq-Jb-WhX" id="w32-5R-F6e"/>
+            </connections>
+            <point key="canvasLocation" x="57.5" y="-133"/>
+        </view>
+    </objects>
+</document>

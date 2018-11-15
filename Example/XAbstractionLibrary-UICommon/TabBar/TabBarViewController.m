@@ -17,6 +17,7 @@
 #import "DemoViewController1.h"
 #import "DemoViewController2.h"
 #import "DemoViewController3.h"
+#import "AIDiscoverViewController.h"
 #import "NavigationController.h"
 #import "TabBarViewController.h"
 #import "NavigationControllerManager.h"
@@ -52,7 +53,12 @@
     nav3.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
     [controllers addObject:nav3];
     
-    DemoViewController2 *demoController4 = [[DemoViewController2 alloc] init];
+//    DemoViewController2 *demoController4 = [[DemoViewController2 alloc] init];
+//    NavigationController *nav4 = [[NavigationController alloc] initWithRootViewController:demoController4];
+//    nav4.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
+//    [controllers addObject:nav4];
+    
+    AIDiscoverViewController *demoController4 = [[AIDiscoverViewController alloc] init];
     NavigationController *nav4 = [[NavigationController alloc] initWithRootViewController:demoController4];
     nav4.currentNavigationDelegate = [NavigationControllerManager sharePageManager];
     [controllers addObject:nav4];

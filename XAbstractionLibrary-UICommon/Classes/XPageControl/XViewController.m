@@ -104,16 +104,23 @@
                                                                            constant:0.0];
         [self.view addConstraint:_leftConstraint];
         
-        if (@available(iOS 11.0, *)) {
+        if (@available(iOS 11.3, *)) {
             _topConstraint = [NSLayoutConstraint constraintWithItem:self.headView
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view.safeAreaLayoutGuide
-                                                          attribute:NSLayoutAttributeTop
+                                                          attribute:NSLayoutAttributeBottom
                                                          multiplier:1.0
                                                            constant:headerTop];
         } else {
             // Fallback on earlier versions
+            _topConstraint = [NSLayoutConstraint constraintWithItem:self.headView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.topLayoutGuide
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:headerTop];
         }
         
         [self.view addConstraint:_topConstraint];
@@ -177,17 +184,25 @@
     [self.view addConstraint:leftLayoutConstraint];
     
     
-    if (@available(iOS 11.0, *)) {
+    if (@available(iOS 11.3, *)) {
         NSLayoutConstraint *bottomLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
                                                                                   attribute:NSLayoutAttributeBottom
                                                                                   relatedBy:NSLayoutRelationEqual
                                                                                      toItem:self.view.safeAreaLayoutGuide
-                                                                                  attribute:NSLayoutAttributeBottom
+                                                                                  attribute:NSLayoutAttributeTop
                                                                                  multiplier:1.0f
                                                                                    constant:0.f];
         [self.view addConstraint:bottomLayoutConstraint];
     } else {
         // Fallback on earlier versions
+        NSLayoutConstraint *bottomLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
+                                                                                  attribute:NSLayoutAttributeBottom
+                                                                                  relatedBy:NSLayoutRelationEqual
+                                                                                     toItem:self.bottomLayoutGuide
+                                                                                  attribute:NSLayoutAttributeTop
+                                                                                 multiplier:1.0f
+                                                                                   constant:0.f];
+        [self.view addConstraint:bottomLayoutConstraint];
     }
     
     NSLayoutConstraint *rightLayoutConstraint = [NSLayoutConstraint constraintWithItem:self.mContentView
