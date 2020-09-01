@@ -1,5 +1,5 @@
 //
-//  XHttpRequest.h
+//  XBaseHttpRequest.h
 //  AFNetworking
 //
 //  Created by lanbiao on 2018/7/12.
@@ -12,7 +12,7 @@
 /**
  *  短连接http请求对象
  */
-@interface XHttpRequest : XData<XHttpRequestDelegate,NSCopying>
+@interface XBaseHttpRequest : XData<XHttpRequestDelegate,NSCopying>
 
 /**
  *  接口请求唯一ID

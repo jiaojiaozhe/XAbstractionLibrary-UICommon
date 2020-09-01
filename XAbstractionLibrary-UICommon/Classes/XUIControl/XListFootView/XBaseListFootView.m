@@ -1,19 +1,19 @@
 //
-//  XListFootView.m
+//  XBaseListFootView.m
 //  XAbstractionLibrary-UICommon
 //
 //  Created by lanbiao on 2018/7/16.
 //
 
-#import "XListFootView.h"
+#import "XBaseListFootView.h"
 #import <XAbstractionLibrary_Base/XAbstractionLibrary-Base-umbrella.h>
 
-@interface XListFootView()<UIScrollViewDelegate>
+@interface XBaseListFootView()<UIScrollViewDelegate>
 @property (nonatomic,strong) XLock *lock;
 @property (nonatomic,strong) UIScrollView *scrollView;
 @end
 
-@implementation XListFootView
+@implementation XBaseListFootView
 @synthesize state = _state;
 @synthesize bLoading = _bLoading;
 
@@ -45,7 +45,7 @@
 
 - (void) initSetup{
     self.lock = [[XLock alloc] init];
-    self.state = XListFootViewStateNormal;
+    self.state = XBaseListFootViewStateNormal;
 }
 
 - (void) setBLoading:(BOOL)bLoading{
@@ -62,13 +62,13 @@
     return bOldLoading;
 }
 
-- (void) setState:(XListFootViewState) state{
+- (void) setState:(XBaseListFootViewState) state{
     [_lock lock];
-    if(state == XListFootViewStateNormal){
+    if(state == XBaseListFootViewStateNormal){
         
-    }else if(state == XListFootViewStatePulling){
+    }else if(state == XBaseListFootViewStatePulling){
         
-    }else if(state == XListFootViewStateLoadingMore){
+    }else if(state == XBaseListFootViewStateLoadingMore){
         
     }
     _state = state;
@@ -88,8 +88,19 @@
         [UIView animateWithDuration:0.5f animations:^{
             [weakSelf.scrollView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
         } completion:^(BOOL finished) {
-            weakSelf.state = XListFootViewStateNormal;
+            weakSelf.state = XBaseListFootViewStateNormal;
             [weakSelf setBLoading:NO];
+        }];
+    }
+}
+
+- (void) stopAutoLoading{
+    if(self.scrollView){
+        __weak typeof(self) weakSelf = self;
+        [UIView animateWithDuration:0.5f animations:^{
+            [weakSelf.scrollView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+        } completion:^(BOOL finished) {
+            weakSelf.state = XBaseListFootViewStateNormal;
         }];
     }
 }
@@ -101,15 +112,15 @@
     if(scrollView.frame.size.height >= scrollView.contentSize.height){
         if(contentOffsetY > VIEW_HEIGHT(self)){
             //松手加载更多
-            if(self.state == XListFootViewStateNormal){
-                self.state = XListFootViewStatePulling;
+            if(self.state == XBaseListFootViewStateNormal){
+                self.state = XBaseListFootViewStatePulling;
                 [self pullProgress:1.0f];
             }
         }else if(contentOffsetY > 0){
             //上拉加载更多
-            if(self.state != XListFootViewStateLoadingMore){
-                if(self.state != XListFootViewStateNormal){
-                    self.state = XListFootViewStateNormal;
+            if(self.state != XBaseListFootViewStateLoadingMore){
+                if(self.state != XBaseListFootViewStateNormal){
+                    self.state = XBaseListFootViewStateNormal;
                 }
             }
             
@@ -123,15 +134,15 @@
     }else{
         if(contentOffsetY + VIEW_HEIGHT(scrollView) > criticalValueY + VIEW_HEIGHT(self)){
             //松手加载
-            if(self.state == XListFootViewStateNormal){
-                self.state = XListFootViewStatePulling;
+            if(self.state == XBaseListFootViewStateNormal){
+                self.state = XBaseListFootViewStatePulling;
                 [self pullProgress:1.0f];
             }
         }else if(contentOffsetY + VIEW_HEIGHT(scrollView) > criticalValueY){
             //上拉加载更多
-            if(self.state != XListFootViewStateLoadingMore){
-                if(self.state != XListFootViewStateNormal){
-                    self.state = XListFootViewStateNormal;
+            if(self.state != XBaseListFootViewStateLoadingMore){
+                if(self.state != XBaseListFootViewStateNormal){
+                    self.state = XBaseListFootViewStateNormal;
                 }
             }
             
@@ -151,9 +162,9 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if(scrollView.frame.size.height >= scrollView.contentSize.height){
-        if(self.state == XListFootViewStatePulling){
+        if(self.state == XBaseListFootViewStatePulling){
             if(!scrollView.isDragging){
-                self.state = XListFootViewStateLoadingMore;
+                self.state = XBaseListFootViewStateLoadingMore;
                 self.scrollView = scrollView;
                 __weak typeof(self) weakSelf = self;
                 [UIView animateWithDuration:0.5f
@@ -166,9 +177,9 @@
             }
         }
     }else{
-        if(self.state == XListFootViewStatePulling){
+        if(self.state == XBaseListFootViewStatePulling){
             if(!scrollView.isDragging){
-                self.state = XListFootViewStateLoadingMore;
+                self.state = XBaseListFootViewStateLoadingMore;
                 self.scrollView = scrollView;
                 [UIView animateWithDuration:0.5f
                                  animations:^{

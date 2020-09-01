@@ -106,15 +106,15 @@
     
 }
 
-- (XListViewStyle) getListStyle{
-    return XListViewStyleNone;
+- (XBaseListViewStyle) getListStyle{
+    return XBaseListViewStyleNone;
 }
 
-- (XListHeadView *) loadHeadView{
+- (XBaseListHeadView *) loadHeadView{
     return nil;
 }
 
-- (XListFootView *) loadFootView{
+- (XBaseListFootView *) loadFootView{
     return nil;
 }
 

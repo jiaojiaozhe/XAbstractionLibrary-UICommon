@@ -1,5 +1,5 @@
 //
-//  XHttpRequestManager.h
+//  XBaseHttpRequestManager.h
 //  AFNetworking
 //
 //  Created by lanbiao on 2018/7/12.
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, ResponseSerializerType) {
 /**
  *  http请求管理器
  */
-@interface XHttpRequestManager : XData
+@interface XBaseHttpRequestManager : XData
 
 /**
  *  请求的超时时间设置

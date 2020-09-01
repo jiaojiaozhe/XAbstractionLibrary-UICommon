@@ -11,27 +11,27 @@
 /**
  *  控件样式
  */
-typedef NS_ENUM(NSInteger, XListViewStyle){
+typedef NS_ENUM(NSInteger, XBaseListViewStyle){
     
     /**
      *  默认，没有页眉页脚
      */
-    XListViewStyleNone,
+    XBaseListViewStyleNone,
     
     /**
      *  标准 有页眉也有页脚
      */
-    XListViewStyleStandard,
+    XBaseListViewStyleStandard,
     
     /**
      *  只有页眉
      */
-    XListViewStyleHeader,
+    XBaseListViewStyleHeader,
     
     /**
      *  只有页脚
      */
-    XListViewStyleFooter
+    XBaseListViewStyleFooter
 };
 
 /**

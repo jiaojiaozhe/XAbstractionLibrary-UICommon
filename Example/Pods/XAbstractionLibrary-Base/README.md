@@ -27,3 +27,9 @@ jiaojiaozhe, bluebiao@163.com
 ## License
 
 XAbstractionLibrary-Base is available under the MIT license. See the LICENSE file for more info.
+
+## Publish
+本地验证： pod lib lint XAbstractionLibrary-Base.podspec --verbose --allow-warnings
+本地验证&远程验证: pod spec lint --verbose --allow-warnings
+发布：pod repo push jiaojiaozhe XAbstractionLibrary-Base.podspec --verbose --allow-warnings
+

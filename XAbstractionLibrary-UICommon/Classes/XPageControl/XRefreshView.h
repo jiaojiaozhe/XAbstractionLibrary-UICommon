@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XTableView.h"
+#import "XBaseTableView.h"
 
 /**
  刷新列表模板
@@ -18,21 +18,21 @@
 
  @param headView 待设置的滑动控件头
  */
-- (void) setHeadView:(XListHeadView *) headView;
+- (void) setHeadView:(XBaseListHeadView *) headView;
 
 /**
  设置滑动控件底部
 
  @param footView 待设置的滑动控件底部
  */
-- (void) setFootView:(XListFootView *) footView;
+- (void) setFootView:(XBaseListFootView *) footView;
 
 /**
  设置请滑动控件风格
 
  @param listStyle 待设置的滑动控件风格
  */
-- (void) setListStyle:(XListViewStyle) listStyle;
+- (void) setListStyle:(XBaseListViewStyle) listStyle;
 
 /**
  设置tableview的delegate

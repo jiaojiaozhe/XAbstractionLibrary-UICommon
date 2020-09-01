@@ -1,11 +1,11 @@
 //
-//  XViewController.h
+//  XBaseViewController.h
 //  AFNetworking
 //
 //  Created by lanbiao on 2018/7/20.
 //
 
-#import "XView.h"
+#import "XBaseView.h"
 #import "XHeadViewDelegate.h"
 #import <UIKit/UIKit.h>
 #import <XAbstractionLibrary_NetWork/XAbstractionLibrary-NetWork-umbrella.h>
@@ -13,14 +13,24 @@
 /**
  基础的试图控制器，自身不支持滑动，但天然支持无网、加载过程、加载失败、无数据等的支持
  */
-@interface XViewController : UIViewController<XHttpResponseDelegate,XHeadViewDelegate>
+@interface XBaseViewController : UIViewController<XHttpResponseDelegate,XHeadViewDelegate>
 
 /**
  加载内容区，原则上不能为nil，需要业务工程师实现
 
  @return 返回内容区
  */
-- (XView *) loadViewPresenter;
+- (XBaseView *) loadViewPresenter;
+
+/**
+ *  设置底部线条是否显示，默认YES
+ */
+- (void) setShowLine:(BOOL) bShow;
+
+/**
+ *  设置底部线条颜色
+ */
+- (void) setLineColor:(UIColor *) color;
 
 /**
  发送UI全局广播

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 lanbiao. All rights reserved.
 //
 
-//#import "XAppInfo.h"
+#import "XAppInfo.h"
 #import "KeychainItemWrapper.h"
 #import "XPermanentStoreData.h"
 
@@ -17,7 +17,7 @@
         return NO;
     }
     
-    NSString *group = nil;//[XAppInfo getAppBundleIdentifier];
+    NSString *group = NULL;//[XAppInfo getAppBundleIdentifier];
     KeychainItemWrapper *keyChainItemWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:cacheKey accessGroup:group];
     if(value != NULL)
         [keyChainItemWrapper setObject:value forKey:(id)kSecValueData];
@@ -33,7 +33,7 @@
     }
     
     id value = NULL;
-    NSString *group = nil;//[XAppInfo getAppBundleIdentifier];
+    NSString *group = NULL;//[XAppInfo getAppBundleIdentifier];
     KeychainItemWrapper *keyChainItemWrapper = [[KeychainItemWrapper alloc] initWithIdentifier:cacheKey accessGroup:group];
     value = [keyChainItemWrapper objectForKey:(id)kSecValueData];
     

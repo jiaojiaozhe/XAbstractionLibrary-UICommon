@@ -27,3 +27,8 @@ jiaojiaozhe, bluebiao@163.com
 ## License
 
 XAbstractionLibrary-Parse is available under the MIT license. See the LICENSE file for more info.
+
+## Publish
+本地验证： pod lib lint XAbstractionLibrary-Parse.podspec --verbose --allow-warnings --sources="https://github.com/jiaojiaozhe/XAbstractionLibrary-Specs,https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git"
+本地验证&远程验证: pod spec lint --verbose --allow-warnings --sources="https://github.com/jiaojiaozhe/XAbstractionLibrary-Specs,https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git"
+发布：pod repo push jiaojiaozhe XAbstractionLibrary-Parse.podspec --verbose --allow-warnings --sources="https://github.com/jiaojiaozhe/XAbstractionLibrary-Specs,https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git"

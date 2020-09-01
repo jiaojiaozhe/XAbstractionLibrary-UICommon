@@ -1,15 +1,15 @@
 //
-//  XViewController.m
+//  XBaseViewController.m
 //  AFNetworking
 //
 //  Created by lanbiao on 2018/7/20.
 //
 
-#import "XView.h"
+#import "XBaseView.h"
 #import "XHeadView.h"
-#import "XViewController.h"
+#import "XBaseViewController.h"
 
-@interface XViewController ()
+@interface XBaseViewController ()
 
 /**
  页面头部区
@@ -19,7 +19,7 @@
 /**
  内容区
  */
-@property (nonatomic,strong) XView *mContentView;
+@property (nonatomic,strong) XBaseView *mContentView;
 
 /**
  当前页面是否是作为其他视图控制器的子控制器存在
@@ -42,10 +42,10 @@
 @property (nonatomic,strong) NSMutableDictionary *requests;
 @end
 
-@implementation XViewController
+@implementation XBaseViewController
 
 + (instancetype) createViewController{
-    XViewController *viewController = [[[self class] alloc] init];
+    XBaseViewController *viewController = [[[self class] alloc] init];
     return viewController;
 }
 
@@ -54,8 +54,8 @@
     if(nibBundleOrNil){
         bundle = nibBundleOrNil;
     }else{
-        Class class = [XViewController class];
-        NSString *className = NSStringFromClass(class);
+        Class class = [XBaseViewController class];
+//        NSString *className = NSStringFromClass(class);
         NSBundle *frameWorkBundle = [NSBundle bundleForClass: class];
         NSString *projectName = [[[[frameWorkBundle bundlePath] lastPathComponent] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
         NSString *frameWorkBundlePath = [frameWorkBundle pathForResource:projectName
@@ -147,15 +147,23 @@
     }
 }
 
-- (XView *) loadViewPresenter{
+- (void) setShowLine:(BOOL) bShow{
+    [self.headView setShowLine:bShow];
+}
+
+- (void) setLineColor:(UIColor *) color{
+    [self.headView setLineColor:color];
+}
+
+- (XBaseView *) loadViewPresenter{
     return NULL;
 }
 
 - (void) setContentView{
     if(!self.mContentView){
-        XView *contentView = [self loadViewPresenter];
+        XBaseView *contentView = [self loadViewPresenter];
         if(!contentView){
-            contentView = [[XView alloc] init];
+            contentView = [[XBaseView alloc] init];
             [contentView setBackgroundColor:[UIColor whiteColor]];
         }
         self.mContentView = contentView;
@@ -235,11 +243,11 @@
         UIPageViewController *pageViewController = (UIPageViewController*)childController;
         NSArray *viewControllers = [pageViewController childViewControllers];
         for(UIViewController *controller in viewControllers){
-            XViewController *baseViewController = (XViewController *) controller;
+            XBaseViewController *baseViewController = (XBaseViewController *) controller;
             baseViewController.bContainer = YES;
         }
-    }else if([childController isKindOfClass:[XViewController class]]){
-        XViewController *baseViewController = (XViewController *) childController;
+    }else if([childController isKindOfClass:[XBaseViewController class]]){
+        XBaseViewController *baseViewController = (XBaseViewController *) childController;
         baseViewController.bContainer = YES;
     }
 }
@@ -286,16 +294,16 @@
 
 - (void) broadcastReceiver:(NSNotification *)notification view:(UIView *) view{
     if(view){
-        if([view isKindOfClass:[XView class]]){
-            XView *xview = (XView *)view;
+        if([view isKindOfClass:[XBaseView class]]){
+            XBaseView *xview = (XBaseView *)view;
             [xview onMyBroadcastReceiver:notification];
         }
         
         NSArray *subViews = [view subviews];
         for(NSInteger index = 0; index < [subViews count]; index++){
             UIView *subView = [subViews objectAtIndex:index];
-            if([subView isKindOfClass:[XView class]]){
-                XView *xSubVuew = (XView*)subView;
+            if([subView isKindOfClass:[XBaseView class]]){
+                XBaseView *xSubVuew = (XBaseView*)subView;
                 [xSubVuew onMyBroadcastReceiver:notification];
             }
         }
@@ -335,8 +343,8 @@
         [self.mContentView cancelRequest:request];
     }
     
-    if(request && [request isKindOfClass:[XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest*)request;
+    if(request && [request isKindOfClass:[XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
         if([httpRequest.ID length] > 0){
             [self.requests removeObjectForKey:httpRequest.ID];
         }
@@ -349,8 +357,8 @@
         [self.mContentView willStartRequest:request];
     }
     
-    if(request && [request isKindOfClass:[XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest*)request;
+    if(request && [request isKindOfClass:[XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
         if([httpRequest.ID length] > 0){
             [self.requests setObject:httpRequest forKey:httpRequest.ID];
         }
@@ -365,11 +373,11 @@
     }
     
     if(oldRequest &&
-       [oldRequest isKindOfClass:[XHttpRequest class]] &&
+       [oldRequest isKindOfClass:[XBaseHttpRequest class]] &&
        newRequest &&
-       [newRequest isKindOfClass:[XHttpRequest class]]){
-        XHttpRequest *oldHttpRequest = (XHttpRequest*)oldRequest;
-        XHttpRequest *newHttpRequest = (XHttpRequest*)newRequest;
+       [newRequest isKindOfClass:[XBaseHttpRequest class]]){
+        XBaseHttpRequest *oldHttpRequest = (XBaseHttpRequest*)oldRequest;
+        XBaseHttpRequest *newHttpRequest = (XBaseHttpRequest*)newRequest;
         if([oldHttpRequest.ID length] > 0)
             [self.requests removeObjectForKey:oldHttpRequest.ID];
         if([newHttpRequest.ID length] > 0)
@@ -400,8 +408,8 @@
     }
     
     if(request &&
-       [request isKindOfClass:[XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest*)request;
+       [request isKindOfClass:[XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
         if([httpRequest.ID length] > 0)
             [self.requests removeObjectForKey:httpRequest.ID];
     }

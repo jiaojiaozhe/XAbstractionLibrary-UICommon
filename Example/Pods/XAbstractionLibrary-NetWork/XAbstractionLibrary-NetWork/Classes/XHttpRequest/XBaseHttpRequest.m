@@ -5,14 +5,14 @@
 //  Created by lanbiao on 2018/7/12.
 //
 
-#import "XHttpRequest.h"
+#import "XBaseHttpRequest.h"
 #import "XHttpResponseDelegate.h"
 
-@interface XHttpRequest()
+@interface XBaseHttpRequest()
 @property (nonatomic,strong) id requestObj;
 @end
 
-@implementation XHttpRequest
+@implementation XBaseHttpRequest
 @synthesize requestObj = _requestObj;
 
 - (instancetype) init{
@@ -62,7 +62,7 @@
     }
     
     self.retryCount += 1;
-    XHttpRequest *newHttpRequest = self;//[self copy];
+    XBaseHttpRequest *newHttpRequest = self;//[self copy];
     return newHttpRequest;
 }
 
@@ -121,7 +121,7 @@
 
 #pragma mark --NSCopying
 - (id) copyWithZone:(NSZone *)zone{
-    XHttpRequest *newHttpRequest = [[[self class] allocWithZone:zone] init];
+    XBaseHttpRequest *newHttpRequest = [[[self class] allocWithZone:zone] init];
     newHttpRequest.requestObj = [self.requestObj copy];
     newHttpRequest.retryCount = self.retryCount;
     newHttpRequest.ownerDelegate = self.ownerDelegate;

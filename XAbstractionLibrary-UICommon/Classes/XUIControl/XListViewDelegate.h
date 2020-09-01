@@ -19,7 +19,7 @@
 /**
  *  TableView的样式
  */
-@property (nonatomic,assign) XListViewStyle  listStyle;
+@property (nonatomic,assign) XBaseListViewStyle  listStyle;
 
 /**
  *  上下拉回调代理
@@ -56,12 +56,12 @@
 /**
  *  构造新的页眉
  */
-- (XListHeadView *) getListHeadView;
+- (XBaseListHeadView *) getListHeadView;
 
 /**
  *  构造新的页脚
  */
-- (XListFootView *) getListMoreView;
+- (XBaseListFootView *) getListMoreView;
 
 
 @end

@@ -25,6 +25,11 @@
 + (NSString *) getDeviceIDFV;
 
 /**
+ *  清除keychain中app的所有缓存信息
+ */
++ (void) removeAllCache;
+
+/**
  *  获取操作系统版本
  */
 + (NSString *) getOSVersion;

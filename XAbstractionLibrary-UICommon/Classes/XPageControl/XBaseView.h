@@ -1,5 +1,5 @@
 //
-//  XView.h
+//  XBaseView.h
 //  XAbstractionLibrary-UICommon
 //
 //  Created by lanbiao on 2018/7/16.
@@ -13,11 +13,11 @@
 *   created by lanbiao on 2018/07/20
  *  抽象化view,包含错误、无网、空数据、加载中等的异常处理
  */
-@interface XView : UIView<XAbstractView,XHttpResponseDelegate,XIBaseNoNetViewRetryDelegate,XIBaseRetryDelegate,XIBaseNotDataRetryDelegate>
+@interface XBaseView : UIView<XAbstractView,XHttpResponseDelegate,XIBaseNoNetViewRetryDelegate,XIBaseRetryDelegate,XIBaseNotDataRetryDelegate>
 
 
 /**
- *  获得模板xview
+ *  获得模板XBaseView
  */
 + (instancetype) createView;
 

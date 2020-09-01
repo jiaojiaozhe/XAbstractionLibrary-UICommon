@@ -252,7 +252,7 @@
     return centerView;
 }
 
-- (void) showLine:(BOOL) bShow{
+- (void) setShowLine:(BOOL) bShow{
     [self.lineView setHidden:!bShow];
 }
 

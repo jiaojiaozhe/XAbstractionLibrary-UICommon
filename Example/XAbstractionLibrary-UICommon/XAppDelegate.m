@@ -2,8 +2,8 @@
 //  XAppDelegate.m
 //  XAbstractionLibrary-UICommon
 //
-//  Created by jiaojiaozhe on 07/16/2018.
-//  Copyright (c) 2018 jiaojiaozhe. All rights reserved.
+//  Created by jiaojiaozhe on 02/01/2019.
+//  Copyright (c) 2019 jiaojiaozhe. All rights reserved.
 //
 
 #import "XAppDelegate.h"
@@ -15,7 +15,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[NavigationControllerManager sharePageManager] rootNavigationController];
     [self.window makeKeyAndVisible];

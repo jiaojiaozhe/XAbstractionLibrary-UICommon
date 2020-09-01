@@ -77,33 +77,34 @@
 - (instancetype) init
 {
     if(self = [super init]){
+        self.bGoodNet = YES;
         __weak typeof(self) weakSelf = self;
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
         [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            NetworkReachabilityStatus netStatus = NetworkReachabilityStatusUnknown;
+            XNetworkReachabilityStatus netStatus = XNetworkReachabilityStatusUnknown;
             switch (status) {
                 case AFNetworkReachabilityStatusUnknown:
-                    netStatus = NetworkReachabilityStatusUnknown;
+                    netStatus = XNetworkReachabilityStatusUnknown;
                     XLOG(@"未知网络");
                     break;
                 case AFNetworkReachabilityStatusNotReachable:
-                    netStatus = NetworkReachabilityStatusNotReachable;
+                    netStatus = XNetworkReachabilityStatusNotReachable;
                     XLOG(@"失去网络连接");
                     break;
                 case AFNetworkReachabilityStatusReachableViaWWAN:
-                    netStatus = NetworkReachabilityStatusReachableViaWWAN;
+                    netStatus = XNetworkReachabilityStatusReachableViaWWAN;
                     XLOG(@"GPRS网络");
                     break;
                 case AFNetworkReachabilityStatusReachableViaWiFi:
-                    netStatus = NetworkReachabilityStatusReachableViaWiFi;
+                    netStatus = XNetworkReachabilityStatusReachableViaWiFi;
                     XLOG(@"WIFI网络");
                     break;
                 default:
-                    netStatus = NetworkReachabilityStatusUnknown;
+                    netStatus = XNetworkReachabilityStatusUnknown;
                     break;
             }
             weakSelf.netWorkStatus = netStatus;
-            if(netStatus == NetworkReachabilityStatusReachableViaWiFi || netStatus == NetworkReachabilityStatusReachableViaWWAN){
+            if(netStatus == XNetworkReachabilityStatusReachableViaWiFi || netStatus == XNetworkReachabilityStatusReachableViaWWAN){
                 weakSelf.bGoodNet = YES;
             }else{
                 weakSelf.bGoodNet = NO;

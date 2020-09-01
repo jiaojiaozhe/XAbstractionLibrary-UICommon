@@ -5,11 +5,11 @@
 //  Created by lanbiao on 2018/8/9.
 //
 
-#import "XTableView.h"
+#import "XBaseTableView.h"
 #import "XRefreshView.h"
 
 @interface XRefreshView()
-@property (nonatomic,strong) IBOutlet XTableView *tableView;
+@property (nonatomic,strong) IBOutlet XBaseTableView *tableView;
 @end
 
 @implementation XRefreshView
@@ -38,22 +38,22 @@
     }
 }
 
-- (XTableView *) tableView{
+- (XBaseTableView *) tableView{
     if(!_tableView){
-        _tableView = [[XTableView alloc] init];
+        _tableView = [[XBaseTableView alloc] init];
     }
     return _tableView;
 }
 
-- (void) setHeadView:(XListHeadView *) headView{
+- (void) setHeadView:(XBaseListHeadView *) headView{
     [self.tableView setHeadView:headView];
 }
 
-- (void) setFootView:(XListFootView *) footView{
+- (void) setFootView:(XBaseListFootView *) footView{
     [self.tableView setFootView:footView];
 }
 
-- (void) setListStyle:(XListViewStyle) listStyle{
+- (void) setListStyle:(XBaseListViewStyle) listStyle{
     [self.tableView setListStyle:listStyle];
 }
 

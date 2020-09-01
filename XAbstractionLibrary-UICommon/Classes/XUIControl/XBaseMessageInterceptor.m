@@ -1,13 +1,13 @@
 //
-//  XMessageInterceptor.m
+//  XBaseMessageInterceptor.m
 //  XAbstractionLibrary-UICommon
 //
 //  Created by lanbiao on 2018/7/16.
 //
 
-#import "XMessageInterceptor.h"
+#import "XBaseMessageInterceptor.h"
 
-@implementation XMessageInterceptor
+@implementation XBaseMessageInterceptor
 - (id) forwardingTargetForSelector:(SEL) aSelector
 {
     if([_interceptor respondsToSelector:aSelector])

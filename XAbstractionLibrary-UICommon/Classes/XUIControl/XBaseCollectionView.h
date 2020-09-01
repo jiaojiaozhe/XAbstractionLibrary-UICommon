@@ -1,20 +1,20 @@
 //
-//  XCollectionView.h
+//  XBaseCollectionView.h
 //  AFNetworking
 //
 //  Created by lanbiao on 2018/7/20.
 //
 
 #import <UIKit/UIKit.h>
-#import "XListHeadView.h"
-#import "XListFootView.h"
+#import "XBaseListHeadView.h"
+#import "XBaseListFootView.h"
 #import "XListViewDelegate.h"
 
 /**
  *  Created by lanbiao on 2018/07/20
  *  全面扩展XTableView,支持上拉、下拉定制、以及预加载等功能
  */
-@interface XCollectionView : UICollectionView
+@interface XBaseCollectionView : UICollectionView
 
 /**
  *  是否正在加载，包括上拉和下拉
@@ -29,7 +29,7 @@
 /**
  *  TableView的样式
  */
-@property (nonatomic,assign) XListViewStyle  listStyle;
+@property (nonatomic,assign) XBaseListViewStyle  listStyle;
 
 /**
  *  上下拉回调代理
@@ -44,12 +44,12 @@
 /**
  *  构造新的页眉
  */
-- (XListHeadView *) getListHeadView;
+- (XBaseListHeadView *) getListHeadView;
 
 /**
  *  构造新的页脚
  */
-- (XListFootView *) getListMoreView;
+- (XBaseListFootView *) getListMoreView;
 
 /**
  *  加载完成

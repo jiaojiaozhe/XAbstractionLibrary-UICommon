@@ -1,24 +1,24 @@
 //
-//  XHttpRequestManager.m
+//  XBaseHttpRequestManager.m
 //  AFNetworking
 //
 //  Created by lanbiao on 2018/7/12.
 //
 
 #import "AFNetworking.h"
-#import "XHttpRequest.h"
-#import "XUploadHttpRequest.h"
-#import "XHttpRequestManager.h"
-#import "XDownloadHttpRequest.h"
+#import "XBaseHttpRequest.h"
+#import "XBaseUploadHttpRequest.h"
+#import "XBaseHttpRequestManager.h"
+#import "XBaseDownloadHttpRequest.h"
 
-@interface XHttpRequestManager()
+@interface XBaseHttpRequestManager()
 @property (nonatomic,strong) XLock *lock;
 @property (nonatomic,strong) AFHTTPSessionManager *sessionManager;
 @property (nonatomic,strong) NSMutableDictionary *allRequests;
 @property (nonatomic,strong) NSMutableDictionary *allAuthRequests;
 @end
 
-@implementation XHttpRequestManager
+@implementation XBaseHttpRequestManager
 
 - (instancetype) init{
     if(self = [super init]){
@@ -92,8 +92,8 @@
         return bNeedReuqest;
     }
     
-    if([request isKindOfClass:[XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest *)request;
+    if([request isKindOfClass:[XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest *)request;
         if(httpRequest.ID.length <= 0 || httpRequest.authID.length <= 0){
             return bNeedReuqest;
         }
@@ -130,8 +130,8 @@
         return;
     }
     
-    if([request isKindOfClass: [XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest*)request;
+    if([request isKindOfClass: [XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
         if(httpRequest.ID.length <= 0 || httpRequest.ID.length <= 0){
             return;
         }
@@ -196,7 +196,7 @@
     int index = (int)[[requests allKeys] count] - 1;
     for(; index >= 0; index--){
         NSString *key = [[requests allKeys] objectAtIndex:index];
-        XHttpRequest *httpRequest = [requests objectForKey:key];
+        XBaseHttpRequest *httpRequest = [requests objectForKey:key];
         [self removeRequest:httpRequest];
     }
 }
@@ -252,8 +252,8 @@
     
     NSString *md5 = [XMD5Digest md5:authKey];
     if(request){
-        if([request isKindOfClass:[XHttpRequest class]]){
-            XHttpRequest *httpRequest = (XHttpRequest*)request;
+        if([request isKindOfClass:[XBaseHttpRequest class]]){
+            XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
             [httpRequest setAuthID:md5];
         }
     }
@@ -290,7 +290,8 @@
         NSString *value = [requestHeaderParams valueForKey:key];
         if(!value)
             continue;
-        [urlRequest addValue:value forHTTPHeaderField:key];
+        [urlRequest setValue:value forHTTPHeaderField:key];
+        //[urlRequest addValue:value forHTTPHeaderField:key];
     }
     return urlRequest;
 }
@@ -318,8 +319,8 @@
         return;
     }
     
-    if([request isKindOfClass: [XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest*) request;
+    if([request isKindOfClass: [XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest*) request;
         if([httpRequest.ID length] <= 0 ||
            [httpRequest.authID length] <= 0){
             return;
@@ -334,8 +335,8 @@
                     int index = (int)[allValue count] - 1;
                     for(; index >= 0; index --){
                         id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
-                        if([request isKindOfClass:[XHttpRequest class]]){
-                            XHttpRequest *httpRequest = (XHttpRequest *)request;
+                        if([request isKindOfClass:[XBaseHttpRequest class]]){
+                            XBaseHttpRequest *httpRequest = (XBaseHttpRequest *)request;
                             if([httpRequest respondsToSelector:@selector(execWithRequest:progress:totalProgress:)]){
                                 [httpRequest execWithRequest:httpRequest progress:progress totalProgress:totalProgress];
                             }
@@ -359,10 +360,10 @@
         return;
     }
     
-    if([oldRequest isKindOfClass: [XHttpRequest class]] &&
-       [newRequest isKindOfClass:[XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest*) oldRequest;
-        XHttpRequest *newHttpRequest = (XHttpRequest*)newRequest;
+    if([oldRequest isKindOfClass: [XBaseHttpRequest class]] &&
+       [newRequest isKindOfClass:[XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest*) oldRequest;
+        XBaseHttpRequest *newHttpRequest = (XBaseHttpRequest*)newRequest;
         if([httpRequest.ID length] <= 0 ||
            [httpRequest.authID length] <= 0 ||
            [newHttpRequest.ID length] <= 0 ||
@@ -379,8 +380,8 @@
                     int index = (int)[allValue count] - 1;
                     for(; index >= 0; index --){
                         id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
-                        if([request isKindOfClass:[XHttpRequest class]]){
-                            XHttpRequest *httpRequest = (XHttpRequest *)request;
+                        if([request isKindOfClass:[XBaseHttpRequest class]]){
+                            XBaseHttpRequest *httpRequest = (XBaseHttpRequest *)request;
                             if([httpRequest respondsToSelector:@selector(willRetryRequest:newRequest:)]){
                                 [httpRequest willRetryRequest:httpRequest newRequest:newRequest];
                             }
@@ -405,8 +406,8 @@
         return;
     }
     
-    if([request isKindOfClass: [XHttpRequest class]]){
-        XHttpRequest *httpRequest = (XHttpRequest*) request;
+    if([request isKindOfClass: [XBaseHttpRequest class]]){
+        XBaseHttpRequest *httpRequest = (XBaseHttpRequest*) request;
         if([httpRequest.ID length] <= 0 ||
            [httpRequest.authID length] <= 0){
             return;
@@ -421,8 +422,8 @@
                     int index = (int)[allValue count] - 1;
                     for(; index >= 0; index --){
                         id<XHttpRequestDelegate> request = [allValue objectAtIndex:index];
-                        if([request isKindOfClass:[XHttpRequest class]]){
-                            XHttpRequest *httpRequest = (XHttpRequest *)request;
+                        if([request isKindOfClass:[XBaseHttpRequest class]]){
+                            XBaseHttpRequest *httpRequest = (XBaseHttpRequest *)request;
                             if(httpRequest.responseBlock){
                                 httpRequest.responseBlock(httpRequest, responseObject, error);
                             }
@@ -434,8 +435,8 @@
                     }
                 }
                 
-                if([request isKindOfClass:[XHttpRequest class]]){
-                    XHttpRequest *httpRequest = (XHttpRequest*)request;
+                if([request isKindOfClass:[XBaseHttpRequest class]]){
+                    XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
                     [self removeRequestWithAuthID:httpRequest.authID];
                 }
             }
@@ -445,7 +446,7 @@
 
 
 - (NSURLSessionDataTask *) startRequest:(NSMutableURLRequest *) urlRequest
-              request:(XHttpRequest *) httpRequest
+              request:(XBaseHttpRequest *) httpRequest
        uploadProgress:(nullable void (^)(NSProgress *uploadProgress)) uploadProgress
      downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgress
      completionHandle:(nullable void (^)(NSURLResponse *response, id _Nullable responseObject,  NSError * _Nullable error)) completionHandle{
@@ -472,8 +473,8 @@
                                                                                                            progress:0
                                                                                                       totalProgress:100];
                                                                             
-                                                                            if([newRequest isKindOfClass:[XHttpRequest class]]){
-                                                                                XHttpRequest *newHttpRequest = (XHttpRequest *)newRequest;
+                                                                            if([newRequest isKindOfClass:[XBaseHttpRequest class]]){
+                                                                                XBaseHttpRequest *newHttpRequest = (XBaseHttpRequest *)newRequest;
                                                                                 [newHttpRequest setRequestObj:newTaskData];
                                                                                 [newTaskData resume];
                                                                             }
@@ -514,7 +515,7 @@
         return NULL;
     }
     
-    __block XHttpRequest *httpRequest = [[XHttpRequest alloc] init];
+    __block XBaseHttpRequest *httpRequest = [[XBaseHttpRequest alloc] init];
     [httpRequest addDelegate:delegate];
     [httpRequest addResponseReturnBlock:responseblock];
     [httpRequest willStartRequest:httpRequest];
@@ -744,7 +745,7 @@
         }
     }];
     
-    XUploadHttpRequest *uploadHttpRequest = [[XUploadHttpRequest alloc] init];
+    XBaseUploadHttpRequest *uploadHttpRequest = [[XBaseUploadHttpRequest alloc] init];
     [uploadHttpRequest setRequestObj:task];
     [uploadHttpRequest addDelegate:delegate];
     
@@ -786,7 +787,7 @@
                                             
                                         }];
     
-    XDownloadHttpRequest *downLoadHttpRequest = [[XDownloadHttpRequest alloc] init];
+    XBaseDownloadHttpRequest *downLoadHttpRequest = [[XBaseDownloadHttpRequest alloc] init];
     [downLoadHttpRequest setRequestObj:downloadTask];
     [downLoadHttpRequest addDelegate:delegate];
     [downLoadHttpRequest willStartRequest:downLoadHttpRequest];

@@ -5,13 +5,13 @@
 //  Created by lanbiao on 2018/8/9.
 //
 
-#import "XView.h"
-#import "XTableView.h"
+#import "XBaseView.h"
+#import "XBaseTableView.h"
 
 /**
  刷新列表布局类，主要提高开发效率
  */
-@interface XRefreshContentView : XView<UITableViewDelegate,UITableViewDataSource>
+@interface XRefreshContentView : XBaseView<UITableViewDelegate,UITableViewDataSource>
 
 /**
  下拉刷新回调,需要业务实现，回调结束需要调用refreshFinish:bError:

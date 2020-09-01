@@ -1,5 +1,5 @@
 //
-//  XMessageInterceptor.h
+//  XBaseMessageInterceptor.h
 //  XAbstractionLibrary-UICommon
 //
 //  Created by lanbiao on 2018/7/16.
@@ -7,7 +7,7 @@
 
 #import <XAbstractionLibrary_Parse/XAbstractionLibrary-Parse-umbrella.h>
 
-@interface XMessageInterceptor : XBaseModel
+@interface XBaseMessageInterceptor : XBaseModel
 @property (nonatomic,weak) id interceptor;
 
 @property (nonatomic,weak) id delegateReceiver;

@@ -27,4 +27,11 @@ typedef enum {
  *  @param type 边缘或全域
  */
 + (void)validatePanWithPushTransitionGestureRecognizerType:(PushTransitionGestureRecognizerType)type;
+
+/**
+ *  设置当前页面是否支持滑动
+ *
+ *  @param bStop YES关闭 否则打开
+ */
+- (void) setBStopDrag:(BOOL) bStop;
 @end

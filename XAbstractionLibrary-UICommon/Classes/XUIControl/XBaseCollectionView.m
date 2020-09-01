@@ -1,12 +1,12 @@
 //
-//  XTableView.m
+//  XBaseCollectionView.m
 //  AFNetworking
 //
-//  Created by lanbiao on 2018/7/16.
+//  Created by lanbiao on 2018/7/20.
 //
 
-#import "XTableView.h"
-#import "XMessageInterceptor.h"
+#import "XBaseCollectionView.h"
+#import "XBaseMessageInterceptor.h"
 #import <XAbstractionLibrary_Base/XAbstractionLibrary-Base-umbrella.h>
 
 /**
@@ -24,24 +24,24 @@
  */
 #define         SAMPLING_RATE           0.2f
 
-@interface XTableView()<XListHeadViewDelegate,XListFootViewDelegate>
+@interface XBaseCollectionView()<XBaseListHeadViewDelegate,XBaseListFootViewDelegate>
 
 @property (nonatomic,strong) XLock *lock;
 
 /**
  *  头部控件
  */
-@property (nonatomic,strong) XListHeadView *headView;
+@property (nonatomic,strong) XBaseListHeadView *headView;
 
 /**
  *  底部控件
  */
-@property (nonatomic,strong) XListFootView *footView;
+@property (nonatomic,strong) XBaseListFootView *footView;
 
 /**
  *  消息转发器
  */
-@property (nonatomic,strong) XMessageInterceptor *messageInterceotor;
+@property (nonatomic,strong) XBaseMessageInterceptor *messageInterceotor;
 
 /**
  *  上一次滑动的位置
@@ -89,11 +89,10 @@
 
 @end
 
-@implementation XTableView
+@implementation XBaseCollectionView
 @synthesize headView = _headView;
 @synthesize footView = _footView;
 @synthesize bLoading = _bLoading;
-@synthesize bPreLoad = _bPreLoad;
 @synthesize bAutoLoading = _bAutoLoading;
 
 - (instancetype) init{
@@ -110,8 +109,8 @@
     return self;
 }
 
-- (instancetype) initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
-    if(self = [super initWithFrame:frame style:style]){
+- (instancetype) initWithFrame:(CGRect)frame collectionViewLayout:(nonnull UICollectionViewLayout *)layout{
+    if(self = [super initWithFrame:frame collectionViewLayout:layout]){
         [self initSetUp];
     }
     return self;
@@ -122,20 +121,7 @@
     [self initSetUp];
 }
 
-- (void)setBPreLoad:(BOOL) bPreLoad{
-    [_lock lock];
-    _bPreLoad = bPreLoad;
-    [_lock unlock];
-}
-
-- (BOOL)bPreLoad{
-    [_lock lock];
-    BOOL bPreLoad = _bPreLoad;
-    [_lock unlock];
-    return bPreLoad;
-}
-
-- (void) setBAutoLoading:(BOOL) bAutoLoading{
+- (void) setBAutoLoading:(BOOL)bAutoLoading{
     [_lock lock];
     _bAutoLoading = bAutoLoading;
     [_lock unlock];
@@ -175,9 +161,8 @@
 }
 
 - (void) initSetUp{
-    
     _lock = [[XLock alloc] init];
-    self.listStyle = XListViewStyleNone;
+    self.listStyle = XBaseListViewStyleNone;
     
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -185,17 +170,16 @@
         if([weakSelf bPullToDown]){
             if(weakSelf.bAutoLoading){
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf setContentOffset:CGPointMake(0, -VIEW_HEIGHT(weakSelf.headView) - 50)];
+                    [weakSelf setContentOffset:CGPointMake(0, -VIEW_HEIGHT(weakSelf.headView) - 35)];
                 });
             }
         }
     });
-    
 }
 
-- (XMessageInterceptor* ) messageInterceotor{
+- (XBaseMessageInterceptor* ) messageInterceotor{
     if(_messageInterceotor == NULL){
-        _messageInterceotor = [[XMessageInterceptor alloc] init];
+        _messageInterceotor = [[XBaseMessageInterceptor alloc] init];
         _messageInterceotor.interceptor = self;
         _messageInterceotor.delegateReceiver = super.delegate;
         _messageInterceotor.dataSourceReceiver = super.dataSource;
@@ -203,16 +187,16 @@
     return _messageInterceotor;
 }
 
-- (void) setDelegate:(id<UITableViewDelegate>)delegate{
+- (void) setDelegate:(id<UICollectionViewDelegate>)delegate{
     if(self.messageInterceotor){
         self.messageInterceotor.delegateReceiver = delegate;
         if(delegate){
-            super.delegate = (id<UITableViewDelegate>)self.messageInterceotor;
+            super.delegate = (id<UICollectionViewDelegate>)self.messageInterceotor;
         }else{
             super.delegate = nil;
         }
     }else{
-        super.delegate = (id<UITableViewDelegate>)delegate;
+        super.delegate = delegate;
     }
 }
 
@@ -224,16 +208,16 @@
 //    }
 //}
 
-- (void) setDataSource:(id<UITableViewDataSource>)dataSource{
+- (void) setDataSource:(id<UICollectionViewDataSource>)dataSource{
     if(self.messageInterceotor){
         self.messageInterceotor.dataSourceReceiver = dataSource;
         if(dataSource){
-            super.dataSource = (id<UITableViewDataSource>)self.messageInterceotor;
+            super.dataSource = (id<UICollectionViewDataSource>)self.messageInterceotor;
         }else{
             super.dataSource = nil;
         }
     }else{
-        super.dataSource = (id<UITableViewDataSource>)dataSource;
+        super.dataSource = dataSource;
     }
 }
 
@@ -245,23 +229,23 @@
 //    }
 //}
 
-- (void) setListStyle:(XListViewStyle)listStyle{
+- (void) setListStyle:(XBaseListViewStyle)listStyle{
     _listStyle = listStyle;
     
-    if(_listStyle == XListViewStyleStandard){
-        //[self removeRefreshView];
-        //[self removeFootView];
+    if(_listStyle == XBaseListViewStyleStandard){
+        [self removeRefreshView];
+        [self removeFootView];
         [self loadRefreshView];
         [self loadFootView];
     }
-    else if(_listStyle == XListViewStyleHeader){
-        //[self removeRefreshView];
-        //[self removeFootView];
+    else if(_listStyle == XBaseListViewStyleHeader){
+        [self removeRefreshView];
+        [self removeFootView];
         [self loadRefreshView];
     }
-    else if(_listStyle == XListViewStyleFooter){
-        //[self removeRefreshView];
-        //[self removeFootView];
+    else if(_listStyle == XBaseListViewStyleFooter){
+        [self removeRefreshView];
+        [self removeFootView];
         [self loadFootView];
     }
     else{
@@ -272,7 +256,7 @@
 
 - (void) loadRefreshView{
     if(![self headView]){
-        XListHeadView *listHeadView = [self getListHeadView];
+        XBaseListHeadView *listHeadView = [self getListHeadView];
         if(!listHeadView){
             return;
         }
@@ -315,7 +299,7 @@
                                                                  attribute:NSLayoutAttributeNotAnAttribute
                                                                 multiplier:1.0f
                                                                   constant:height];
-            [self addConstraint:_headHeightConstraint];
+            [self addConstraint:_headWidthConstraint];
         }
         
         if(!_headWidthConstraint){
@@ -326,18 +310,18 @@
                                                                 attribute:NSLayoutAttributeWidth
                                                                multiplier:1.0f
                                                                  constant:0.0];
-            [self addConstraint:_headWidthConstraint];
+            [self addConstraint:_headHeightConstraint];
         }
         
         [[self headView] setNeedsLayout];
         [[self headView] layoutIfNeeded];
     }else{
-        [self addSubview:[self headView]];
-        SET_VIEW_TOP([self headView], -(VIEW_HEIGHT([self headView])));
-        SET_VIEW_LEFT([self headView], 0);
-        SET_VIEW_WIDTH([self headView], VIEW_WIDTH(self));
-        SET_VIEW_HEIGHT([self headView], VIEW_HEIGHT([self headView]));
-    }
+            [self addSubview:[self headView]];
+            SET_VIEW_TOP([self headView], -(VIEW_HEIGHT([self headView])));
+            SET_VIEW_LEFT([self headView], 0);
+            SET_VIEW_WIDTH([self headView], VIEW_WIDTH(self));
+            SET_VIEW_HEIGHT([self headView], VIEW_HEIGHT([self headView]));
+        }
 }
 
 - (void) removeRefreshView{
@@ -369,7 +353,7 @@
 - (void) loadFootView{
     
     if(![self footView]){
-        XListFootView *listFoodView = [self getListMoreView];
+        XBaseListFootView *listFoodView = [self getListMoreView];
         if(!listFoodView){
             return;
         }
@@ -430,12 +414,12 @@
         [[self footView] setNeedsLayout];
         [[self footView] layoutIfNeeded];
     }else{
-        [self addSubview:[self footView]];
-        SET_VIEW_TOP([self footView], top);
-        SET_VIEW_LEFT([self footView], 0);
-        SET_VIEW_WIDTH([self footView], VIEW_WIDTH(self));
-        SET_VIEW_HEIGHT([self footView], height);
-    }
+            [self addSubview:[self footView]];
+            SET_VIEW_TOP([self footView], top);
+            SET_VIEW_LEFT([self footView], 0);
+            SET_VIEW_WIDTH([self footView], VIEW_WIDTH(self));
+            SET_VIEW_HEIGHT([self footView], height);
+        }
 }
 
 - (void) removeFootView{
@@ -481,39 +465,39 @@
         SET_VIEW_TOP([self footView], footerViewTop);
 }
 
-- (void) setHeadView:(XListHeadView *)headView{
+- (void) setHeadView:(XBaseListHeadView *)headView{
     [_lock lock];
     _headView = headView;
     [_lock unlock];
 }
 
-- (XListHeadView *)headView{
-    XListHeadView *headView = nil;
+- (XBaseListHeadView *)headView{
+    XBaseListHeadView *headView = nil;
     [_lock lock];
     headView = _headView;
     [_lock unlock];
     return headView;
 }
 
-- (void)setFootView:(XListFootView *)footView{
+- (void)setFootView:(XBaseListFootView *)footView{
     [_lock lock];
     _footView = footView;
     [_lock unlock];
 }
 
-- (XListFootView *)footView{
-    XListFootView *footView = nil;
+- (XBaseListFootView *)footView{
+    XBaseListFootView *footView = nil;
     [_lock lock];
     footView = _footView;
     [_lock unlock];
     return footView;
 }
 
-- (XListHeadView *) getListHeadView{
+- (XBaseListHeadView *) getListHeadView{
     return [self headView];
 }
 
-- (XListFootView *) getListMoreView{
+- (XBaseListFootView *) getListMoreView{
     return [self footView];
 }
 
@@ -542,17 +526,36 @@
         });
     }
     
-    [self setBLoading:NO];
+    if([self bLoading])
+        [self setBLoading:NO];
+}
+
+- (void) finishAutoLoad{
+    if([self headView] && [[self headView] bLoading]){
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([weakSelf headView])
+                [[weakSelf headView] stopAutoLoading];
+        });
+    }
+    
+    if([self footView] && [[self footView] bLoading]){
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([weakSelf footView])
+                [[weakSelf footView] stopAutoLoading];
+        });
+    }
 }
 
 //当前是否支持下拉刷新
 - (BOOL) bPullToDown{
-    return _listStyle == XListViewStyleStandard || _listStyle == XListViewStyleHeader;
+    return _listStyle == XBaseListViewStyleStandard || _listStyle == XBaseListViewStyleHeader;
 }
 
 //当前是否支持上拉加载更多
 - (BOOL) bPullToUp{
-    return _listStyle == XListViewStyleStandard || _listStyle == XListViewStyleFooter;
+    return _listStyle == XBaseListViewStyleStandard || _listStyle == XBaseListViewStyleFooter;
 }
 
 - (void) reloadData{
@@ -560,8 +563,9 @@
 }
 
 #pragma mark --
-#pragma mark --XHeadViewDelegate
-- (void)didTriggerRefresh:(XListHeadView *) refreshView{
+#pragma mark --XListHeadViewDelegate
+- (void)didTriggerRefresh:(XBaseListHeadView *) refreshView{
+    [self setBLoading:YES];
     if(_callBackDelegate){
         [_callBackDelegate listViewDidTriggerRefresh:self];
     }
@@ -569,21 +573,21 @@
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(LOAD_TIMEOUT);
-        [weakSelf finishLoad];
+        [weakSelf finishAutoLoad];
     });
 }
 
 #pragma mark --
 #pragma mark --XFootViewDelegate
-- (void)didTriggerLoadMore:(XListFootView *)loadMoreView{
+- (void)didTriggerLoadMore:(XBaseListFootView *)loadMoreView{
+    [self setBLoading:YES];
     if(_callBackDelegate){
         [_callBackDelegate listViewDidTriggerLoadMore:self];
     }
-    
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(LOAD_TIMEOUT);
-        [weakSelf finishLoad];
+        [weakSelf finishAutoLoad];
     });
 }
 
@@ -596,14 +600,11 @@
     }
     
     //预加载处理
-    if(self.bPreLoad){
-        if(VIEW_HEIGHT(self) * [self getPerLoadRate] < self.contentSize.height){
-            if([self bPullToUp]){
-                if(![self bLoading]){
-                    if(self.contentOffset.y + VIEW_HEIGHT(self) * [self getPerLoadRate] >= self.contentSize.height){
-                        [self setBLoading:YES];
-                        [self didTriggerLoadMore:_footView];
-                    }
+    if(VIEW_HEIGHT(self) * [self getPerLoadRate] < self.contentSize.height){
+        if([self bPullToUp]){
+            if(![self bLoading]){
+                if(self.contentOffset.y + VIEW_HEIGHT(self) * [self getPerLoadRate] >= self.contentSize.height){
+                    [self didTriggerLoadMore:_footView];
                 }
             }
         }

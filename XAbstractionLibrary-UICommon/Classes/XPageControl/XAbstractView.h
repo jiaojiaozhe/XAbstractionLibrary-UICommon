@@ -51,4 +51,9 @@
  *  页面初始化后，第一次的业务逻辑
  */
 - (void) loadPage;
+
+/**
+ *  页面初始化数据
+ */
+- (void) initData;
 @end

@@ -11,6 +11,7 @@
 //有效的向右拖动的最小速率，即为大于这个速率就认为想返回上一页
 #define kPushTransitionConstantMinVelocity 300.0f
 
+NSString * const kStopDrag = @"__StopDrag";
 NSString * const kPushTransitionInteractivePopTransition = @"pushTransitionInteractivePopTransition";
 NSString * const kPushTransitionGestureRecognizer = @"pushTransitionGestureRecognizer";
 NSString * const kPushTransitionViewControllerOfPan = @"pushTransitionViewControllerOfPan";
@@ -106,6 +107,7 @@ void PushTransitionSwizzle(Class c, SEL origSEL, SEL newSEL){
 
 
 @interface UIViewController()<UINavigationControllerDelegate>
+@property (nonatomic,assign) BOOL bStopDrag;
 @property (nonatomic, strong) UIGestureRecognizer *pushTransitionGestureRecognizer;
 @property (nonatomic, strong) UIPercentDrivenInteractiveTransition *percentDrivenInteractivePopTransition;
 @end
@@ -147,11 +149,27 @@ void PushTransitionSwizzle(Class c, SEL origSEL, SEL newSEL){
     return objc_getAssociatedObject(self, &kPushTransitionGestureRecognizer);
 }
 
+- (void) setBStopDrag:(BOOL) bStop{
+    [self willChangeValueForKey:kStopDrag];
+    objc_setAssociatedObject(self, &kStopDrag, @(bStop), OBJC_ASSOCIATION_ASSIGN);
+    [self didChangeValueForKey:kStopDrag];
+}
+
+- (BOOL) bStopDrag{
+    NSNumber  *number = objc_getAssociatedObject(self, &kStopDrag);
+    if(number)
+        return [number boolValue];
+    return NO;
+}
 
 #pragma mark - hook
 - (void) pushTransitionHookViewDidLoad
 {
     [self pushTransitionHookViewDidLoad];
+    
+    if ([self bStopDrag]) {
+        return;
+    }
     
     if ([self isKindOfClass:[UINavigationController class]]) {
         return;

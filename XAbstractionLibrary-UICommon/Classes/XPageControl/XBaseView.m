@@ -1,16 +1,17 @@
 //
-//  XView.m
+//  XBaseView.m
 //  XAbstractionLibrary-UICommon
 //
 //  Created by lanbiao on 2018/7/16.
 //
 
-#import "XView.h"
+#import "XBaseView.h"
 #import "XXNibBridge.h"
 #import <XAbstractionLibrary_NetWork/XAbstractionLibrary-NetWork-umbrella.h>
 
 
-@interface XView()<XXNibBridge>
+@interface XBaseView()<XXNibBridge>
+@property (nonatomic,strong) UIView *subContentView;
 @property (nonatomic,strong) IBOutlet UIView *contentView;
 @property (nonatomic,strong) IBOutlet UIView *errorContentView;
 
@@ -49,7 +50,7 @@
 @property (nonatomic,strong) NSMutableDictionary *requests;
 @end
 
-@implementation XView
+@implementation XBaseView
 @synthesize bNotNet = _bNotNet;
 @synthesize bNotData = _bNotData;
 @synthesize bLoading = _bLoading;
@@ -62,12 +63,12 @@
 
 + (instancetype) createView{
 //    NSString *className = NSStringFromClass([self class]);
-//    NSBundle *bundle = [NSBundle bundleForClass:[XView class]];
-//    XView *view = [[bundle loadNibNamed:className
+//    NSBundle *bundle = [NSBundle bundleForClass:[XBaseView class]];
+//    XBaseView *view = [[bundle loadNibNamed:className
 //                                  owner:nil
 //                                options:nil] firstObject];
     
-    XView *view = [[[self class] alloc] init];
+    XBaseView *view = [[[self class] alloc] init];
     [view awakeFromNib];
     return view;
 }
@@ -162,9 +163,12 @@
 
 - (void) awakeFromNib{
     [super awakeFromNib];
-    [self initData];
+    [self setupData];
     [self.contentView setHidden:NO];
     [self.errorContentView setHidden:YES];
+    
+    //初始化数据
+    [self initData];
     
     [self setContentView];
     [self setNotNetView];
@@ -195,7 +199,7 @@
     [self refreshStatusView];
 }
 
-- (void) initData{
+- (void) setupData{
     _lock = [[XLock alloc] init];
     _uiLock = [[XLock alloc] init];
     [self initState];
@@ -216,14 +220,14 @@
         }
         
         if([XNetWorkStatus shareNetkStatus].bGoodNet){
-            if([XNetWorkStatus shareNetkStatus].netWorkStatus == NetworkReachabilityStatusReachableViaWWAN){
+            if([XNetWorkStatus shareNetkStatus].netWorkStatus == XNetworkReachabilityStatusReachableViaWWAN){
                 if(![self bIgnoreShowError] && [self bNotNet]){
                     [self retryNotNet:NO];
                 }else{
                     [self setBNotNet:NO];
                     [self refreshStatusView];
                 }
-            }else if([XNetWorkStatus shareNetkStatus].netWorkStatus == NetworkReachabilityStatusReachableViaWiFi){
+            }else if([XNetWorkStatus shareNetkStatus].netWorkStatus == XNetworkReachabilityStatusReachableViaWiFi){
                 if(![self bIgnoreShowError] && [self bNotNet]){
                     [self retryNotNet:NO];
                 }else{
@@ -241,8 +245,8 @@
             for(NSInteger index = [self.requests count] - 1; index >= 0 ; index--){
                 NSString *key = [[self.requests allKeys] objectAtIndex:index];
                 id<XHttpRequestDelegate> request = [self.requests objectForKey:key];
-                if(request && [request isKindOfClass:[XHttpRequest class]]){
-                    XHttpRequest *httpRequest = (XHttpRequest*)request;
+                if(request && [request isKindOfClass:[XBaseHttpRequest class]]){
+                    XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
                     [httpRequest cancel];
                 }
             }
@@ -377,6 +381,8 @@
 }
 
 - (void) setNotNetView{
+    if([self notNetViewDelegate])
+        return;
     [self setNotNetViewDelegate:[self loadNotNetView]];
     if([self notNetViewDelegate]){
         if(self.errorContentView){
@@ -423,6 +429,8 @@
 }
 
 - (void) setErrorView{
+    if([self errorViewDelegate])
+        return;
     [self setErrorViewDelegate:[self loadErrorView]];
     if([self errorViewDelegate]){
         if(self.errorContentView){
@@ -469,6 +477,8 @@
 }
 
 - (void) setNotDataView{
+    if([self notDataViewDelegate])
+        return;
     [self setNotDataViewDelegate:[self loadNotDataView]];
     if([self notDataViewDelegate]){
         if(self.errorContentView){
@@ -515,6 +525,9 @@
 }
 
 - (void) setLoadingView{
+    if([self loadingViewDelegate]){
+        return;
+    }
     [self setLoadingViewDelegate:[self loadLoadingView]];
     if([self loadingViewDelegate]){
         if(self.errorContentView){
@@ -561,7 +574,11 @@
 }
 
 - (void) setContentView{
+    if(self.subContentView){
+        return;
+    }
     UIView *contentView = [self getContentView];
+    self.subContentView = contentView;
     if(contentView != NULL){
         contentView.translatesAutoresizingMaskIntoConstraints = NO;
         NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:contentView
@@ -812,6 +829,10 @@
     
 }
 
+- (void) initData{
+    
+}
+
 #pragma mark --
 #pragma mark --XIBaseNoNetViewRetryDelegate
 - (void) retryNotNet:(BOOL) bNotNet{
@@ -848,8 +869,8 @@
 #pragma mark --XHttpResponseDelegate
 - (void) cancelRequest:(id<XHttpRequestDelegate>) request{
     if(request){
-        if([request isKindOfClass:[XHttpRequest class]]){
-            XHttpRequest *httpRequest = (XHttpRequest*)request;
+        if([request isKindOfClass:[XBaseHttpRequest class]]){
+            XBaseHttpRequest *httpRequest = (XBaseHttpRequest*)request;
             if([httpRequest.ID length] > 0){
                 [_requests removeObjectForKey:httpRequest.ID];
             }
@@ -859,8 +880,8 @@
 
 - (void) willStartRequest:(id<XHttpRequestDelegate>) request{
     if(request){
-        if([request isKindOfClass:[XHttpRequest class]]){
-            XHttpRequest *httpRequest = (XHttpRequest *)request;
+        if([request isKindOfClass:[XBaseHttpRequest class]]){
+            XBaseHttpRequest *httpRequest = (XBaseHttpRequest *)request;
             [_requests setObject:httpRequest forKey:httpRequest.ID];
         
             [self setBLoading:YES];
@@ -876,11 +897,11 @@
 - (void) willRetryRequest:(id<XHttpRequestDelegate>) oldRequest
                newRequest:(id<XHttpRequestDelegate>) newRequest{
     if(oldRequest && newRequest){
-        if([oldRequest isKindOfClass:[XHttpRequest class]] &&
-           [newRequest isKindOfClass:[XHttpRequest class]]){
-            XHttpRequest *oldHttpRequest = (XHttpRequest *)oldRequest;
+        if([oldRequest isKindOfClass:[XBaseHttpRequest class]] &&
+           [newRequest isKindOfClass:[XBaseHttpRequest class]]){
+            XBaseHttpRequest *oldHttpRequest = (XBaseHttpRequest *)oldRequest;
             if([_requests.allKeys containsObject:oldHttpRequest.ID]){
-                XHttpRequest *newHttpRequest = (XHttpRequest*)newRequest;
+                XBaseHttpRequest *newHttpRequest = (XBaseHttpRequest*)newRequest;
                 [_requests setObject:newHttpRequest forKey:oldHttpRequest.ID];
             }
         }
@@ -897,7 +918,7 @@
                 progress:(long long) progress
            totalProgress:(long long) totalProgress{
     if(request){
-        if([request isKindOfClass:[XHttpRequest class]]){
+        if([request isKindOfClass:[XBaseHttpRequest class]]){
             [self setBLoading:YES];
             [self refreshStatusView];
             if([self loadingViewDelegate]){
@@ -911,8 +932,8 @@
                 responseDic:(id) responseDic
                       error:(NSError *) error{
     if(request){
-        if([request isKindOfClass:[XHttpRequest class]]){
-            XHttpRequest *httpRequest = (XHttpRequest *)request;
+        if([request isKindOfClass:[XBaseHttpRequest class]]){
+            XBaseHttpRequest *httpRequest = (XBaseHttpRequest *)request;
             [_requests removeObjectForKey:httpRequest.ID];
 //            [httpRequest cancel];
         }

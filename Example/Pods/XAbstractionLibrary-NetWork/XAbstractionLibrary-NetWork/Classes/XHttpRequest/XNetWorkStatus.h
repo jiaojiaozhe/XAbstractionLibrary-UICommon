@@ -10,33 +10,33 @@
 /**
  *  网络状态
  */
-typedef NS_ENUM(NSInteger, NetworkReachabilityStatus) {
+typedef NS_ENUM(NSInteger, XNetworkReachabilityStatus) {
     
     /**
      *  未知状态
      */
-    NetworkReachabilityStatusUnknown          = -1,
+    XNetworkReachabilityStatusUnknown          = -1,
     
     /**
      *  无网
      */
-    NetworkReachabilityStatusNotReachable     = 0,
+    XNetworkReachabilityStatusNotReachable     = 0,
     
     /**
      *  移动网络
      */
-    NetworkReachabilityStatusReachableViaWWAN = 1,
+    XNetworkReachabilityStatusReachableViaWWAN = 1,
     
     /**
      *  wifi
      */
-    NetworkReachabilityStatusReachableViaWiFi = 2,
+    XNetworkReachabilityStatusReachableViaWiFi = 2,
 };
 
 /**
  *  网络状态处理
  */
-@interface XNetWorkStatus : XData
+@interface XNetWorkStatus : NSObject
 
 /**
  *  网络是否正常
@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, NetworkReachabilityStatus) {
 /**
  *  当前网络状态
  */
-@property (nonatomic,assign) NetworkReachabilityStatus netWorkStatus;
+@property (nonatomic,assign) XNetworkReachabilityStatus netWorkStatus;
 
 /**
  *  单利对象方法

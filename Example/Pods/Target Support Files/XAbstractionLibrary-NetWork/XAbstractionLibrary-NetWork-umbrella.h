@@ -10,13 +10,13 @@
 #endif
 #endif
 
-#import "XDownloadHttpRequest.h"
-#import "XHttpRequest.h"
+#import "XBaseDownloadHttpRequest.h"
+#import "XBaseHttpRequest.h"
+#import "XBaseHttpRequestManager.h"
+#import "XBaseUploadHttpRequest.h"
 #import "XHttpRequestDelegate.h"
-#import "XHttpRequestManager.h"
 #import "XHttpResponseDelegate.h"
 #import "XNetWorkStatus.h"
-#import "XUploadHttpRequest.h"
 
 FOUNDATION_EXPORT double XAbstractionLibrary_NetWorkVersionNumber;
 FOUNDATION_EXPORT const unsigned char XAbstractionLibrary_NetWorkVersionString[];

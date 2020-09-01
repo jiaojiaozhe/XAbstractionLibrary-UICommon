@@ -23,4 +23,14 @@
  */
 + (XHeadView *) createHeadViewWithDelegate:(id<XHeadViewDelegate>) delegate;
 
+/**
+ *  设置底部线条是否显示，默认YES
+ */
+- (void) setShowLine:(BOOL) bShow;
+
+/**
+ *  设置底部线条颜色
+ */
+- (void) setLineColor:(UIColor *) color;
+
 @end

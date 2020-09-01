@@ -5,8 +5,8 @@
 //  Created by lanbiao on 2018/7/12.
 //
 
-#import "XUploadHttpRequest.h"
+#import "XBaseUploadHttpRequest.h"
 
-@implementation XUploadHttpRequest
+@implementation XBaseUploadHttpRequest
 
 @end
