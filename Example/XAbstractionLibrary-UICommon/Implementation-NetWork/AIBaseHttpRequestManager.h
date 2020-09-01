@@ -33,7 +33,7 @@ typedef BOOL(^ExistsDataBlock)(id<XHttpRequestDelegate> request,AIBaseResult *re
 /**
  基础http请求管理器，抽象类
  */
-@interface AIBaseHttpRequestManager : XHttpRequestManager
+@interface AIBaseHttpRequestManager : XBaseHttpRequestManager
 
 /**
  *  接口请求主机地址

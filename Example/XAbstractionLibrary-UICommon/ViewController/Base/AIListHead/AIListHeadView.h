@@ -11,7 +11,7 @@
 /**
  ToC项目滑动列表默认头部
  */
-@interface AIListHeadView : XListHeadView
+@interface AIListHeadView : XBaseListHeadView
 
 /**
  创建滑动列表默认头部

@@ -17,7 +17,7 @@
 
 - (instancetype) init{
     if(self = [super init]){
-        self.tabBarController = [[TabBarViewController alloc] init];
+        
     }
     return self;
 }
@@ -41,6 +41,7 @@
     }
     
     if(!bLoaded){
+        self.tabBarController = [[TabBarViewController alloc] init];
         [self.navigationController pushViewController:self.tabBarController animated:NO];
     }
 }

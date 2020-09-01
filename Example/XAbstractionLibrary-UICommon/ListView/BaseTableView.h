@@ -8,17 +8,17 @@
 
 #import <XAbstractionLibrary_UICommon/XAbstractionLibrary-UICommon-umbrella.h>
 
-@interface BaseTableView : XTableView
+@interface BaseTableView : XBaseTableView
 
 /**
  *  自定义的页眉
  */
-- (XListHeadView *) getListHeadView;
+- (XBaseListHeadView *) getListHeadView;
 
 
 /**
  *  自定义的页脚
  */
-- (XListFootView *) getListMoreView;
+- (XBaseListFootView *) getListMoreView;
 
 @end

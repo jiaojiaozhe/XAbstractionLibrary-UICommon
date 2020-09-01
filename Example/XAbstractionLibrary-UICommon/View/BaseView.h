@@ -11,7 +11,7 @@
 #import "AIHttpsRequestManager.h"
 #import <XAbstractionLibrary_UICommon/XAbstractionLibrary-UICommon-umbrella.h>
 
-@interface BaseView : XView
+@interface BaseView : XBaseView
 
 - (id<XHttpRequestDelegate>) postRequestWithRequest:(AIBaseRequest *) request
                                        httpDelegate:(id<XHttpResponseDelegate>)delegate

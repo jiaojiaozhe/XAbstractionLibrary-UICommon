@@ -26,14 +26,14 @@
     //    return [nib instantiateWithOwner:nil options:nil].firstObject;
 }
 
-- (void) setState:(XListFootViewState) state{
-    if(state == XListFootViewStateNormal){
+- (void) setState:(XBaseListFootViewState) state{
+    if(state == XBaseListFootViewStateNormal){
         _stateLabel.text = @"上拉刷新";
         [_stateLabel sizeToFit];
-    }else if(state == XListFootViewStatePulling){
+    }else if(state == XBaseListFootViewStatePulling){
         _stateLabel.text = @"松开加载更多";
         [_stateLabel sizeToFit];
-    }else if(state == XListFootViewStateLoadingMore){
+    }else if(state == XBaseListFootViewStateLoadingMore){
         _stateLabel.text = @"正在刷新...";
         [_stateLabel sizeToFit];
     }

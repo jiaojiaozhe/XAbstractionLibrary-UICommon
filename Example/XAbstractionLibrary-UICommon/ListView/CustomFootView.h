@@ -11,7 +11,7 @@
 /**
  *  自定义底部
  */
-@interface CustomFootView : XListFootView
+@interface CustomFootView : XBaseListFootView
 
 /**
  *  创建默认的自定义底部区域

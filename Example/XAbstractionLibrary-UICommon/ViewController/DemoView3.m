@@ -85,19 +85,19 @@ typedef BOOL(^RefreshExistsDataBlock)(id<XHttpRequestDelegate> request,AIRefresh
     return notDataView;
 }
 
-- (XListViewStyle) getListStyle{
-    return XListViewStyleStandard;
+- (XBaseListViewStyle) getListStyle{
+    return XBaseListViewStyleStandard;
 }
 
-- (XListHeadView *) loadHeadView{
+- (XBaseListHeadView *) loadHeadView{
     return [CustomHeadView createHeadView];
 }
 
-- (XListFootView *) loadFootView{
+- (XBaseListFootView *) loadFootView{
     return [CustomFootView createFootView];
 }
 
-- (void)initView{
+- (void) initView{
     [super initView];
     [self setBAutoLoading:YES];
     [self setBPreLoadMore:YES];

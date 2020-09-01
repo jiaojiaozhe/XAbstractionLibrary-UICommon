@@ -11,6 +11,6 @@
 /**
  ToC项目的CollectionView列表，与系统的UICollectionView使用方式一致
  */
-@interface AICollectionView : XCollectionView
+@interface AICollectionView : XBaseCollectionView
 
 @end

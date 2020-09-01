@@ -11,6 +11,6 @@
 /**
  ToC基础不带滑动的视图控制器
  */
-@interface AIBaseViewController : XViewController
+@interface AIBaseViewController : XBaseViewController
 
 @end

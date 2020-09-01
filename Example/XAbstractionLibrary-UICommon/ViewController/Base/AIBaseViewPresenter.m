@@ -22,7 +22,7 @@
     return nil;
 }
 
-- (void)initView{
+- (void) initView{
     
 }
 

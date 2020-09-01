@@ -25,7 +25,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (XView *) loadViewPresenter{
+- (XBaseView *) loadViewPresenter{
     AIDiscoverViewPresenter *discoverViewPresenter = [AIDiscoverViewPresenter createView];
     return discoverViewPresenter;
 }

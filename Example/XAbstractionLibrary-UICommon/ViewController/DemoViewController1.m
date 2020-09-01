@@ -25,7 +25,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (XView *) loadViewPresenter{
+- (XBaseView *) loadViewPresenter{
     DemoView *demoView = [DemoView createView];
     return demoView;
 }

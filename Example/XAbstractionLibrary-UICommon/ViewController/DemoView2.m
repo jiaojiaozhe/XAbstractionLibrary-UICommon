@@ -64,7 +64,7 @@
     return notDataView;
 }
 
-- (void)initView{
+- (void) initView{
     [super initView];
     _dataList = [NSMutableArray array];
     [self setBAutoLoading:YES];
@@ -75,15 +75,15 @@
     
 }
 
-- (XListViewStyle) getListStyle{
-    return XListViewStyleStandard;
+- (XBaseListViewStyle) getListStyle{
+    return XBaseListViewStyleStandard;
 }
 
-- (XListHeadView *) loadHeadView{
+- (XBaseListHeadView *) loadHeadView{
     return [CustomHeadView createHeadView];
 }
 
-- (XListFootView *) loadFootView{
+- (XBaseListFootView *) loadFootView{
     return [CustomFootView createFootView];
 }
 

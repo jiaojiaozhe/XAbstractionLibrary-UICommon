@@ -11,7 +11,7 @@
 /**
  ToC项目滑动列表默认底部
  */
-@interface AIListFootView : XListFootView
+@interface AIListFootView : XBaseListFootView
 
 /**
  构建滑动列表默认底部

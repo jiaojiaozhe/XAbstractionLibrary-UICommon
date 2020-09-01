@@ -45,7 +45,7 @@
 }
 */
 
-- (XView *) loadViewPresenter{
+- (XBaseView *) loadViewPresenter{
     DemoView3 *demoView3 = [DemoView3 createView];
     return demoView3;
 }

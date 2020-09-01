@@ -12,11 +12,11 @@
 
 @implementation AICollectionView
 
-- (XListHeadView *)getListHeadView{
+- (XBaseListHeadView *)getListHeadView{
     return [AIListHeadView createHeadView];
 }
 
-- (XListFootView *)getListMoreView{
+- (XBaseListFootView *)getListMoreView{
     return [AIListFootView createFootView];
 }
 @end

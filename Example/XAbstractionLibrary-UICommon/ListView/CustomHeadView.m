@@ -25,14 +25,14 @@
 //    return [nib instantiateWithOwner:nil options:nil].firstObject;
 }
 
-- (void) setState:(XListHeadViewState)state{
-    if(state == XListHeadViewStateNormal){
+- (void) setState:(XBaseListHeadViewState)state{
+    if(state == XBaseListHeadViewStateNormal){
         _stateLabel.text = @"下拉刷新";
         [_stateLabel sizeToFit];
-    }else if(state == XListHeadViewStatePulling){
+    }else if(state == XBaseListHeadViewStatePulling){
         _stateLabel.text = @"松开即可刷新";
         [_stateLabel sizeToFit];
-    }else if(state == XListHeadViewStateLoading){
+    }else if(state == XBaseListHeadViewStateLoading){
         _stateLabel.text = @"正在刷新...";
         [_stateLabel sizeToFit];
     }

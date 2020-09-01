@@ -1,5 +1,5 @@
 source 'https://github.com/jiaojiaozhe/XAbstractionLibrary-Specs'
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 use_frameworks!
 

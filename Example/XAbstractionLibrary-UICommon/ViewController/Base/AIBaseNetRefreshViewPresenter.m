@@ -60,19 +60,19 @@
     return notDataView;
 }
 
-- (XListHeadView *) loadHeadView{
+- (XBaseListHeadView *) loadHeadView{
     return [AIListHeadView createHeadView];
 }
 
-- (XListFootView *) loadFootView{
+- (XBaseListFootView *) loadFootView{
     return [AIListFootView createFootView];
 }
 
-- (XListViewStyle) getListStyle{
-    return XListViewStyleStandard;
+- (XBaseListViewStyle) getListStyle{
+    return XBaseListViewStyleStandard;
 }
 
-- (void)initView{
+- (void) initView{
     [super initView];
     
 }

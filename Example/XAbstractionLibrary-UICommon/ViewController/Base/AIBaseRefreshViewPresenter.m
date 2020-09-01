@@ -60,7 +60,7 @@
     return notDataView;
 }
 
-- (void)initView{
+- (void) initView{
     [super initView];
     
 }
@@ -69,16 +69,16 @@
     
 }
 
-- (XListHeadView *) loadHeadView{
+- (XBaseListHeadView *) loadHeadView{
     return [AIListHeadView createHeadView];
 }
 
-- (XListFootView *) loadFootView{
+- (XBaseListFootView *) loadFootView{
     return [AIListFootView createFootView];
 }
 
-- (XListViewStyle) getListStyle{
-    return XListViewStyleStandard;
+- (XBaseListViewStyle) getListStyle{
+    return XBaseListViewStyleStandard;
 }
 
 - (void) refreshToDown:(UIScrollView *) scrollView{

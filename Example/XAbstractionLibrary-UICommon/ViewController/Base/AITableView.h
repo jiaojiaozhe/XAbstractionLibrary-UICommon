@@ -11,6 +11,6 @@
 /**
  ToC项目的tableView控件,与系统UITableView控件使用方式一致
  */
-@interface AITableView : XTableView
+@interface AITableView : XBaseTableView
 
 @end

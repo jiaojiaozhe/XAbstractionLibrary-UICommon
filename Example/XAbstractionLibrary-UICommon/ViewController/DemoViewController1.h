@@ -8,6 +8,6 @@
 
 #import <XAbstractionLibrary_UICommon/XAbstractionLibrary-UICommon-umbrella.h>
 
-@interface DemoViewController1 : XViewController
+@interface DemoViewController1 : XBaseViewController
 
 @end

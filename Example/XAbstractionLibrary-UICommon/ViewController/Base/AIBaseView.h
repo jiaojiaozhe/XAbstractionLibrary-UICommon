@@ -14,7 +14,7 @@
 /**
  ToC项目的基础View，非常重要，天然支持了无网、加载中、加载错误、无数据等状态的支持
  */
-@interface AIBaseView : XView
+@interface AIBaseView : XBaseView
 
 /**
  页面级的post请求方法

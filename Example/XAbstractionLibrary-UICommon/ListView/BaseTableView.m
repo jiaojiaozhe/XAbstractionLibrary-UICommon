@@ -12,11 +12,11 @@
 
 @implementation BaseTableView
 
-- (XListHeadView *) getListHeadView{
+- (XBaseListHeadView *) getListHeadView{
     return [CustomHeadView createHeadView];
 }
 
-- (XListFootView *) getListMoreView{
+- (XBaseListFootView *) getListMoreView{
     return [CustomFootView createFootView];
 }
 

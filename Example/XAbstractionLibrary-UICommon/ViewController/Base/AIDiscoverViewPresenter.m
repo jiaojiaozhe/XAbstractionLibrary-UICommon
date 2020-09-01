@@ -14,7 +14,7 @@
 
 @implementation AIDiscoverViewPresenter
 
-- (void)initView{
+- (void) initView{
     [super initView];
     _dataList = [NSMutableArray array];
     [self setBAutoLoading:YES];
@@ -25,8 +25,8 @@
     
 }
 
-- (XListViewStyle) getListStyle{
-    return XListViewStyleStandard;
+- (XBaseListViewStyle) getListStyle{
+    return XBaseListViewStyleStandard;
 }
 
 - (void) refreshToDown:(UIScrollView *) scrollView{
