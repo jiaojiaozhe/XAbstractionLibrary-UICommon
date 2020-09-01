@@ -32,6 +32,44 @@
     return self;
 }
 
+- (instancetype) initWithRootViewController:(UIViewController *)rootViewController{
+    if(self = [super initWithRootViewController:rootViewController]){
+        self.navigationBarHidden = YES;
+        self.delegate = self;
+        CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
+        if(version >= 7.0){
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+            if(@available(iOS 11.0, *)){
+                //self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            }else{
+                //11.0以后的OS需要设置ScrollView的contentInsetAdjustmentBehavior
+                self.automaticallyAdjustsScrollViewInsets = NO;
+            }
+        }
+    }
+    return self;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.navigationBarHidden = YES;
+        self.delegate = self;
+        CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
+        if(version >= 7.0){
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+            if(@available(iOS 11.0, *)){
+                //self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            }else{
+                //11.0以后的OS需要设置ScrollView的contentInsetAdjustmentBehavior
+                self.automaticallyAdjustsScrollViewInsets = NO;
+            }
+        }
+    }
+    return self;
+}
+
 - (BOOL) shouldAutorotate{
     return NO;
 }
