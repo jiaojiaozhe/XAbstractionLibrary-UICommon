@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2ECFDCF87D12F269646DE0DD /* Pods_XAbstractionLibrary_UICommon_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537AFEC73417810B1568002A /* Pods_XAbstractionLibrary_UICommon_Tests.framework */; };
-		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
-		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
+		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* XAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* XAppDelegate.m */; };
@@ -99,7 +99,7 @@
 		BCFC9E392116923700353BC3 /* AIBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFC9E382116923700353BC3 /* AIBaseModel.m */; };
 		BCFC9E3C2116926A00353BC3 /* AIJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFC9E3B2116926A00353BC3 /* AIJSONAdapter.m */; };
 		BCFC9E3F211692A400353BC3 /* AIAES.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFC9E3E211692A400353BC3 /* AIAES.m */; };
-		E8F81E1071835DFB781FCDD1 /* Pods_XAbstractionLibrary_UICommon_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1151F72671B7B7CE002BB87 /* Pods_XAbstractionLibrary_UICommon_Example.framework */; };
+		E8F81E1071835DFB781FCDD1 /* Pods_XAbstractionLibrary_UICommon_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1151F72671B7B7CE002BB87 /* Pods_XAbstractionLibrary_UICommon_Example.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +139,10 @@
 		7D2B377170D905D86F578A52 /* Pods-XAbstractionLibrary-UICommon_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XAbstractionLibrary-UICommon_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XAbstractionLibrary-UICommon_Tests/Pods-XAbstractionLibrary-UICommon_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1151F72671B7B7CE002BB87 /* Pods_XAbstractionLibrary_UICommon_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XAbstractionLibrary_UICommon_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC515004254D01BA005CEC1A /* XAbstractionLibrary_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XAbstractionLibrary_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC515006254D01BA005CEC1A /* XAbstractionLibrary_NetWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XAbstractionLibrary_NetWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC515008254D01BA005CEC1A /* XAbstractionLibrary_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XAbstractionLibrary_Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC51500A254D01BA005CEC1A /* XAbstractionLibrary_UICommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XAbstractionLibrary_UICommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA51BE424FE1B8A001E56CB /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
 		BCA51BE524FE1B8A001E56CB /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 		BCA51BE624FE1B8A001E56CB /* ViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
@@ -274,7 +278,9 @@
 		BCFC9E3B2116926A00353BC3 /* AIJSONAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIJSONAdapter.m; sourceTree = "<group>"; };
 		BCFC9E3D211692A400353BC3 /* AIAES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIAES.h; sourceTree = "<group>"; };
 		BCFC9E3E211692A400353BC3 /* AIAES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIAES.m; sourceTree = "<group>"; };
+		C38ED315DEF851FE7CF1139A /* Pods-XAbstractionLibrary-UICommon_Tests.prerelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XAbstractionLibrary-UICommon_Tests.prerelease.xcconfig"; path = "Pods/Target Support Files/Pods-XAbstractionLibrary-UICommon_Tests/Pods-XAbstractionLibrary-UICommon_Tests.prerelease.xcconfig"; sourceTree = "<group>"; };
 		CA3E15AC1059AE4B3253EF4A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EF0CECCD0AB93A059D80FECF /* Pods-XAbstractionLibrary-UICommon_Example.prerelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XAbstractionLibrary-UICommon_Example.prerelease.xcconfig"; path = "Pods/Target Support Files/Pods-XAbstractionLibrary-UICommon_Example/Pods-XAbstractionLibrary-UICommon_Example.prerelease.xcconfig"; sourceTree = "<group>"; };
 		EFD2D8742C3000ADC8358BAB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,6 +334,10 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC515004254D01BA005CEC1A /* XAbstractionLibrary_Base.framework */,
+				BC515006254D01BA005CEC1A /* XAbstractionLibrary_NetWork.framework */,
+				BC515008254D01BA005CEC1A /* XAbstractionLibrary_Parse.framework */,
+				BC51500A254D01BA005CEC1A /* XAbstractionLibrary_UICommon.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -396,6 +406,8 @@
 				3E4E1BACB205FF616AC04592 /* Pods-XAbstractionLibrary-UICommon_Example.release.xcconfig */,
 				7D2B377170D905D86F578A52 /* Pods-XAbstractionLibrary-UICommon_Tests.debug.xcconfig */,
 				5293023BE6FD6BC36C3EC386 /* Pods-XAbstractionLibrary-UICommon_Tests.release.xcconfig */,
+				EF0CECCD0AB93A059D80FECF /* Pods-XAbstractionLibrary-UICommon_Example.prerelease.xcconfig */,
+				C38ED315DEF851FE7CF1139A /* Pods-XAbstractionLibrary-UICommon_Tests.prerelease.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1010,6 +1022,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F851C8CE0C166764993D9E5 /* Pods-XAbstractionLibrary-UICommon_Example.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7G6DSLE4J6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1017,6 +1030,32 @@
 				INFOPLIST_FILE = "XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MD5Digest\"",
+					"-framework",
+					"\"Mantle\"",
+					"-framework",
+					"\"OpenUDID\"",
+					"-framework",
+					"\"XAbstractionLibrary_Base\"",
+					"-framework",
+					"\"XAbstractionLibrary_NetWork\"",
+					"-framework",
+					"\"XAbstractionLibrary_Parse\"",
+					"-framework",
+					"\"XAbstractionLibrary_UICommon\"",
+					"-framework",
+					"\"XXNibBridge\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.study.xabstractionlibrary.uiconmon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1027,6 +1066,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E4E1BACB205FF616AC04592 /* Pods-XAbstractionLibrary-UICommon_Example.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7G6DSLE4J6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1039,6 +1079,31 @@
 				INFOPLIST_FILE = "XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MD5Digest\"",
+					"-framework",
+					"\"Mantle\"",
+					"-framework",
+					"\"OpenUDID\"",
+					"-framework",
+					"\"XAbstractionLibrary_Base\"",
+					"-framework",
+					"\"XAbstractionLibrary_NetWork\"",
+					"-framework",
+					"\"XAbstractionLibrary_Parse\"",
+					"-framework",
+					"\"XAbstractionLibrary_UICommon\"",
+					"-framework",
+					"\"XXNibBridge\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.study.xabstractionlibrary.uiconmon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1124,8 +1189,9 @@
 		};
 		BCD10E63250332DB00FD9483 /* Prerelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E4E1BACB205FF616AC04592 /* Pods-XAbstractionLibrary-UICommon_Example.release.xcconfig */;
+			baseConfigurationReference = EF0CECCD0AB93A059D80FECF /* Pods-XAbstractionLibrary-UICommon_Example.prerelease.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7G6DSLE4J6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1138,6 +1204,31 @@
 				INFOPLIST_FILE = "XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MD5Digest\"",
+					"-framework",
+					"\"Mantle\"",
+					"-framework",
+					"\"OpenUDID\"",
+					"-framework",
+					"\"XAbstractionLibrary_Base\"",
+					"-framework",
+					"\"XAbstractionLibrary_NetWork\"",
+					"-framework",
+					"\"XAbstractionLibrary_Parse\"",
+					"-framework",
+					"\"XAbstractionLibrary_UICommon\"",
+					"-framework",
+					"\"XXNibBridge\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.study.xabstractionlibrary.uiconmon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1146,7 +1237,7 @@
 		};
 		BCD10E64250332DB00FD9483 /* Prerelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5293023BE6FD6BC36C3EC386 /* Pods-XAbstractionLibrary-UICommon_Tests.release.xcconfig */;
+			baseConfigurationReference = C38ED315DEF851FE7CF1139A /* Pods-XAbstractionLibrary-UICommon_Tests.prerelease.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

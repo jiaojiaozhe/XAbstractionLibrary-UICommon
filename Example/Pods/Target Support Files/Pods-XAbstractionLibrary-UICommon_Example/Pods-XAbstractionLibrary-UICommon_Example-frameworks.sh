@@ -218,6 +218,17 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-UICommon/XAbstractionLibrary_UICommon.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XXNibBridge/XXNibBridge.framework"
 fi
+if [[ "$CONFIGURATION" == "Prerelease" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MD5Digest/MD5Digest.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/OpenUDID/OpenUDID.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-Base/XAbstractionLibrary_Base.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-NetWork/XAbstractionLibrary_NetWork.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-Parse/XAbstractionLibrary_Parse.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XAbstractionLibrary-UICommon/XAbstractionLibrary_UICommon.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/XXNibBridge/XXNibBridge.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

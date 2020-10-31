@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "XBaseValidator.h"
-#import <Mantle/EXTRuntimeExtensions.h>
+#import <Mantle/MTLEXTRuntimeExtensions.h>
 #import "XAbstractionLibrary-Base-umbrella.h"
 #import "NSValueTransformer+CustomParseNSArray.h"
 #import "NSValueTransformer+CustomParseDictionary.h"

@@ -1,5 +1,5 @@
 //
-//  EXTRuntimeExtensions.m
+//  MTLEXTRuntimeExtensions.m
 //  extobjc
 //
 //  Created by Justin Spahr-Summers on 2011-03-05.
@@ -7,7 +7,7 @@
 //  Released under the MIT license.
 //
 
-#import "EXTRuntimeExtensions.h"
+#import "MTLEXTRuntimeExtensions.h"
 #import <ctype.h>
 #import <libkern/OSAtomic.h>
 #import <objc/message.h>
@@ -41,10 +41,10 @@ typedef struct {
     //
     // this does NOT refer to a special protocol having been injected already
     BOOL ready;
-} EXTSpecialProtocol;
+} MTLSpecialProtocol;
 
-// the full list of special protocols (an array of EXTSpecialProtocol structs)
-static EXTSpecialProtocol * restrict specialProtocols = NULL;
+// the full list of special protocols (an array of MTLSpecialProtocol structs)
+static MTLSpecialProtocol * restrict specialProtocols = NULL;
 
 // the number of special protocols stored in the array
 static size_t specialProtocolCount = 0;
@@ -54,7 +54,7 @@ static size_t specialProtocolCount = 0;
 // generally going to be a power-of-two
 static size_t specialProtocolCapacity = 0;
 
-// the number of EXTSpecialProtocols which have been marked as ready for
+// the number of MTLSpecialProtocols which have been marked as ready for
 // injection (though not necessary injected)
 //
 // in other words, the total count which have 'ready' set to YES
@@ -81,16 +81,16 @@ static void mtl_injectSpecialProtocols (void) {
      * a special protocol conforms to another special protocol, the former
      * will be prioritized above the latter.
      */
-    qsort_b(specialProtocols, specialProtocolCount, sizeof(EXTSpecialProtocol), ^(const void *a, const void *b){
+    qsort_b(specialProtocols, specialProtocolCount, sizeof(MTLSpecialProtocol), ^(const void *a, const void *b){
         // if the pointers are equal, it must be the same protocol
         if (a == b)
             return 0;
 
-        const EXTSpecialProtocol *protoA = a;
-        const EXTSpecialProtocol *protoB = b;
+        const MTLSpecialProtocol *protoA = a;
+        const MTLSpecialProtocol *protoB = b;
 
         // A higher return value here means a higher priority
-        int (^protocolInjectionPriority)(const EXTSpecialProtocol *) = ^(const EXTSpecialProtocol *specialProtocol){
+        int (^protocolInjectionPriority)(const MTLSpecialProtocol *) = ^(const MTLSpecialProtocol *specialProtocol){
             int runningTotal = 0;
 
             for (size_t i = 0;i < specialProtocolCount;++i) {
@@ -732,91 +732,6 @@ BOOL mtl_getPropertyAccessorsForClass (objc_property_t property, Class aClass, M
     return YES;
 }
 
-NSMethodSignature *mtl_globalMethodSignatureForSelector (SEL aSelector) {
-    NSCParameterAssert(aSelector != NULL);
-
-    // set up a small & simple cache/hash to avoid repeatedly scouring every
-    // class & protocol in the runtime.
-    static const size_t selectorCacheLength = 1 << 8;
-    static const uintptr_t selectorCacheMask = (selectorCacheLength - 1);
-    static mtl_methodDescription volatile methodDescriptionCache[selectorCacheLength];
-
-    uintptr_t hash = (uintptr_t)((void *)aSelector) & selectorCacheMask;
-    mtl_methodDescription methodDesc;
-
-    // reads and writes need to be atomic, but will be ridiculously fast,
-    // so we can stay in userland for locks, and keep the speed.
-    static os_unfair_lock lock = OS_UNFAIR_LOCK_INIT;
-
-    os_unfair_lock_lock(&lock);
-    methodDesc = methodDescriptionCache[hash];
-    os_unfair_lock_unlock(&lock);
-
-    // cache hit? check the selector to insure we aren't colliding
-    if (methodDesc.name == aSelector) {
-        return [NSMethodSignature signatureWithObjCTypes:methodDesc.types];
-    }
-
-    methodDesc = (mtl_methodDescription){.name = NULL, .types = NULL};
-
-    uint classCount = 0;
-    Class *classes = mtl_copyClassList(&classCount);
-
-    if (classes) {
-        @autoreleasepool {
-            // set up an autorelease pool in case any Cocoa classes invoke
-            //+initialize during this process
-            for (uint i = 0;i < classCount;++i) {
-                Class cls = classes[i];
-
-                Method method = class_getInstanceMethod(cls, aSelector);
-                if (!method)
-                    method = class_getClassMethod(cls, aSelector);
-
-                if (method) {
-                    methodDesc = (mtl_methodDescription){.name = aSelector, .types = method_getTypeEncoding(method)};
-                    break;
-                }
-            }
-        }
-        free(classes);
-    }
-
-    // if not found, then we can look through optional protocol methods for completeness
-    if (!methodDesc.name) {
-        uint protocolCount = 0;
-        Protocol * __unsafe_unretained *protocols = objc_copyProtocolList(&protocolCount);
-        if (protocols) {
-            struct objc_method_description objcMethodDesc;
-            for (uint i = 0;i < protocolCount;++i) {
-                objcMethodDesc = protocol_getMethodDescription(protocols[i], aSelector, NO, YES);
-                if (!objcMethodDesc.name)
-                    objcMethodDesc = protocol_getMethodDescription(protocols[i], aSelector, NO, NO);
-
-                if (objcMethodDesc.name) {
-                    methodDesc = (mtl_methodDescription){.name = objcMethodDesc.name, .types = objcMethodDesc.types};
-                    break;
-                }
-            }
-            free(protocols);
-        }
-    }
-
-    if (methodDesc.name) {
-        // if not locked, cache this value, but don't wait around
-        if (os_unfair_lock_trylock(&lock)) {
-            methodDescriptionCache[hash] = methodDesc;
-            os_unfair_lock_unlock(&lock);
-        }
-
-        // NB: there are some esoteric system type encodings that cause -signatureWithObjCTypes: to fail,
-        // e.g on OS X 10.8, -[NSDecimalNumber* -initWithDecimal:]. Doubt it's worth trying to catch here.
-        return [NSMethodSignature signatureWithObjCTypes:methodDesc.types];
-    } else {
-        return nil;
-    }
-}
-
 BOOL mtl_loadSpecialProtocol (Protocol *protocol, void (^injectionBehavior)(Class destinationClass)) {
     @autoreleasepool {
         NSCParameterAssert(protocol != nil);
@@ -884,9 +799,9 @@ BOOL mtl_loadSpecialProtocol (Protocol *protocol, void (^injectionBehavior)(Clas
         #ifndef __clang_analyzer__
         mtl_specialProtocolInjectionBlock copiedBlock = [injectionBehavior copy];
 
-        // construct a new EXTSpecialProtocol structure and add it to the first
+        // construct a new MTLSpecialProtocol structure and add it to the first
         // empty space in the array
-        specialProtocols[specialProtocolCount] = (EXTSpecialProtocol){
+        specialProtocols[specialProtocolCount] = (MTLSpecialProtocol){
             .protocol = protocol,
             .injectionBlock = (__bridge_retained void *)copiedBlock,
             .ready = NO

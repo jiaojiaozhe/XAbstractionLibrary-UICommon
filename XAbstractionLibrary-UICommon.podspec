@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XAbstractionLibrary-UICommon'
-  s.version          = '0.0.19'
+  s.version          = '0.0.22'
   s.summary          = 'XAbstractionLibrary-UICommon是基础的UI相关组件.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、控�
   s.source           = { :git => 'https://github.com/jiaojiaozhe/XAbstractionLibrary-UICommon.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'XAbstractionLibrary-UICommon/Classes/**/*'
   
@@ -42,5 +42,6 @@ XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、控�
 
     s.dependency 'XAbstractionLibrary-NetWork'
     s.dependency 'XAbstractionLibrary-Parse'
+    s.dependency 'XAbstractionLibrary-Base'
     s.dependency 'XXNibBridge'
 end
