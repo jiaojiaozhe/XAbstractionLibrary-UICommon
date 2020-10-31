@@ -19,16 +19,16 @@ PODS:
   - Mantle/extobjc (2.1.6)
   - MD5Digest (1.1.0)
   - OpenUDID (1.0.0)
-  - XAbstractionLibrary-Base (0.0.24):
+  - XAbstractionLibrary-Base (0.0.26):
     - MD5Digest
     - OpenUDID
-  - XAbstractionLibrary-NetWork (0.0.22):
+  - XAbstractionLibrary-NetWork (0.0.26):
     - AFNetworking
     - XAbstractionLibrary-Base
-  - XAbstractionLibrary-Parse (0.0.22):
+  - XAbstractionLibrary-Parse (0.0.26):
     - Mantle (~> 2.1.0)
     - XAbstractionLibrary-Base
-  - XAbstractionLibrary-UICommon (0.0.22):
+  - XAbstractionLibrary-UICommon (0.0.26):
     - XAbstractionLibrary-Base
     - XAbstractionLibrary-NetWork
     - XAbstractionLibrary-Parse
@@ -60,10 +60,10 @@ SPEC CHECKSUMS:
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
   MD5Digest: fea371215507cfcdc3c9633d02cffc7fd075ebc3
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
-  XAbstractionLibrary-Base: ebd74cea5ae87825b427c9e0c5d6d267a18c377a
-  XAbstractionLibrary-NetWork: 57912028858b2916248ddab3aa3eab01adfa5333
-  XAbstractionLibrary-Parse: aa942e949f9380421cca2c9b012076844ab7a68e
-  XAbstractionLibrary-UICommon: f145b8323d1c3bc0bd0228219fc2f2110d3bb0c0
+  XAbstractionLibrary-Base: f345d0195eca303b182cb542797cf769c3ead099
+  XAbstractionLibrary-NetWork: 87a5f6e2ddd5f66e0c30c6cf7ed13a88d2b4b6da
+  XAbstractionLibrary-Parse: f517318f32af7b610e0f7dc6c60c26e3b26c6a67
+  XAbstractionLibrary-UICommon: 07dcdfc91da894555b0ed4d1949d2213eee62a99
   XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
 PODFILE CHECKSUM: f77f86bf6f7c176078b670d5ff24f9e65b262b86

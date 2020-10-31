@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XAbstractionLibrary-UICommon'
-  s.version          = '0.0.22'
+  s.version          = '0.0.26'
   s.summary          = 'XAbstractionLibrary-UICommon是基础的UI相关组件.'
 
 # This description is used to generate tags and improve search results.
@@ -40,8 +40,12 @@ XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、控�
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
+#    s.dependency 'XAbstractionLibrary-NetWork', :path => '../../XAbstractionLibrary-NetWork/', :configurations => %w[Debug]
+#    s.dependency 'XAbstractionLibrary-Parse', :path => '../../XAbstractionLibrary-Parse/', :configurations => %w[Debug]
+#    s.dependency 'XAbstractionLibrary-Base', :path => '../../XAbstractionLibrary-Base/', :configurations => %w[Debug]
+
+    s.dependency 'XAbstractionLibrary-Base'
     s.dependency 'XAbstractionLibrary-NetWork'
     s.dependency 'XAbstractionLibrary-Parse'
-    s.dependency 'XAbstractionLibrary-Base'
     s.dependency 'XXNibBridge'
 end

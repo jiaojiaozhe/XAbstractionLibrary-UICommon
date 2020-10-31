@@ -1,6 +1,6 @@
 {
   "name": "XAbstractionLibrary-UICommon",
-  "version": "0.0.22",
+  "version": "0.0.26",
   "summary": "XAbstractionLibrary-UICommon是基础的UI相关组件.",
   "description": "XAbstractionLibrary-UICommon是基础的UI相关组件，解决页面级、控件级的开发效率低下的问题.",
   "homepage": "https://github.com/jiaojiaozhe/XAbstractionLibrary-UICommon",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/jiaojiaozhe/XAbstractionLibrary-UICommon.git",
-    "tag": "0.0.22"
+    "tag": "0.0.26"
   },
   "platforms": {
     "ios": "9.0"
@@ -25,13 +25,13 @@
     ]
   },
   "dependencies": {
+    "XAbstractionLibrary-Base": [
+
+    ],
     "XAbstractionLibrary-NetWork": [
 
     ],
     "XAbstractionLibrary-Parse": [
-
-    ],
-    "XAbstractionLibrary-Base": [
 
     ],
     "XXNibBridge": [

@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		013D1A9D48D7AFFAEA17D2474D465AE9 /* XAbstractionLibrary-UICommon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80F880FD8825F044F0E7DD3EF0421170 /* XAbstractionLibrary-UICommon.bundle */; };
 		019FAE95797CB4A85C5706D3E2E81303 /* XAbstractionLibrary-NetWork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F540EDDAB6C2A7DBDEED908D0B8E785 /* XAbstractionLibrary-NetWork-dummy.m */; };
-		0284F812B821756E1740CAB1632D667C /* XBaseMessageInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = D325A6F0DD26AEC1BCCDE08DB7991165 /* XBaseMessageInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02EEC825B66394D32985606DB5129F14 /* XXNibBridge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CB4C20740308B76F594538C37DEFF65 /* XXNibBridge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02CAAA9DF175E9D5CB77D323ED334BC6 /* XIBaseErrorViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5231B4D327060E52F2F2472AAE45F37F /* XIBaseErrorViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03390CC2EDDB078ADFBF7182F0FDDD97 /* XJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A54992A9CF3446F3D4D00091D351F110 /* XJSONAdapter.m */; };
 		062B4F43117D85E969A6EE61963649EF /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 553FF7C876F10956C6F184010333118B /* AFURLRequestSerialization.m */; };
-		0775B6C2936E4964049F58AFBDF69D87 /* XView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E147C073744B4C10CD9583809CF9E19B /* XView.xib */; };
 		077EC2CD6C72C9A73820C363383F5012 /* XBaseValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2A23C95C2913D6C799DBD20FF72998 /* XBaseValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07826ACE0D25C48FBD727825C8CA2405 /* XAbstractionLibrary_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C122E7A6858677C98CE6F315A2D78484 /* XAbstractionLibrary_Base.framework */; };
 		07D431E612E1574A3E69358675200667 /* WKWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BC1FF0FAAB291478141A7831490EC7 /* WKWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0878F4FF48D68307F255BA61BECE9583 /* XPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F082BBF8162639B1AAC5C329E2EC0CA1 /* XPushTransitionAnimation.m */; };
-		08954BA35CA78CB1B94C8B692DA7D64A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
+		08727DCBACA8582C5BF076B01AA147D4 /* XHeadView.h in Headers */ = {isa = PBXBuildFile; fileRef = B732BD4CCB8EEBC8624E744B33500EC2 /* XHeadView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08D7D80C794FB0416F5FDEFD6190CED2 /* WKWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 746D2B663D314A65BE6F947D344D448E /* WKWebView+AFNetworking.m */; };
 		095930B0F7139D0E33684EEA447EEE35 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = D648E7531DB63700050099BDA083FEFF /* ReplaceMe.m */; };
 		0AF7EB1FE4D51C65CE1D4B828AA2F01B /* XKeyValueObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B8E86F1F615B633E0D9CF48E8BD355 /* XKeyValueObserver.m */; };
@@ -28,36 +24,37 @@
 		0D7CCE5261D93601076EB0854D75F7DF /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3382D864903F699C35CD4DC020D43878 /* NSString+MD5.m */; };
 		0DF65362E474241A0A6DD79B21F44CAD /* NSDictionary+Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = F751F76D585B078C159B9CEB510EF732 /* NSDictionary+Crash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FA0963F3E3B037DC19ECDD6408893DC /* XFloatTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F6706E034CA75DEA856EE999B27EC13 /* XFloatTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		106BD8F4A883C2DD4B2246E6D7A82FDE /* XRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD04B33E92C0D84108C61CD9F1613C9A /* XRefreshViewController.m */; };
 		10A9B875CA75299F76F5F0823681B96A /* NSDictionary+Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A0090C1B81EBBC13378ADEE286F5E4 /* NSDictionary+Crash.m */; };
-		1299EB61A7A8418F4BBA85EAC842E9CF /* XBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A17226FE243AAEE67AF6ED77CD85B5 /* XBaseViewController.m */; };
 		12A53D01A263FDBD31882E23468701FF /* XCompositeTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C302DDD7AB7960E847BFFACA6467A0 /* XCompositeTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1333EE0953B8B60189EDF0F3946D7703 /* XBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F95FE95AC14E7F91BF3642546943F3 /* XBaseTableView.m */; };
 		13BE4DB50EACA6EBCEC98C76B1926CEA /* XStringTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = E67193172F86ED2805446696BFFF20AB /* XStringTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		14773F0143B3BFA92BA38B2F1A067F40 /* XNetRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A76DACA208F5BD13D005B31200B68E /* XNetRefreshViewController.m */; };
+		14327FD6F3DF671BF954A463CE475C28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		1683630A15460B51A365BECFBCBBB9D7 /* NSValueTransformer+CustomParseNSArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 3564AA693BADA3A4470E92FAFF89449F /* NSValueTransformer+CustomParseNSArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		177285DCD07B10B3B751B71A81414E00 /* XBaseDownloadHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E59D20D5C4CF1E19BCE1671FE6B198 /* XBaseDownloadHttpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19A5098D234278A58023B48A2079CF88 /* XIBaseNotNetViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECC563C0659C761E2B0CAA49ED3B8BF /* XIBaseNotNetViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19FA28D6CE93981D49FA84A20EE7B3B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		1A820B412B0069B8D78AA1B7996F374B /* XHttpRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2128F205A8EAF65C9642E3165B2D8888 /* XHttpRequestDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B69981329027DC1A5D9EBE55D36559F /* XBaseUploadHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 8467DB75A23ED647EBC59BF6C7D0D0BE /* XBaseUploadHttpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C0A67E3CCE20031C1BD9F7C758FFAE5 /* XDateTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8839214435B8144B86753BA296178CBF /* XDateTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C34C5F2EAEDD1AAC58C0DC8E82D3D82 /* XBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E0EECA87FCA68EB39B013293943DDABB /* XBaseViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C7A5C9655D989F04060FF4C615382B3 /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 341E89BD243FA7A7EF5E0C48A4D06607 /* NSObject+MTLComparisonAdditions.m */; };
 		1C91276884020C9F55B831DDC2DD1C85 /* MTLEXTScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1C312A9D86825C865426B8B0ADE46F /* MTLEXTScope.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1D883250C2CFECEB48A2D9FCA9041827 /* XBaseHttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7A6ECC3D3DE2DBBF7EE603ADB32FE /* XBaseHttpRequestManager.m */; };
-		1FE8F04FF87002D5F5D4EA85DEBBEA4D /* XBaseCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C9E3D2C41100E8FD1AF7956088A1A3 /* XBaseCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E19189FF09D191D62547E5F9F2935B2 /* XNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = E907EC9C113190EF7ECA85E50F6C5CBA /* XNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		208BD19C4141FA128939BA41A3026414 /* XBaseListFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C888DBE9C4D27EA535C43F72F8269B /* XBaseListFootView.m */; };
 		20AB44D990EA9661C81380A41151D32D /* MTLMetamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = FDB453FB496CA3EFC54C51BDF13DB3BF /* MTLMetamacros.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		20DC97F621EBE4AC105387DF1B929FE4 /* XNetWorkStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 7622DD5ADA5722FFF641408C187F7F52 /* XNetWorkStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		211EAAA39A831B6FAAD45AD1F4AAF1E6 /* XMutableStringTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B81CA340DC6CA1A26D8DAF357B03C2 /* XMutableStringTypeValidator.m */; };
-		2175670251177C487ADE25E990DED9A2 /* XXNibConvention.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD0F198F4E8074DB64DCDE2C7062031 /* XXNibConvention.m */; };
 		2282D665135CCCECE8F2F045F50F643F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		22FC015C383502E6DBAD13A73B220D9C /* NSString+XCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E2080324ECC7162A302D825050752 /* NSString+XCommon.m */; };
 		244D21EAF646F899AAFB78397A35415A /* XMD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EBDF9BE72867EDD4B371B86AF605EE /* XMD5Digest.m */; };
 		246B0870FB73B68E71A4436F65AAE411 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		24FCB7E59FC709DCE46019B66093BDCA /* OpenUDID-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA8C0A5F4AD1E0920E6B3305030E830 /* OpenUDID-dummy.m */; };
 		2560E94C850AB16A4532A5626B6A78C1 /* Pods-XAbstractionLibrary-UICommon_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1272E569E83854ED1088FAB4F15BB88C /* Pods-XAbstractionLibrary-UICommon_Example-dummy.m */; };
-		2719C38C419F5FDB3FCD9F33E3D3EDE6 /* XBaseListHeadView.h in Headers */ = {isa = PBXBuildFile; fileRef = A85667830F23F9A23F2811FE1DB87E84 /* XBaseListHeadView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27AB4557C1CE7055AF04AFEC52415FC8 /* XData.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD342358FACAFC9BF6A93113820F655 /* XData.m */; };
 		29847C62F7DECC5365CF07D571D1EB59 /* XUnknowTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE97636BF96459E17AC510A5AB539CA1 /* XUnknowTypeValidator.m */; };
 		29BFBA94B548941078777299C0F5DD33 /* XAbstractionLibrary-NetWork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B7750184A7D866D9774B69EA380312E /* XAbstractionLibrary-NetWork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B7AE07090D70F1EF1FEBC0F904944CE /* XViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A3B73230F98FD39D15B1E0A3E1499F /* XViewController.xib */; };
 		2BCD06DD0D0DA565283819EE17E59575 /* MTLValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3967C139EBD06B9C0E531BBB2F59D9F3 /* MTLValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BE0D941E3EF0D173360E618420A6116 /* XBaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D51D72062CD0DA1EF5616808AE4C71 /* XBaseHttpRequest.m */; };
 		2C008F29676A95C4237EAF69AB435522 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE438ACCAAE244AE6E920392994782AE /* UIProgressView+AFNetworking.m */; };
@@ -69,7 +66,6 @@
 		2FA29025DC70B97C5F2B8B13A64E5D60 /* XData.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B5AC5876F2139BDCC7BD974DC2F450D /* XData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FB1D9E03282BBABA8892BEF1C4B7C3B /* XModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B3D6426BCAC7A280EDD9521A6A5B70 /* XModel.m */; };
 		30561599030D8D4CC78EDA3C904438BD /* NSDictionary+MTLJSONKeyPath.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC41A1D2E53894D551CB919605FC266 /* NSDictionary+MTLJSONKeyPath.m */; };
-		31B9C0E1C19DF5B5F3C1C1124B0F79DD /* XAbstractionLibrary_Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860E909C63B07021740D9ED4487028D4 /* XAbstractionLibrary_Parse.framework */; };
 		31C8B535C806901463B0CC6DBBF719DC /* XResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBD5F2886784CFC3321533F83AEA069 /* XResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		323C241B8487E79DA34A0DBE4D03C021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		32903BFDBDBD6DF7F0ECE01F63893E68 /* XPermanentStoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 85869FAF34ACCC3B2F6DF68F70D70FC4 /* XPermanentStoreData.m */; };
@@ -78,12 +74,15 @@
 		33678D35B6AF9C33C9A038A3EE3895EF /* XAppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = F2ABCFB692334C7894F6AECB28AE3D86 /* XAppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		344FA8C792F6EA436F61B26EB118C3FC /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B6F741BF198B0331C1D8F262F0397C5 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34AF76AAB32B9DAF9D58E33CC71EDAD3 /* XRecursiveLock.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5B2050973EE36C5F368AEA911AEE41 /* XRecursiveLock.m */; };
-		34B32449E57EA5C195C12D90E5F08270 /* XListViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A479C26B99F226A3CF65A9FE397251C3 /* XListViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		352417B22DAC8939DA19974750557074 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D15BA78E9928D17F18968B7FF4DA101C /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35436AEF39F5B45FB7A67A281BF5CAE9 /* XAbstractionLibrary-Parse-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6775225CB2119C23F5A63AC9C425F10A /* XAbstractionLibrary-Parse-dummy.m */; };
 		3586C2F6EBE5D865D0E455CE98D2CE6D /* Pods-XAbstractionLibrary-UICommon_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F23E8AB1BE4980BB73400B1A789655 /* Pods-XAbstractionLibrary-UICommon_Tests-dummy.m */; };
-		36F9ED0D6E71730728BE404F0CE6317D /* XListViewMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A03C43E835E44C55B97C74A06F51ED /* XListViewMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36D00C14AF1B13D57F564B8BFD7B80E2 /* XListViewMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A03C43E835E44C55B97C74A06F51ED /* XListViewMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		378576F749AED70D7A66B6F9C88E9168 /* XTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAD90539B62E2E440D5AE6AC72BEAAE /* XTabBarController.m */; };
+		37D201EA84E7569E47C25E9BC9DBAF02 /* XBaseListFootView.h in Headers */ = {isa = PBXBuildFile; fileRef = CC77FD984398E5507C1F882D0D8B132D /* XBaseListFootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		388AE896814389BCD6B9C75E2F0C8B9F /* NSError+MTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDCB91C6728E9D24014F0730A13DED /* NSError+MTLModelException.m */; };
+		39DF37D059D02AD36AAD992207F0B27C /* XAbstractionLibrary_Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860E909C63B07021740D9ED4487028D4 /* XAbstractionLibrary_Parse.framework */; };
+		3A9271440D6F19807FA18F305FA53A84 /* XListViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A479C26B99F226A3CF65A9FE397251C3 /* XListViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFFB108380D18DEE4FAD50FFBD301BF /* XConditionLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B17F6D8E6F43D8C077546534B29CC6 /* XConditionLock.m */; };
 		3B45BC8074AB0872B71B87580608AD99 /* XLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC57E816159C77404F1A75F68DC7FF6 /* XLock.m */; };
 		3C36CABF26E4ABA915A2D1CDDAABA61B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7642FC0D1DB19DD861474B4CEBC31A95 /* AFURLSessionManager.m */; };
@@ -91,17 +90,19 @@
 		3F92A6E2B7CFFDCD1567CE32B7BE9E9D /* NSDictionary+MTLMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1C211BC2862C3F0F6B99F52B1219 /* NSDictionary+MTLMappingAdditions.m */; };
 		41337E5F6F9773CCDAE408397C903032 /* XBaseHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 14262D53DB59915C6C648B730079A9AC /* XBaseHttpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42B1D8C7ACE0B3971F9B35E367D0A43F /* XModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 03F487160E31A653D08F2379ACB52F5C /* XModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		437B4A9B68E5BC6535F818C4E0FBDBC5 /* XAbstractView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A0C9F7037D4735C97A714D50BB92D9 /* XAbstractView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44187D42F05FD1287C73F2C10271EF2B /* XHeadViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E5876818FA82F73354F4DF12025C1761 /* XHeadViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		441A1ABDAD15912A447B754E3483D6F1 /* NSValueTransformer+CustomParseDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F39968C0E74810AC076C815C3CD682 /* NSValueTransformer+CustomParseDictionary.m */; };
+		44528F4D1833E8A14BA252831A7EAA13 /* XHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A372FC5BE0AB5BF97D3C50DB37F675C /* XHeadView.xib */; };
 		458D77B5E9DCF4933EC59260251C288E /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 16AB7CB9749AC2FAB96322E220EF3B7A /* KeychainItemWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4893AC7FD796546CA274864F83F718F3 /* XTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8704AE3FC8AC530B6E7CC53F73866630 /* XTabBar.m */; };
-		49E3A67BABFCBABA38628A10147828E4 /* XAbstractionLibrary-UICommon-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C85C1A0233BFEBA8DE9F288FA5D56F /* XAbstractionLibrary-UICommon-dummy.m */; };
+		4A2779D6EC3F142ED525582346A90FBD /* XViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A3B73230F98FD39D15B1E0A3E1499F /* XViewController.xib */; };
+		4AA60304B97C76B75C71FC7E459CF838 /* XXNibBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ED0C2587FD101CC4A8C3F9222067E6 /* XXNibBridge.framework */; };
 		4B2A056B97784CAA419969DA6704F9B3 /* NSArray+MTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AFDC0C20F3E6532B1A72B230AF3FF1CF /* NSArray+MTLManipulationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BBC81F687A63F7EE83270C1D155BECD /* MTLEXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FE06AC363762EE0093A25095D5ADC2 /* MTLEXTScope.m */; };
 		4BD7EB26257C8A57CC1BA83A9293A752 /* XWeakMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E9E1EA4B28C3DEA8208886BE26C1032 /* XWeakMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E32D6D6E87F684E87513B62DF422585 /* NSDictionary+MTLJSONKeyPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 542D11E1B79180A96469C5088F61EEA6 /* NSDictionary+MTLJSONKeyPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EDDAC236F3692D347A95EED6256028B /* XArrayTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5851328411128E2A79BE8546DFF181C4 /* XArrayTypeValidator.m */; };
 		51212D3659BB00E03E3D5A5A5C0499FB /* XCompositeTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E84B7BD770CFBFBDCD05751607CB6CE0 /* XCompositeTypeValidator.m */; };
+		515ACB8A744535FA304455BB20F1E507 /* XBaseMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C628D7EC8C69E75F4DE5264149AD11 /* XBaseMessageInterceptor.m */; };
 		5343B3242B34FAD60DBD64A2BEBD69B8 /* XMutableDictionaryTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = F396D1B537B0BE55F7FED6BA172DF7F9 /* XMutableDictionaryTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		551FCA99BF543582B0BBC41130E07CF0 /* NSError+MTLModelException.h in Headers */ = {isa = PBXBuildFile; fileRef = FD592523BDA770AFC702F3CF24FB33C1 /* NSError+MTLModelException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55524932C5B99252C8C988128DCFC279 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
@@ -109,15 +110,13 @@
 		56716FA2D145AD2BC016BCAF2D7BA8F4 /* MTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = EECCD7A6A8FF67DC7F8C2B75CD253470 /* MTLJSONAdapter.m */; };
 		569E0D840A4C66B532DAA2BA69EBDAA6 /* NSString+XCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 790B829604A865D4EA3170960368CBEA /* NSString+XCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		58A1BFF93340592AA3489598C5323D50 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = A84B11B8AB9DAD73D30FF547B6BB4266 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		59F92E79C7D780CA0E7705CBAC414030 /* XNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F33268635AFA6874B4E18FDE7E0A9FB /* XNavigationController.m */; };
-		5B3BDDB0BC574717652A7F5F8E33634C /* XXNibConvention.h in Headers */ = {isa = PBXBuildFile; fileRef = E826834E565892633A3C48FA0BF5C6C6 /* XXNibConvention.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BA97AA11567BACC4B1FCD661879F109 /* XNetRefreshViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B525FA29ABB9F1CC35CFBF67CD0D1BA7 /* XNetRefreshViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D6ADBFF57F6ADE5BE4398AA54ACC364 /* XXNibBridge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8508ECE8AD4E6395F9F7E25F8124E645 /* XXNibBridge-dummy.m */; };
-		5E9C6C40E50268325A442645250719A7 /* XBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF7216174C3B581A082CD4A1102114 /* XBaseCollectionView.m */; };
-		60B1D3184D5C1610AB30E7B9B8C75964 /* XRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD04B33E92C0D84108C61CD9F1613C9A /* XRefreshViewController.m */; };
+		58EF50A80AD9816DAE837ED4445EEA33 /* XRefreshContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = A82CFC94A5CDCBF0A7592F4E4BDC43E1 /* XRefreshContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DA3D77820F2DB069A96565110950EB9 /* XXNibBridge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CB4C20740308B76F594538C37DEFF65 /* XXNibBridge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EC1ACBDA282AB3402E192EAE52156E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		60E3496AA4334DAEF0B8576782ECFF15 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = F822CA34F3BFF2B760CFD41DD59E3704 /* ReplaceMe.m */; };
 		614472D47299EB4247B2AFD43C5A5129 /* MTLReflection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B3E2410DC724D5E5C9D27E3D71CF94F /* MTLReflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		616E3787A0AAF1CFADA97D1C2998CCE0 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4A861B3F65842504097935FF63F429 /* ReplaceMe.m */; };
+		614BECE1F12D4FADC4C1389B8D05AF72 /* XIBaseLoadingViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8E5E2C76005540ADFAFE96F94A5FE4 /* XIBaseLoadingViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62FB745F5450EC414BDD6BE1AB780E27 /* XBaseMessageInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = D325A6F0DD26AEC1BCCDE08DB7991165 /* XBaseMessageInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63B38E21C6720034F9C42037DC5B760A /* NSValueTransformer+CustomParseDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 25ABFF2C62D8C3294EA042AB28FE660F /* NSValueTransformer+CustomParseDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6499EF70570EC82BA9B27ECFF14B6D2F /* XAbstractionLibrary_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C122E7A6858677C98CE6F315A2D78484 /* XAbstractionLibrary_Base.framework */; };
 		65249D9AF75215320D2799695DE33DB7 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E3F4A93F2FE8A87B3CE8DD8A0CEC72 /* AFImageDownloader.m */; };
@@ -125,43 +124,43 @@
 		65C12E2D1D69AAE6E2D4865F32B7731C /* NSArray+Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B5696EF846F3EF9939C117944CF7E4 /* NSArray+Crash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		668A7EBF17AFEF555BBBD764FCF130F7 /* XViewMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 78ACF6FABC9D6CFBBD900E038833DD0B /* XViewMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66AB165746BEC262844AC5164E495FA4 /* XDataManangerMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = A9D04817BFC7146E21D9930D47FFD368 /* XDataManangerMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66E966C4D7B7E200ABB40A15104A4523 /* XNetRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A76DACA208F5BD13D005B31200B68E /* XNetRefreshViewController.m */; };
 		68472B7A5EAB38FEFB668F37C52E8634 /* Mantle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B2ED7FEC1C94C0413EC6F4A7DDB847 /* Mantle-dummy.m */; };
-		688606650A4EF5BA1C7714F5D7DC9BF7 /* XIBaseLoadingViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8E5E2C76005540ADFAFE96F94A5FE4 /* XIBaseLoadingViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		689D2A325DFD5ADD10BADFE4CF102683 /* XBaseCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C9E3D2C41100E8FD1AF7956088A1A3 /* XBaseCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68DE80C337C59DC634BBFA20D9BAEFC7 /* XBaseListHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A5A0015761D87DD82793A2872BA24 /* XBaseListHeadView.m */; };
+		699E3E20A9CE54F308C815C5F851372A /* XRefreshViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A70F73F53D145337910EE98FF905DDAE /* XRefreshViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A619DF396100C3F750CA156871B5405 /* XUnknowTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E175F5799B6900F75D738D20C009745 /* XUnknowTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B19D219F3E3DD3A0A9CB56DCE6BF191 /* XCharTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EECFC5B0F91BB17576A4529A329C09DC /* XCharTypeValidator.m */; };
 		6BB3217B3234AD291E587A5C3A976AC2 /* XNonRetainObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 381A13896689753B9892BF58A6BF92A8 /* XNonRetainObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C9CFB8DF339C265AAD4F077AFBF36CA /* XRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43707EB003D5B1BFC0A8DD26DB78CD6F /* XRefreshView.xib */; };
 		6D09717A80CC183FD86F04526DA28885 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DF632561D019E9CD4A42C5976A8D9A6 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D399666E3053A981D8125301EC11197 /* XBaseListFootView.h in Headers */ = {isa = PBXBuildFile; fileRef = CC77FD984398E5507C1F882D0D8B132D /* XBaseListFootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EDB05A206FB7A8F454F84FB594B0941 /* XAbstractionLibrary-UICommon-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45648B16FDDB08929102F7D4C274F515 /* XAbstractionLibrary-UICommon-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7060AE32471D8F6B5329CDF77FAC19B2 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB51686AFE8D86E029E2B2EE07C79EA /* UIRefreshControl+AFNetworking.m */; };
 		709DFEDC36D52A10876423B33EB50615 /* XAbstractionLibrary-Parse-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF0FE25C71EA553440F1AF3CABA265E /* XAbstractionLibrary-Parse-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7119336D8A0CD223E9392AE4F264CF18 /* XIBaseNotNetViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECC563C0659C761E2B0CAA49ED3B8BF /* XIBaseNotNetViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		717E927699B39962215C54F1D525D7C2 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E36BF8E1A265D3B5B49CD237B4537D /* AFSecurityPolicy.m */; };
 		7186025E30C8AE6A884F60030A40E335 /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B22CF81709CDDAC3F1A85F435A75F7 /* NSValueTransformer+MTLInversionAdditions.m */; };
+		71F30A48A26B66858C6C01C7F8EB3098 /* XXNibBridge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8508ECE8AD4E6395F9F7E25F8124E645 /* XXNibBridge-dummy.m */; };
+		7233D898C6D96F2EACD80594A99AD3B6 /* XView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E147C073744B4C10CD9583809CF9E19B /* XView.xib */; };
 		7298A6BE2F92566B9FC789E6CC427C9B /* NSMutableArray+Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC240D5FEA2C3D91A1528022FA52C05 /* NSMutableArray+Crash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7378D7C7B9404DD444E3B8D9BFB4E5FE /* XBaseDownloadHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC34022DB8FD57590CD44C8CD51A752 /* XBaseDownloadHttpRequest.m */; };
-		7476E52E5F6A3403AE06839893CDBC2C /* XBaseListFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C888DBE9C4D27EA535C43F72F8269B /* XBaseListFootView.m */; };
-		75CF7EB3F79E1794C83170856F8351E4 /* XBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F95FE95AC14E7F91BF3642546943F3 /* XBaseTableView.m */; };
-		760A03C1FF39B6CF47CB28E65A532D18 /* XNetRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F292F76C9E507A451106CFCF7961559 /* XNetRefreshContentView.m */; };
 		770F61D49244DE9EE6B84147E121233B /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB37146DA688C8B51DE459DE8BB0DB7 /* UIActivityIndicatorView+AFNetworking.m */; };
+		79AC896322E04A61AE7589702D623029 /* UIViewController+PushTransistion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE148990F2DDD99D4A6A1B4959F62F7 /* UIViewController+PushTransistion.m */; };
+		7A6B1FB70056E10F390FCA4ECE20B7FE /* XTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = DCE8871085D392F06E2F37BB6AC664DB /* XTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B94CBA7DDB5A4C62D4193243DCD179A /* XNumberTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0562474456400CBCC5B75C32EFF9B217 /* XNumberTypeValidator.m */; };
 		7BB11DC8D8D4BAE0D3F988DA49D28580 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DB9983F0AEF8FAF56176BCE7A8BDB /* AFAutoPurgingImageCache.m */; };
+		7CC9466B56D184F4C7DB7F2B47AB6414 /* XIBaseRetryDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = FF1160EDB24AA715FE7AFD4012F417B7 /* XIBaseRetryDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D5DD025A2F47E780BC762F95312C2F8 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E96113A06F724B4A721240D1F112E5B /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D8BF4277DCF19413AD955E0441E13EB /* Pods-XAbstractionLibrary-UICommon_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6669D94135B0A0F923BB7D174DA2824 /* Pods-XAbstractionLibrary-UICommon_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FF5B9802ABA26E3922295AE0BDF78F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		82C97618F3BD1AE98D78B73BFC9B9CE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		8539FF5300E331DC2904B78DE74B35A5 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E34ACBA609526E031550D3D15FCD87B5 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85D3E729114064EF174A7DE630D00046 /* XNotification_Action.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2F7512D2C66CA1B7605F06CB985B6E /* XNotification_Action.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86BA5CB936FDF954A70E43C7D2AF41DF /* XXNibBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 36498A3D2CF70FF7BA140141AFB03CB2 /* XXNibBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86CB16D157C6C25E6852DF4CBBB7A27C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		87571757113E7B9E5FFFEEF0A049BFB7 /* UIImage+Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 75050C362CA5CC581C5F23E0D3ADE498 /* UIImage+Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		880056BFA05F61AB3AEE73608DDA4763 /* XTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8704AE3FC8AC530B6E7CC53F73866630 /* XTabBar.m */; };
 		8874CCC33EA6F7D27B6D7F92687787EE /* XIntTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C5FC50448A104F3D14F5674CDBF697 /* XIntTypeValidator.m */; };
 		88CA90DAB45214F1EC1E8471BC72EE2F /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED32CC0F97FDC7599D349EA9073AE2 /* AFNetworking-dummy.m */; };
 		89231FDC296496867DB8359F6807827A /* XMutableArrayTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C2665D69901917389F94B32AA566 /* XMutableArrayTypeValidator.m */; };
 		89D0CB630A5DB19EA5373998C930A733 /* XUnsignedCharTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = FD756719201B0FE7C7D30D496B67CDF8 /* XUnsignedCharTypeValidator.m */; };
 		8A1F1976565509DC3361E41BF7E8A8A0 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD353B984209EC9F8B34A1D7689499 /* UIButton+AFNetworking.m */; };
-		8A52A6DEC80B78BD702BEED0E9D79324 /* XRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB30986B1417B456A091D71F23343 /* XRefreshContentView.m */; };
-		8A696FE5E4F32CC6E1B55CD9DD3231BF /* XBaseMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C628D7EC8C69E75F4DE5264149AD11 /* XBaseMessageInterceptor.m */; };
 		8B6A242A7ABEB3E5B0C9809310C400FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
 		8B9FE02BB2DD95BFF2490EFA277F713D /* XMutableDictionaryTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 277C5D139388F9CFE59BCA7A735D7C63 /* XMutableDictionaryTypeValidator.m */; };
 		8BB65A1F0220A71FD9627DBE8DA039B6 /* MD5Digest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B30C3A6DC197428BFD4D797C9A7CD7DD /* MD5Digest-dummy.m */; };
@@ -170,85 +169,84 @@
 		8C92DF30C710EF3478054BFD0412CA97 /* XFloatTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EC680C78DC6737331B3C896E61897D96 /* XFloatTypeValidator.m */; };
 		8D56A4E7488E5AFAE61ABBBACEDF6516 /* NSObject+MTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C727DB355B7CF96F60F42232C869F70 /* NSObject+MTLComparisonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E5CD168B057E8FF401A8FFD8114AF1D /* XConditionLock.h in Headers */ = {isa = PBXBuildFile; fileRef = D203FA44D596CF888173772BA128EA52 /* XConditionLock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F2BCE9B10FDA2230FEAD2495523194A /* XBaseTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 941ED2D77F9BBCE0A2F12CAEB21C66BD /* XBaseTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F509D5EE90B85A706138D4DBEC817B1 /* XIBaseNotDataViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 795B37F3143FB517E3C3A33BC1AE0D67 /* XIBaseNotDataViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FF83E9F8043DD51EFCD90D7CB794B6D /* XBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A17226FE243AAEE67AF6ED77CD85B5 /* XBaseViewController.m */; };
 		912930CCFE9381743790389F5A345A8D /* MTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5FE9DE21C1E833DBB76E9FCC594AA /* MTLModel.m */; };
-		91F8D5CE8F8FB7CE4B04EBD9777ACFEB /* XHeadView.h in Headers */ = {isa = PBXBuildFile; fileRef = B732BD4CCB8EEBC8624E744B33500EC2 /* XHeadView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91BF063932C9958F3E07E07D1582DA6E /* XXNibConvention.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD0F198F4E8074DB64DCDE2C7062031 /* XXNibConvention.m */; };
 		9295C0A0D0F9DC0842F8EC71FD9EE88B /* XUnsignedCharTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 76D210E2BC0BE92AA7583FBA5AABC1EE /* XUnsignedCharTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9520CCC018EB05429B669309EA685E5F /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9B0AE13F38ABF02AA42AB41E88968B /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95A0553649CE11BA1F982412FA1FC65F /* XBooleanTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DF9FF5CD5763ED47E90368D7ABE0C2 /* XBooleanTypeValidator.m */; };
 		96F4E194ECACDD4DB23573AEAEED9657 /* XAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C26D2B70F912BB0392576D32BE867C /* XAppInfo.m */; };
-		97FBD79BC932F4D3D9E6D150FAEEC99F /* XHeadViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E5876818FA82F73354F4DF12025C1761 /* XHeadViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97349237D03200174DC9E08AD2E7A4A4 /* XHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A635C2C63BCCAA523633F58C7A701B /* XHeadView.m */; };
 		98554A47E00C96697DC41FD61148A592 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 351B0DC17FC9DEC99EAAC298ABD5982B /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9884DB0AD3C1296A364C877037F92292 /* MTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BB32AD940266A89B15BFFC63710072 /* MTLReflection.m */; };
 		9900E11FF1893E2C67DB7CB78632D458 /* NSArray+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C9E8F4D71CEEEA567CC34D4C2A2705 /* NSArray+MTLManipulationAdditions.m */; };
 		996A641B5213EB60FF9C5D57066C7A99 /* XDoubleTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC07CD55A83168EB1BB65F2EDA07EE9 /* XDoubleTypeValidator.m */; };
-		9A0CA377754A19C4C769E2BD9A1BF4B0 /* XRefreshContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = A82CFC94A5CDCBF0A7592F4E4BDC43E1 /* XRefreshContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99B128861A0308FAAF281583ED895A25 /* XNetRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F292F76C9E507A451106CFCF7961559 /* XNetRefreshContentView.m */; };
 		9AAB44C5D0CF0E5BB477471898A6793E /* XConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F918F72B01A1F70CD825F76B582892E2 /* XConfig.m */; };
 		9AE3C1D9CD0E7125E191C257E1CB116B /* Mantle.h in Headers */ = {isa = PBXBuildFile; fileRef = 774AB6F14F14C660D87C0FB0EDB02015 /* Mantle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9AF0BF86C753C450C23E890D613F805C /* XIBaseNotDataRetryDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D34593659F587067477366B77F7B54E /* XIBaseNotDataRetryDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B396FC4A5DA5DAB9EFEFEAFC92330A8 /* XCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 941274E4CCDB6084E2E413039A3020B0 /* XCondition.m */; };
+		9B57C9CD7085A84BB3ACF67EDEDD09B9 /* XRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43707EB003D5B1BFC0A8DD26DB78CD6F /* XRefreshView.xib */; };
 		9CD4BA738D2110B8EB635F692D3F61DA /* XBaseUploadHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 644ABAB930373060F7803D0102E66A3B /* XBaseUploadHttpRequest.m */; };
 		9EEC84CC8AC387A278B2704AC735037C /* MTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 414C14D84B62EB1B112DB815C50C4A69 /* MTLModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F57C7C6C4FF5F6CDB1E1F93C47BFC76 /* XBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C949F04CE82E3168FDBF7A774C4CA1 /* XBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A038A4EF4D58E6087CF0F9AA9D1A8EE8 /* NSValueTransformer+MTLInversionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E743004E601C7D14CE865DE6B0789C7D /* NSValueTransformer+MTLInversionAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A04B00646158F1D491D98FFFF3BEE255 /* XAbstractView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A0C9F7037D4735C97A714D50BB92D9 /* XAbstractView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1F7151C86F7DB869AF5EC308567323D /* XDataTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A10AD0AE5C92F011DB8B5D28AD1FA4 /* XDataTypeValidator.m */; };
-		A3E71B065E869B4CCE4DD723EB6CF974 /* XHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A635C2C63BCCAA523633F58C7A701B /* XHeadView.m */; };
 		A40331C3513E68CF5FBB4812D276A3EF /* XKeyValueObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3B34FCB51E13C5B23D498287F70330 /* XKeyValueObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4A8B626A6B294B512744FE506BDF05C /* XIBaseRetryDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = FF1160EDB24AA715FE7AFD4012F417B7 /* XIBaseRetryDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A54F8009F57E3F62A3AA4B484CDA122B /* XDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A02038345CC252537B815F4D2F6720 /* XDeviceInfo.m */; };
 		A60CF7747900CF50467338D43E103BE5 /* MTLModel+NSCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BE7BCC559D28583111A65E6224AFAAB /* MTLModel+NSCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6979E99B134694176A9DB4D35470F2E /* XTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = DCE8871085D392F06E2F37BB6AC664DB /* XTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7083D86C1B0FB9ADEC7E42351843BB2 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C6F488CDD3A7EE5C85908106B89C3AB /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A8D2B0003B820EF90B2962ACE00E8652 /* XAbstractionLibrary_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C122E7A6858677C98CE6F315A2D78484 /* XAbstractionLibrary_Base.framework */; };
-		AA937B54A0828F2A12221740494EB67F /* XNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = E907EC9C113190EF7ECA85E50F6C5CBA /* XNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A924ABEC44DA54619049AFD2D2891112 /* XXNibBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 36498A3D2CF70FF7BA140141AFB03CB2 /* XXNibBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABEEC457158D2B57F7B26A247C120285 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 80626A48388F946EB7F43BD3FD63CAC5 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD2047DB15E262205951A771A02A700F /* NSDictionary+MTLMappingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1207F9C47722B048A7B7B38A3EBFE8 /* NSDictionary+MTLMappingAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADCB3CF22A783C9E2E8A365F10050144 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E008BCED0D929CA1CF268E35E51668F /* AFNetworkActivityIndicatorManager.m */; };
-		AEE16BF837F451AD6695A6E6A65FFCAC /* UIViewController+PushTransistion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE148990F2DDD99D4A6A1B4959F62F7 /* UIViewController+PushTransistion.m */; };
 		B04DC373A6A88F4BCF6C379BDC4C2FC1 /* OpenUDID-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE38FFBBC6666C8EA3B0FC8985F4EA3 /* OpenUDID-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1DE150B72948FCB651595707F915005 /* XNonRetainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0615B50E8FEBD235221F07CFA8BC84DF /* XNonRetainObject.m */; };
 		B34D9B20E4ED429FD38EA4786B931E98 /* XIntergerTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = DC60B6F384AC8B69AB55FE89FA2B141C /* XIntergerTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4A9F407E724C015EEB9969F3C4127C2 /* XAbstractionLibrary-Base-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F11AE209B03887667A6EBA24B9DC8E3 /* XAbstractionLibrary-Base-dummy.m */; };
 		B4B29A4048D11925F0A5401074EFAD2B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C012964E5B467689732BEAAEA75A8C7D /* AdSupport.framework */; };
-		B4E6C4C8C5F664C9D2A8862DCA53AF00 /* XIBaseNotDataRetryDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D34593659F587067477366B77F7B54E /* XIBaseNotDataRetryDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B52ED12696D995BFE7D450D5F3CDE000 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 012330D73E7BEEF07CF0C9E3A27BFCDF /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B562A8AEAEB2D9F3BE1371B0698D8E01 /* XBaseListHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A5A0015761D87DD82793A2872BA24 /* XBaseListHeadView.m */; };
 		B5EBB47DC95880F93D4868838A849706 /* XDefaultValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F96B4CFB360B9348858CFDFC5402D8 /* XDefaultValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B62A6942846628D430C7A3486D112473 /* XRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C331BC009B54FB8EA59F95B315E407 /* XRefreshView.m */; };
+		B65224A56AB167789FB82AECD80AB30E /* XPushTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 30A6272F638580B303FC141659A25C21 /* XPushTransitionAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6664EC3FCC2206DB833824B4F150AED /* Mantle-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF5F791B8B974A888AF4C984D056E0C1 /* Mantle-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B72B769799592CA83370B197C41CE410 /* XAbstractionLibrary-UICommon-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45648B16FDDB08929102F7D4C274F515 /* XAbstractionLibrary-UICommon-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B75747F28A874C3957E1E110614699F1 /* XRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C331BC009B54FB8EA59F95B315E407 /* XRefreshView.m */; };
+		B7945F048D59245CFEF4D50E052150DF /* UIViewController+PushTransistion.h in Headers */ = {isa = PBXBuildFile; fileRef = 741441361EBB0987F67169AD449CB500 /* UIViewController+PushTransistion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7F19A56698046680CD1C85361F69278 /* XMutableStringTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 347C61745DEC2700B3B8AF2D1BAD9B66 /* XMutableStringTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD8D3552E553B324D987F3A988D4E368 /* UIViewController+PushTransistion.h in Headers */ = {isa = PBXBuildFile; fileRef = 741441361EBB0987F67169AD449CB500 /* UIViewController+PushTransistion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8039517C2C1DFEFE0EE998DC58A8440 /* XNetRefreshViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B525FA29ABB9F1CC35CFBF67CD0D1BA7 /* XNetRefreshViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBFF1568EDA9E34D534F2EB080B7D2A5 /* XAbstractionLibrary_NetWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BAE2BB9D063201E6AAA47C00C0D794 /* XAbstractionLibrary_NetWork.framework */; };
 		BDD744F050D3432DC9C49878018249B0 /* XIntTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = E3DDEC9533AD7F66861D8E2AD937AF9F /* XIntTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BFC7C3B1FAC3331E25A4F6A7758A1BF7 /* XBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 671394905B9D1E81354F1B3BAB50AEEE /* XBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF9CD61919B588C03BF23D32BF95D096 /* XTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B6B0EA1C7AC9A4587D37E55A880FFA /* XTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFD23CE00A7CEADF49ECC13EBA9C102F /* XArrayTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE046268F68D76B02A52483204250AE /* XArrayTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFFCC03926790BF9A0E494C5DCF7B650 /* XXNibBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A32C9C1822F56DEFF1E547B1DB6B0C5D /* XXNibBridge.m */; };
 		C16AB435781B072E5DAA2A07D6FFB719 /* XNetWorkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D34571476E251AB596BE40AB1B483D /* XNetWorkStatus.m */; };
 		C24958EEEBEF8E7AD7E9FA3B4298782F /* XNumberTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B304B3A54252F446C4CF199AE47CB4A5 /* XNumberTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C26A0CEF444FECC7A1BAAE1C8373AD93 /* NSMutableArray+Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17638E5BAFEB844A67DDA0D7EED6B9 /* NSMutableArray+Crash.m */; };
 		C2B451A45F3D90CC2DF1FA64534B4519 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BDA9D08D049DF423244CC7BAC779530 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C347193BD701DBBA570772F855188AC8 /* XMantle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6822D698C5D01E1D0CF5FACABF5EFC43 /* XMantle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3AD56E90E694FEFFD87AD69F3A9C160 /* XIBaseNotDataViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 795B37F3143FB517E3C3A33BC1AE0D67 /* XIBaseNotDataViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4340B2E17FFCC772579AE609085C581 /* XDateTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = F9731FB46C8830F2E7E6EBADD71CE388 /* XDateTypeValidator.m */; };
+		C4E37599C6658209712786DB9B52C6E6 /* XBaseListHeadView.h in Headers */ = {isa = PBXBuildFile; fileRef = A85667830F23F9A23F2811FE1DB87E84 /* XBaseListHeadView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C70953509DA9D8669F57911D1F91BA1F /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A194690F739DC7E76845E9B99DD7B71E /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C710FB501ADA284F8DDCB3F1AFF56120 /* XXNibBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A32C9C1822F56DEFF1E547B1DB6B0C5D /* XXNibBridge.m */; };
+		C72CF52F44CACCD7D13D4315629FB11A /* XAbstractionLibrary_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C122E7A6858677C98CE6F315A2D78484 /* XAbstractionLibrary_Base.framework */; };
 		C94EC49910EFD545F1362C27B15518DC /* NSArray+Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654DC2349A160783426F32F84E93BAC /* NSArray+Crash.m */; };
 		C9684ECBC129F0DA2809E5DFBA15333A /* MTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A56F5FBCFE469C3B35AB3E16B3E2DF53 /* MTLValueTransformer.m */; };
 		CB0BFD4016952DAA3C49DCC3B7F0E9DC /* XJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A98D40F676F08C7ABA9F587DA15C873 /* XJSONAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB2DC4A68B923538832350D7DCE9D5F1 /* XCharTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 61EC084D35CD95AE8DE6BAC16A9F092E /* XCharTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC25F0BA9CE18275584AB55191C90C74 /* MTLEXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = E457E81F1E5CB9D1D4C3ECB36EFDC5CE /* MTLEXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CC89D892B39DB13D4D5693FFECAB1F3A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6F1C8AD7CDA0A0FCC4D531EFDD6836 /* AFHTTPSessionManager.m */; };
-		CC99230D1640A69515162B1F3328F6BE /* XPushTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 30A6272F638580B303FC141659A25C21 /* XPushTransitionAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD4F08A41527687AB9FEA7A406AA6803 /* XRefreshView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0F79E61EBC7DB61FC328BD5D515836 /* XRefreshView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE8270620549F24201D689CF4232DF6C /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 32461EE80F32ECBC032D6B2A11AC05AF /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF23059EA9A27BCC094E07FC5E5E3977 /* NSDictionary+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F15668E295AD53E9E0B868EA1071B665 /* NSDictionary+MTLManipulationAdditions.m */; };
 		CF5722A6D07C1B8E6321575B0834123D /* XBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6ABE7DAF43FD3F62123C6EABF25820 /* XBaseModel.m */; };
-		D29307605D78BDDE62F7EEDFC93E3B3D /* XBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F73A784389EA5966786986F6CB9C2F /* XBaseView.m */; };
 		D3E17EDAC917FA91720D2726D2F1AA6C /* XGlobalMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA63AB06C16ECF84D573E4FEDDBE0FC /* XGlobalMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D5993C96792B5A1EDF449D4A247E5F18 /* XXNibBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ED0C2587FD101CC4A8C3F9222067E6 /* XXNibBridge.framework */; };
+		D60C7AAFCD4D71A55EAD37328D07AE28 /* XRefreshView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0F79E61EBC7DB61FC328BD5D515836 /* XRefreshView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6B7055BFEC2241C77D9CECC4CCA6882 /* XUnsignedIntegerTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F99D7974EDE05FCB0D77893BC27E3 /* XUnsignedIntegerTypeValidator.m */; };
 		D775BF209426C32223FC9F1D0EB79F12 /* NSValueTransformer+CustomParseNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA07338183297BC61045A8ADB0F32 /* NSValueTransformer+CustomParseNSArray.m */; };
 		D808C57BB6B9231C8C7AC76DC3D1D331 /* XDictionaryTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE14020D913AD232BBDBA4CF66AC903 /* XDictionaryTypeValidator.m */; };
+		D8099DA7D0006B30C1D5DD6CC40CBF24 /* XPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F082BBF8162639B1AAC5C329E2EC0CA1 /* XPushTransitionAnimation.m */; };
+		D972D846CDF47B0F80290F1BFC4FAFA6 /* XNetRefreshContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = F994109B6ECCB3B7DE29708414305986 /* XNetRefreshContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9E5F4490CCEA751BC521BD87F0C1283 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E68DB60E6FCB0A6DB580F03523032171 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC581974DA7D650235B26CA81117A749 /* XTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B6B0EA1C7AC9A4587D37E55A880FFA /* XTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB0ED390BA35FB8B1CBF2CE22BB40757 /* XBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 671394905B9D1E81354F1B3BAB50AEEE /* XBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD47146FF70009D6FACA442957FF041B /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F41744042A664F64943DB0FA4346FB /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD59C6D9FE80FF056113493E2BBFD4CC /* XBaseHttpRequestManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EAFDA00A4CE10FFC0A5C039CB471F6FB /* XBaseHttpRequestManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDAC170B5384FBDC418082D8792F011D /* XUnsignedIntegerTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = FB534E32B4FB082E0CDD2C231D27B571 /* XUnsignedIntegerTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -257,44 +255,53 @@
 		E06E54D6D69BDC39779EFC7980F5053B /* XDoubleTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 701B19FFF1D6C28718D4ED2C9015DB3D /* XDoubleTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0A13DF46C0B0667EA25CF6D6B59B2D3 /* XHttpResponseDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 92A1C73D90097C25BCFBB930FD0A2FA9 /* XHttpResponseDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0E916756B31ACBCE6D959C978DBFA4A /* Pods-XAbstractionLibrary-UICommon_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCBA5F08036D32DE7F26888087F15928 /* Pods-XAbstractionLibrary-UICommon_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E101201D5EF244A56FF3B4F1463E019A /* XAbstractionLibrary-UICommon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80F880FD8825F044F0E7DD3EF0421170 /* XAbstractionLibrary-UICommon.bundle */; };
 		E138230C901D590C8D3A16EEAF8220C9 /* NSMutableDictionary+Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88C21F5CD99FEF3824C50737E892C /* NSMutableDictionary+Crash.m */; };
 		E192C0FB12280950E8B214D3ABD5DBE5 /* MTLModel+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2817C6E8B9431E13FAFB194AE2FAEBFE /* MTLModel+NSCoding.m */; };
 		E198B0FC3E52C8265F16F2AD39362B0B /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD5E6148ED7837F94EC0F8886F443B7 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E19E21487E5FA34EEE51487D4EC6BC60 /* OpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A5D16F384AA02506B768E49C6092D9 /* OpenUDID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E29F53BA6F93868090C290A82A08F6A3 /* XDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEC98929D5497904B89F4ADF675A9D3 /* XDeviceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2EF5A05375C02056911FABC6611FCF3 /* XRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB30986B1417B456A091D71F23343 /* XRefreshContentView.m */; };
 		E30929A53AA4140E3440C670F91F4EC6 /* MTLTransformerErrorHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ECCB195115B9F4AA834392DCF89AF4E /* MTLTransformerErrorHandling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3339EEBE65B0B097AD2C6C49F765B9F /* XBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F73A784389EA5966786986F6CB9C2F /* XBaseView.m */; };
 		E34AB884D9479C79797A9E4FA1013038 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C0A2962B2BBBAB3E6BD7A679D6015D /* AFNetworking.framework */; };
 		E51BF6BCE2D1A89882C2F094443E7655 /* MTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3473D4AB25AEBA862AB9EB1FDAAC6A47 /* MTLJSONAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E5243905D01AEFD6D556337ED55248CA /* XRecursiveLock.h in Headers */ = {isa = PBXBuildFile; fileRef = F772876FD9894D2D81796497B0977E43 /* XRecursiveLock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5B18462AC812116E57F42D14247E59B /* XXNibConvention.h in Headers */ = {isa = PBXBuildFile; fileRef = E826834E565892633A3C48FA0BF5C6C6 /* XXNibConvention.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E69820F47EF03840110FDF5B2662EB9E /* XBooleanTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 717EA1E0F629F768E8C530E3AC1576DB /* XBooleanTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7341106E482C2E3D1339AFF7FAE1493 /* NSMutableDictionary+Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = 98232C680E8242B24A30B56FAB8BD33A /* NSMutableDictionary+Crash.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7B34F3612B6D4932431100917CF9E9A /* XBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E0EECA87FCA68EB39B013293943DDABB /* XBaseViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8E5198EB4FC32FB417EFF33A43C5B74 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4A861B3F65842504097935FF63F429 /* ReplaceMe.m */; };
 		E91F3A4E476FF7441E768AEEA52780EB /* MD5Digest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B710D17A92973679575B4F07BA5509 /* MD5Digest.framework */; };
 		E98C02A4AB42FF73C6408A08129B9410 /* XConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = C8F7518E6786DC7587BFDDFD4F935B30 /* XConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9D9CE084BE85B2E39883D55273167C5 /* XLock.h in Headers */ = {isa = PBXBuildFile; fileRef = AC64EC312B3CD84A1C864629DD941287 /* XLock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB223DD2BFFCC6B355DAF66DFB8966F8 /* XIBaseErrorViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5231B4D327060E52F2F2472AAE45F37F /* XIBaseErrorViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB5D43D6B0B670417C8A988F42DB9BE2 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3524A674BDD41E3853970C02A127A8 /* KeychainItemWrapper.m */; };
 		EB6F66037FFE73073DEBCB09880FA3B3 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE0CD1ABF1CDE0728ECE21109520794 /* UIImageView+AFNetworking.m */; };
+		EBF91D86B96929272589B08C5074918F /* XIBaseNoNetViewRetryDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B53F8113A4783532D3B6896E14FB15A1 /* XIBaseNoNetViewRetryDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECCC99A8797BCF2BF3708C0A15C392E3 /* XDataTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5DFAD8C302C7A6E7ED82F0DC0B2F9A /* XDataTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDB4A95767CE7DFF41D5365807E83259 /* XRefreshViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A70F73F53D145337910EE98FF905DDAE /* XRefreshViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDB7ABB4327C417F62CC2E109DA8F61E /* XNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F33268635AFA6874B4E18FDE7E0A9FB /* XNavigationController.m */; };
 		EDE9327A2D68D26C14E7AD8E9E35C3DC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D6F289D51276CEE14A7D2DE70584EC /* AFNetworkReachabilityManager.m */; };
-		EE492F345B95D7D6B3909002F6253666 /* XIBaseNoNetViewRetryDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B53F8113A4783532D3B6896E14FB15A1 /* XIBaseNoNetViewRetryDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFBD19595B551AEB138759094859133B /* XTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAD90539B62E2E440D5AE6AC72BEAAE /* XTabBarController.m */; };
-		EFC4933DF0D0AEA4463C4BDAB63E2ACC /* XAbstractionLibrary_NetWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BAE2BB9D063201E6AAA47C00C0D794 /* XAbstractionLibrary_NetWork.framework */; };
-		F07C3EDFC9349BEB1085CCA700C37AD5 /* XHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A372FC5BE0AB5BF97D3C50DB37F675C /* XHeadView.xib */; };
+		F1CE7FC743A48BFEF8D632DA539ECD5D /* XBaseTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 941ED2D77F9BBCE0A2F12CAEB21C66BD /* XBaseTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E45F31D85DDE77DCE1F885339FBF94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D7F910B08D7A954F4722E6968FC20 /* Foundation.framework */; };
+		F4E0B43DCD98705BDBE6DE83E80321BA /* XBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF7216174C3B581A082CD4A1102114 /* XBaseCollectionView.m */; };
 		F5714DC0AA1C7647B5EB1926B7F192F9 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484ED7FE4AEE6549A4662575B832381 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; };
 		F5A084ED43D94F0C21A4EAA9AFA505AF /* XPermanentStoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 930A2692BB8F776D74714AA31FF45855 /* XPermanentStoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F72FDCBBC8C6C8C7896090471B4BA794 /* XIntergerTypeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E4F0C1E4DE72C2BC51A89F7CA1A3FF /* XIntergerTypeValidator.m */; };
 		F7B3CDFA36E7798CE4768A940712CDE9 /* XDictionaryTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 55C7BB83B91E14B3B1F469367FE36EE4 /* XDictionaryTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7EF1D1C056F3DC74FDEF9B44A5D11ED /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 691C0D7144C47CC5B15F0A81B46D9682 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8DD571BB3AFE78F65166AE8A8987037 /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 20788569B9D5023CE19720F4B33BC378 /* AFCompatibilityMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA47D07B446C14C5400231C681A5C778 /* XNetRefreshContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = F994109B6ECCB3B7DE29708414305986 /* XNetRefreshContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD1B39EE46282C48406CEA7C1FD6E92B /* OpenUDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D06BBE1CBE075BE8DAAD0C1263AB7A /* OpenUDID.framework */; };
+		FE0D4B3DF1FF0B5F0B93863A46E24F40 /* XAbstractionLibrary-UICommon-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C85C1A0233BFEBA8DE9F288FA5D56F /* XAbstractionLibrary-UICommon-dummy.m */; };
 		FEDCDDD515BB8EBD609564733451BBCF /* XMutableArrayTypeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 16DA9634F86B4D198896A6DBC1ED5020 /* XMutableArrayTypeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		01671D4E2691BE1651E8E1EF129DCCC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9409F5C24FD1656C059E057E7CE14904;
+			remoteInfo = "XAbstractionLibrary-Parse";
+		};
 		0990C9EBE991ADC6CA1718222B77CF3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -308,6 +315,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0130B3724283586C0E9D2A112D4F2AA1;
 			remoteInfo = AFNetworking;
+		};
+		0B05E525DCCD3EDC2A47A2881AE067DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46E5E6A66FD41EFFC8E04442C25DA6B4;
+			remoteInfo = "XAbstractionLibrary-Base";
 		};
 		115189BF120A50BC6DFE6C15F10E23D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -365,7 +379,7 @@
 			remoteGlobalIDString = 46E5E6A66FD41EFFC8E04442C25DA6B4;
 			remoteInfo = "XAbstractionLibrary-Base";
 		};
-		794C909B199B7D695FA7E84CE9B36FD4 /* PBXContainerItemProxy */ = {
+		80E5D135ECFF382AB281561BDADAECA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -379,19 +393,12 @@
 			remoteGlobalIDString = 47CCF1D9F019FFC6546DA481B71A2C4E;
 			remoteInfo = Mantle;
 		};
-		88DEA1FFB4A16B60E49E1F1B60DBBDE9 /* PBXContainerItemProxy */ = {
+		AFC71C9E66489D0A0440B304F46C07CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CC2D8CA4AE24FE3DE91172DE32FBE1BC;
 			remoteInfo = XXNibBridge;
-		};
-		A639257330C94AE1B729666386926794 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9409F5C24FD1656C059E057E7CE14904;
-			remoteInfo = "XAbstractionLibrary-Parse";
 		};
 		CB4224E8282AE6E9ECEEAC8529BB78B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -414,13 +421,6 @@
 			remoteGlobalIDString = 46E5E6A66FD41EFFC8E04442C25DA6B4;
 			remoteInfo = "XAbstractionLibrary-Base";
 		};
-		DD0D913A3C8F9944C1206DF52F4DE039 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46E5E6A66FD41EFFC8E04442C25DA6B4;
-			remoteInfo = "XAbstractionLibrary-Base";
-		};
 		DE8D7F08D43B678C3A5505C1F011B14F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -428,19 +428,19 @@
 			remoteGlobalIDString = DD7CA28F5685C431FFDFC620C6AFCDAD;
 			remoteInfo = MD5Digest;
 		};
-		E45C45E0C50F82255E7AEBF98833D6B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D6DDBE144A48653F1C4FB2E1451D9AA2;
-			remoteInfo = "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon";
-		};
 		EE3EC67F9283A977E2A118C2B697DB70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DD7CA28F5685C431FFDFC620C6AFCDAD;
 			remoteInfo = MD5Digest;
+		};
+		F0A8A5478260972F4DC89BC01D6F2DC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6DDBE144A48653F1C4FB2E1451D9AA2;
+			remoteInfo = "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -807,6 +807,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33BD8FBB52A5FD16DC8F4711A471850F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC1ACBDA282AB3402E192EAE52156E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A3B21D0175822BB31A23EA0A56A68FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -815,11 +823,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CEFA703F50C6B868E4033721BB964AA /* Frameworks */ = {
+		43DA90E9CE39345BE258EB6F284DA2E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08954BA35CA78CB1B94C8B692DA7D64A /* Foundation.framework in Frameworks */,
+				14327FD6F3DF671BF954A463CE475C28 /* Foundation.framework in Frameworks */,
+				C72CF52F44CACCD7D13D4315629FB11A /* XAbstractionLibrary_Base.framework in Frameworks */,
+				BBFF1568EDA9E34D534F2EB080B7D2A5 /* XAbstractionLibrary_NetWork.framework in Frameworks */,
+				39DF37D059D02AD36AAD992207F0B27C /* XAbstractionLibrary_Parse.framework in Frameworks */,
+				4AA60304B97C76B75C71FC7E459CF838 /* XXNibBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,7 +845,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8EF784C6D49D253BA14A164E34C1D87C /* Frameworks */ = {
+		888294EF3A07436C2F47C94D1A909FCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -888,18 +900,6 @@
 				2282D665135CCCECE8F2F045F50F643F /* Foundation.framework in Frameworks */,
 				E91F3A4E476FF7441E768AEEA52780EB /* MD5Digest.framework in Frameworks */,
 				FD1B39EE46282C48406CEA7C1FD6E92B /* OpenUDID.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F73D2AA7DB06777116612AA9938703DF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				86CB16D157C6C25E6852DF4CBBB7A27C /* Foundation.framework in Frameworks */,
-				A8D2B0003B820EF90B2962ACE00E8652 /* XAbstractionLibrary_Base.framework in Frameworks */,
-				EFC4933DF0D0AEA4463C4BDAB63E2ACC /* XAbstractionLibrary_NetWork.framework in Frameworks */,
-				31B9C0E1C19DF5B5F3C1C1124B0F79DD /* XAbstractionLibrary_Parse.framework in Frameworks */,
-				D5993C96792B5A1EDF449D4A247E5F18 /* XXNibBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1655,43 +1655,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1C537A245483A05492860E753AC6186D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD8D3552E553B324D987F3A988D4E368 /* UIViewController+PushTransistion.h in Headers */,
-				B72B769799592CA83370B197C41CE410 /* XAbstractionLibrary-UICommon-umbrella.h in Headers */,
-				437B4A9B68E5BC6535F818C4E0FBDBC5 /* XAbstractView.h in Headers */,
-				1FE8F04FF87002D5F5D4EA85DEBBEA4D /* XBaseCollectionView.h in Headers */,
-				6D399666E3053A981D8125301EC11197 /* XBaseListFootView.h in Headers */,
-				2719C38C419F5FDB3FCD9F33E3D3EDE6 /* XBaseListHeadView.h in Headers */,
-				0284F812B821756E1740CAB1632D667C /* XBaseMessageInterceptor.h in Headers */,
-				8F2BCE9B10FDA2230FEAD2495523194A /* XBaseTableView.h in Headers */,
-				BFC7C3B1FAC3331E25A4F6A7758A1BF7 /* XBaseView.h in Headers */,
-				E7B34F3612B6D4932431100917CF9E9A /* XBaseViewController.h in Headers */,
-				91F8D5CE8F8FB7CE4B04EBD9777ACFEB /* XHeadView.h in Headers */,
-				97FBD79BC932F4D3D9E6D150FAEEC99F /* XHeadViewDelegate.h in Headers */,
-				EB223DD2BFFCC6B355DAF66DFB8966F8 /* XIBaseErrorViewDelegate.h in Headers */,
-				688606650A4EF5BA1C7714F5D7DC9BF7 /* XIBaseLoadingViewDelegate.h in Headers */,
-				EE492F345B95D7D6B3909002F6253666 /* XIBaseNoNetViewRetryDelegate.h in Headers */,
-				B4E6C4C8C5F664C9D2A8862DCA53AF00 /* XIBaseNotDataRetryDelegate.h in Headers */,
-				C3AD56E90E694FEFFD87AD69F3A9C160 /* XIBaseNotDataViewDelegate.h in Headers */,
-				7119336D8A0CD223E9392AE4F264CF18 /* XIBaseNotNetViewDelegate.h in Headers */,
-				A4A8B626A6B294B512744FE506BDF05C /* XIBaseRetryDelegate.h in Headers */,
-				34B32449E57EA5C195C12D90E5F08270 /* XListViewDelegate.h in Headers */,
-				36F9ED0D6E71730728BE404F0CE6317D /* XListViewMacro.h in Headers */,
-				AA937B54A0828F2A12221740494EB67F /* XNavigationController.h in Headers */,
-				FA47D07B446C14C5400231C681A5C778 /* XNetRefreshContentView.h in Headers */,
-				5BA97AA11567BACC4B1FCD661879F109 /* XNetRefreshViewController.h in Headers */,
-				CC99230D1640A69515162B1F3328F6BE /* XPushTransitionAnimation.h in Headers */,
-				9A0CA377754A19C4C769E2BD9A1BF4B0 /* XRefreshContentView.h in Headers */,
-				CD4F08A41527687AB9FEA7A406AA6803 /* XRefreshView.h in Headers */,
-				EDB4A95767CE7DFF41D5365807E83259 /* XRefreshViewController.h in Headers */,
-				DC581974DA7D650235B26CA81117A749 /* XTabBar.h in Headers */,
-				A6979E99B134694176A9DB4D35470F2E /* XTabBarController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1F9295CED16E9530E22B230A352EB45D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1716,6 +1679,43 @@
 				8D56A4E7488E5AFAE61ABBBACEDF6516 /* NSObject+MTLComparisonAdditions.h in Headers */,
 				A038A4EF4D58E6087CF0F9AA9D1A8EE8 /* NSValueTransformer+MTLInversionAdditions.h in Headers */,
 				7D5DD025A2F47E780BC762F95312C2F8 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		217F2B0DD9EAC6DBAF05036823A7BD62 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7945F048D59245CFEF4D50E052150DF /* UIViewController+PushTransistion.h in Headers */,
+				6EDB05A206FB7A8F454F84FB594B0941 /* XAbstractionLibrary-UICommon-umbrella.h in Headers */,
+				A04B00646158F1D491D98FFFF3BEE255 /* XAbstractView.h in Headers */,
+				689D2A325DFD5ADD10BADFE4CF102683 /* XBaseCollectionView.h in Headers */,
+				37D201EA84E7569E47C25E9BC9DBAF02 /* XBaseListFootView.h in Headers */,
+				C4E37599C6658209712786DB9B52C6E6 /* XBaseListHeadView.h in Headers */,
+				62FB745F5450EC414BDD6BE1AB780E27 /* XBaseMessageInterceptor.h in Headers */,
+				F1CE7FC743A48BFEF8D632DA539ECD5D /* XBaseTableView.h in Headers */,
+				DB0ED390BA35FB8B1CBF2CE22BB40757 /* XBaseView.h in Headers */,
+				1C34C5F2EAEDD1AAC58C0DC8E82D3D82 /* XBaseViewController.h in Headers */,
+				08727DCBACA8582C5BF076B01AA147D4 /* XHeadView.h in Headers */,
+				44187D42F05FD1287C73F2C10271EF2B /* XHeadViewDelegate.h in Headers */,
+				02CAAA9DF175E9D5CB77D323ED334BC6 /* XIBaseErrorViewDelegate.h in Headers */,
+				614BECE1F12D4FADC4C1389B8D05AF72 /* XIBaseLoadingViewDelegate.h in Headers */,
+				EBF91D86B96929272589B08C5074918F /* XIBaseNoNetViewRetryDelegate.h in Headers */,
+				9AF0BF86C753C450C23E890D613F805C /* XIBaseNotDataRetryDelegate.h in Headers */,
+				8F509D5EE90B85A706138D4DBEC817B1 /* XIBaseNotDataViewDelegate.h in Headers */,
+				19A5098D234278A58023B48A2079CF88 /* XIBaseNotNetViewDelegate.h in Headers */,
+				7CC9466B56D184F4C7DB7F2B47AB6414 /* XIBaseRetryDelegate.h in Headers */,
+				3A9271440D6F19807FA18F305FA53A84 /* XListViewDelegate.h in Headers */,
+				36D00C14AF1B13D57F564B8BFD7B80E2 /* XListViewMacro.h in Headers */,
+				1E19189FF09D191D62547E5F9F2935B2 /* XNavigationController.h in Headers */,
+				D972D846CDF47B0F80290F1BFC4FAFA6 /* XNetRefreshContentView.h in Headers */,
+				B8039517C2C1DFEFE0EE998DC58A8440 /* XNetRefreshViewController.h in Headers */,
+				B65224A56AB167789FB82AECD80AB30E /* XPushTransitionAnimation.h in Headers */,
+				58EF50A80AD9816DAE837ED4445EEA33 /* XRefreshContentView.h in Headers */,
+				D60C7AAFCD4D71A55EAD37328D07AE28 /* XRefreshView.h in Headers */,
+				699E3E20A9CE54F308C815C5F851372A /* XRefreshViewController.h in Headers */,
+				BF9CD61919B588C03BF23D32BF95D096 /* XTabBar.h in Headers */,
+				7A6B1FB70056E10F390FCA4ECE20B7FE /* XTabBarController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1766,16 +1766,6 @@
 				1A820B412B0069B8D78AA1B7996F374B /* XHttpRequestDelegate.h in Headers */,
 				E0A13DF46C0B0667EA25CF6D6B59B2D3 /* XHttpResponseDelegate.h in Headers */,
 				20DC97F621EBE4AC105387DF1B929FE4 /* XNetWorkStatus.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7161F8B07FAE3F5D9601529F6A887729 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02EEC825B66394D32985606DB5129F14 /* XXNibBridge-umbrella.h in Headers */,
-				86BA5CB936FDF954A70E43C7D2AF41DF /* XXNibBridge.h in Headers */,
-				5B3BDDB0BC574717652A7F5F8E33634C /* XXNibConvention.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1870,6 +1860,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D8BF4277DCF19413AD955E0441E13EB /* Pods-XAbstractionLibrary-UICommon_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9E71704A88F592F041FAFE9326E0D2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DA3D77820F2DB069A96565110950EB9 /* XXNibBridge-umbrella.h in Headers */,
+				A924ABEC44DA54619049AFD2D2891112 /* XXNibBridge.h in Headers */,
+				E5B18462AC812116E57F42D14247E59B /* XXNibConvention.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2020,21 +2020,21 @@
 		};
 		AE33064C0F82E40E78D6EC75BB263F01 /* XAbstractionLibrary-UICommon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53776F4678E6DCA1E5929F4AF5AFD43C /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon" */;
+			buildConfigurationList = 1836362743F5F299839C4B89A5C0A99D /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon" */;
 			buildPhases = (
-				1C537A245483A05492860E753AC6186D /* Headers */,
-				94A8C91A2DE4B41DFC96E8D2E11A8CDB /* Sources */,
-				F73D2AA7DB06777116612AA9938703DF /* Frameworks */,
-				83552581786E7FBCBDE23F2BB2419E3E /* Resources */,
+				217F2B0DD9EAC6DBAF05036823A7BD62 /* Headers */,
+				4DE447902A19AFF60F92D3BE76A81099 /* Sources */,
+				43DA90E9CE39345BE258EB6F284DA2E1 /* Frameworks */,
+				869650EF9DBEA119B0BBF7F65BB9C528 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				79DAE0D473F9022EA7DB5D7C7CB3D5DA /* PBXTargetDependency */,
-				67FB3EBB805456C32D25350EEDD69E07 /* PBXTargetDependency */,
-				1B243B80AE5BD28F0A837523F4E0F805 /* PBXTargetDependency */,
-				DB05758FE29DCD146ED06EF7288CAE7E /* PBXTargetDependency */,
-				352972A9E799D96D3560FEC8749C2B66 /* PBXTargetDependency */,
+				6816AF304D38C5416D7A4DB40E3FEFE4 /* PBXTargetDependency */,
+				543C31CBE15E773F5A8DFB7EC11C8982 /* PBXTargetDependency */,
+				084FF161FFB3FDA1D74DA068CA3B0CB0 /* PBXTargetDependency */,
+				B6DBC5244BF1418740B964E916380E97 /* PBXTargetDependency */,
+				5B52EAF12C40C2E96C22A0FEF685F963 /* PBXTargetDependency */,
 			);
 			name = "XAbstractionLibrary-UICommon";
 			productName = "XAbstractionLibrary-UICommon";
@@ -2043,12 +2043,12 @@
 		};
 		CC2D8CA4AE24FE3DE91172DE32FBE1BC /* XXNibBridge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B33D208319A5667E6711A9869933289E /* Build configuration list for PBXNativeTarget "XXNibBridge" */;
+			buildConfigurationList = DC77EF94AD88FAAB06601B5D76AAAFC5 /* Build configuration list for PBXNativeTarget "XXNibBridge" */;
 			buildPhases = (
-				7161F8B07FAE3F5D9601529F6A887729 /* Headers */,
-				4D8635AC633C064D15BC1269705D3EDB /* Sources */,
-				4CEFA703F50C6B868E4033721BB964AA /* Frameworks */,
-				373C71EEF3DC09F6BCEF0DD624995C19 /* Resources */,
+				FD9E71704A88F592F041FAFE9326E0D2 /* Headers */,
+				AFD491B3DEB14A271FDBB29DE216E051 /* Sources */,
+				33BD8FBB52A5FD16DC8F4711A471850F /* Frameworks */,
+				708F171922FA928F4D1CABB436529339 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -2061,11 +2061,11 @@
 		};
 		D6DDBE144A48653F1C4FB2E1451D9AA2 /* XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 66C2DDE1A3BFD61339AD5B28F799EF62 /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon" */;
+			buildConfigurationList = 11A8FCE89A3B8C1963AD54379B7CA304 /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon" */;
 			buildPhases = (
-				00FB4F9ABE42D83705DBF6C4DAD219A1 /* Sources */,
-				8EF784C6D49D253BA14A164E34C1D87C /* Frameworks */,
-				30891C9134EEFDC3870D8208358D2E5C /* Resources */,
+				42B54584F5D3D16FB11B24DFD29DB3ED /* Sources */,
+				888294EF3A07436C2F47C94D1A909FCA /* Frameworks */,
+				69096FF5B6D64FDC1B5AC940DCB4C715 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -2151,24 +2151,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		30891C9134EEFDC3870D8208358D2E5C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F07C3EDFC9349BEB1085CCA700C37AD5 /* XHeadView.xib in Resources */,
-				6C9CFB8DF339C265AAD4F077AFBF36CA /* XRefreshView.xib in Resources */,
-				0775B6C2936E4964049F58AFBDF69D87 /* XView.xib in Resources */,
-				2B7AE07090D70F1EF1FEBC0F904944CE /* XViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		373C71EEF3DC09F6BCEF0DD624995C19 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3B7C7FD769AC481E9B5746ED408B8F42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2204,6 +2186,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69096FF5B6D64FDC1B5AC940DCB4C715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44528F4D1833E8A14BA252831A7EAA13 /* XHeadView.xib in Resources */,
+				9B57C9CD7085A84BB3ACF67EDEDD09B9 /* XRefreshView.xib in Resources */,
+				7233D898C6D96F2EACD80594A99AD3B6 /* XView.xib in Resources */,
+				4A2779D6EC3F142ED525582346A90FBD /* XViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6BFE8F111B87E1640D0B5E66FD61C3FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2211,11 +2204,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83552581786E7FBCBDE23F2BB2419E3E /* Resources */ = {
+		708F171922FA928F4D1CABB436529339 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013D1A9D48D7AFFAEA17D2474D465AE9 /* XAbstractionLibrary-UICommon.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869650EF9DBEA119B0BBF7F65BB9C528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E101201D5EF244A56FF3B4F1463E019A /* XAbstractionLibrary-UICommon.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2243,13 +2243,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00FB4F9ABE42D83705DBF6C4DAD219A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		037E2154290B9D397FE6F4AD28ED7753 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2292,6 +2285,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42B54584F5D3D16FB11B24DFD29DB3ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4865AE441AE7F7B641D60D9D48643146 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2325,13 +2325,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D8635AC633C064D15BC1269705D3EDB /* Sources */ = {
+		4DE447902A19AFF60F92D3BE76A81099 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6ADBFF57F6ADE5BE4398AA54ACC364 /* XXNibBridge-dummy.m in Sources */,
-				C710FB501ADA284F8DDCB3F1AFF56120 /* XXNibBridge.m in Sources */,
-				2175670251177C487ADE25E990DED9A2 /* XXNibConvention.m in Sources */,
+				E8E5198EB4FC32FB417EFF33A43C5B74 /* ReplaceMe.m in Sources */,
+				79AC896322E04A61AE7589702D623029 /* UIViewController+PushTransistion.m in Sources */,
+				FE0D4B3DF1FF0B5F0B93863A46E24F40 /* XAbstractionLibrary-UICommon-dummy.m in Sources */,
+				F4E0B43DCD98705BDBE6DE83E80321BA /* XBaseCollectionView.m in Sources */,
+				208BD19C4141FA128939BA41A3026414 /* XBaseListFootView.m in Sources */,
+				68DE80C337C59DC634BBFA20D9BAEFC7 /* XBaseListHeadView.m in Sources */,
+				515ACB8A744535FA304455BB20F1E507 /* XBaseMessageInterceptor.m in Sources */,
+				1333EE0953B8B60189EDF0F3946D7703 /* XBaseTableView.m in Sources */,
+				E3339EEBE65B0B097AD2C6C49F765B9F /* XBaseView.m in Sources */,
+				8FF83E9F8043DD51EFCD90D7CB794B6D /* XBaseViewController.m in Sources */,
+				97349237D03200174DC9E08AD2E7A4A4 /* XHeadView.m in Sources */,
+				EDB7ABB4327C417F62CC2E109DA8F61E /* XNavigationController.m in Sources */,
+				99B128861A0308FAAF281583ED895A25 /* XNetRefreshContentView.m in Sources */,
+				66E966C4D7B7E200ABB40A15104A4523 /* XNetRefreshViewController.m in Sources */,
+				D8099DA7D0006B30C1D5DD6CC40CBF24 /* XPushTransitionAnimation.m in Sources */,
+				E2EF5A05375C02056911FABC6611FCF3 /* XRefreshContentView.m in Sources */,
+				B75747F28A874C3957E1E110614699F1 /* XRefreshView.m in Sources */,
+				106BD8F4A883C2DD4B2246E6D7A82FDE /* XRefreshViewController.m in Sources */,
+				880056BFA05F61AB3AEE73608DDA4763 /* XTabBar.m in Sources */,
+				378576F749AED70D7A66B6F9C88E9168 /* XTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2343,30 +2360,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94A8C91A2DE4B41DFC96E8D2E11A8CDB /* Sources */ = {
+		AFD491B3DEB14A271FDBB29DE216E051 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				616E3787A0AAF1CFADA97D1C2998CCE0 /* ReplaceMe.m in Sources */,
-				AEE16BF837F451AD6695A6E6A65FFCAC /* UIViewController+PushTransistion.m in Sources */,
-				49E3A67BABFCBABA38628A10147828E4 /* XAbstractionLibrary-UICommon-dummy.m in Sources */,
-				5E9C6C40E50268325A442645250719A7 /* XBaseCollectionView.m in Sources */,
-				7476E52E5F6A3403AE06839893CDBC2C /* XBaseListFootView.m in Sources */,
-				B562A8AEAEB2D9F3BE1371B0698D8E01 /* XBaseListHeadView.m in Sources */,
-				8A696FE5E4F32CC6E1B55CD9DD3231BF /* XBaseMessageInterceptor.m in Sources */,
-				75CF7EB3F79E1794C83170856F8351E4 /* XBaseTableView.m in Sources */,
-				D29307605D78BDDE62F7EEDFC93E3B3D /* XBaseView.m in Sources */,
-				1299EB61A7A8418F4BBA85EAC842E9CF /* XBaseViewController.m in Sources */,
-				A3E71B065E869B4CCE4DD723EB6CF974 /* XHeadView.m in Sources */,
-				59F92E79C7D780CA0E7705CBAC414030 /* XNavigationController.m in Sources */,
-				760A03C1FF39B6CF47CB28E65A532D18 /* XNetRefreshContentView.m in Sources */,
-				14773F0143B3BFA92BA38B2F1A067F40 /* XNetRefreshViewController.m in Sources */,
-				0878F4FF48D68307F255BA61BECE9583 /* XPushTransitionAnimation.m in Sources */,
-				8A52A6DEC80B78BD702BEED0E9D79324 /* XRefreshContentView.m in Sources */,
-				B62A6942846628D430C7A3486D112473 /* XRefreshView.m in Sources */,
-				60B1D3184D5C1610AB30E7B9B8C75964 /* XRefreshViewController.m in Sources */,
-				4893AC7FD796546CA274864F83F718F3 /* XTabBar.m in Sources */,
-				EFBD19595B551AEB138759094859133B /* XTabBarController.m in Sources */,
+				71F30A48A26B66858C6C01C7F8EB3098 /* XXNibBridge-dummy.m in Sources */,
+				BFFCC03926790BF9A0E494C5DCF7B650 /* XXNibBridge.m in Sources */,
+				91BF063932C9958F3E07E07D1582DA6E /* XXNibConvention.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2447,6 +2447,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		084FF161FFB3FDA1D74DA068CA3B0CB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XAbstractionLibrary-Parse";
+			target = 9409F5C24FD1656C059E057E7CE14904 /* XAbstractionLibrary-Parse */;
+			targetProxy = 01671D4E2691BE1651E8E1EF129DCCC1 /* PBXContainerItemProxy */;
+		};
 		0A08A9017ACB0142648B69B1D1469B01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "XAbstractionLibrary-Base";
@@ -2464,12 +2470,6 @@
 			name = MD5Digest;
 			target = DD7CA28F5685C431FFDFC620C6AFCDAD /* MD5Digest */;
 			targetProxy = EE3EC67F9283A977E2A118C2B697DB70 /* PBXContainerItemProxy */;
-		};
-		1B243B80AE5BD28F0A837523F4E0F805 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "XAbstractionLibrary-Parse";
-			target = 9409F5C24FD1656C059E057E7CE14904 /* XAbstractionLibrary-Parse */;
-			targetProxy = A639257330C94AE1B729666386926794 /* PBXContainerItemProxy */;
 		};
 		24F5D35B187D253D91CED85F5A2945DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2495,12 +2495,6 @@
 			target = 47CCF1D9F019FFC6546DA481B71A2C4E /* Mantle */;
 			targetProxy = 3387831563D409ED923194607F48D41D /* PBXContainerItemProxy */;
 		};
-		352972A9E799D96D3560FEC8749C2B66 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = XXNibBridge;
-			target = CC2D8CA4AE24FE3DE91172DE32FBE1BC /* XXNibBridge */;
-			targetProxy = 88DEA1FFB4A16B60E49E1F1B60DBBDE9 /* PBXContainerItemProxy */;
-		};
 		3F37238CE11EE254598256A670E121F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "XAbstractionLibrary-Base";
@@ -2513,29 +2507,35 @@
 			target = 0130B3724283586C0E9D2A112D4F2AA1 /* AFNetworking */;
 			targetProxy = 09EA06FEE9106D86861D5697CB6837BF /* PBXContainerItemProxy */;
 		};
+		543C31CBE15E773F5A8DFB7EC11C8982 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XAbstractionLibrary-NetWork";
+			target = 9E701EA0E9C123FC48E368E2FC84E3F4 /* XAbstractionLibrary-NetWork */;
+			targetProxy = 80E5D135ECFF382AB281561BDADAECA4 /* PBXContainerItemProxy */;
+		};
+		5B52EAF12C40C2E96C22A0FEF685F963 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XXNibBridge;
+			target = CC2D8CA4AE24FE3DE91172DE32FBE1BC /* XXNibBridge */;
+			targetProxy = AFC71C9E66489D0A0440B304F46C07CC /* PBXContainerItemProxy */;
+		};
 		5DB14547FD48262190D694899ACAA528 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Mantle;
 			target = 47CCF1D9F019FFC6546DA481B71A2C4E /* Mantle */;
 			targetProxy = 88C941DB681260D1F12A7443CEDDFED2 /* PBXContainerItemProxy */;
 		};
-		67FB3EBB805456C32D25350EEDD69E07 /* PBXTargetDependency */ = {
+		6816AF304D38C5416D7A4DB40E3FEFE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "XAbstractionLibrary-NetWork";
-			target = 9E701EA0E9C123FC48E368E2FC84E3F4 /* XAbstractionLibrary-NetWork */;
-			targetProxy = 794C909B199B7D695FA7E84CE9B36FD4 /* PBXContainerItemProxy */;
+			name = "XAbstractionLibrary-Base";
+			target = 46E5E6A66FD41EFFC8E04442C25DA6B4 /* XAbstractionLibrary-Base */;
+			targetProxy = 0B05E525DCCD3EDC2A47A2881AE067DE /* PBXContainerItemProxy */;
 		};
 		72A372766F651E6B8C3BA6F8726A8B22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "XAbstractionLibrary-NetWork";
 			target = 9E701EA0E9C123FC48E368E2FC84E3F4 /* XAbstractionLibrary-NetWork */;
 			targetProxy = 115189BF120A50BC6DFE6C15F10E23D6 /* PBXContainerItemProxy */;
-		};
-		79DAE0D473F9022EA7DB5D7C7CB3D5DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "XAbstractionLibrary-Base";
-			target = 46E5E6A66FD41EFFC8E04442C25DA6B4 /* XAbstractionLibrary-Base */;
-			targetProxy = DD0D913A3C8F9944C1206DF52F4DE039 /* PBXContainerItemProxy */;
 		};
 		A0D5D9A039BDC6AF0A34F644BBA7BF5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2549,6 +2549,12 @@
 			target = D9E35E25D90A614E195E5B4FBC555747 /* OpenUDID */;
 			targetProxy = 0990C9EBE991ADC6CA1718222B77CF3F /* PBXContainerItemProxy */;
 		};
+		B6DBC5244BF1418740B964E916380E97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon";
+			target = D6DDBE144A48653F1C4FB2E1451D9AA2 /* XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon */;
+			targetProxy = F0A8A5478260972F4DC89BC01D6F2DC9 /* PBXContainerItemProxy */;
+		};
 		BE0EC77911FFBC33C8714FC7154312AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OpenUDID;
@@ -2561,12 +2567,6 @@
 			target = AE33064C0F82E40E78D6EC75BB263F01 /* XAbstractionLibrary-UICommon */;
 			targetProxy = 2C99BE2CEF3046CE378DAE0E2A909FF9 /* PBXContainerItemProxy */;
 		};
-		DB05758FE29DCD146ED06EF7288CAE7E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon";
-			target = D6DDBE144A48653F1C4FB2E1451D9AA2 /* XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon */;
-			targetProxy = E45C45E0C50F82255E7AEBF98833D6B8 /* PBXContainerItemProxy */;
-		};
 		DF959C524509DC170769A9FB9BF77616 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "XAbstractionLibrary-Base";
@@ -2576,24 +2576,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0180383A105BAFE2CF79A7C48E91C858 /* Prerelease */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 402FC43488CFBE4352147508864AE42A /* XAbstractionLibrary-UICommon.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XAbstractionLibrary-UICommon";
-				IBSC_MODULE = XAbstractionLibrary_UICommon;
-				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/ResourceBundle-XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = "XAbstractionLibrary-UICommon";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Prerelease;
-		};
 		02A8D894BA6D7363EB2F1B276A2FC0A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6CE10F23B9C7C9497AB3E2B34E36A7E2 /* OpenUDID.debug.xcconfig */;
@@ -2690,23 +2672,6 @@
 			};
 			name = Debug;
 		};
-		0ADD8875B93BB0E0EE999A315E140102 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 402FC43488CFBE4352147508864AE42A /* XAbstractionLibrary-UICommon.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XAbstractionLibrary-UICommon";
-				IBSC_MODULE = XAbstractionLibrary_UICommon;
-				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/ResourceBundle-XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = "XAbstractionLibrary-UICommon";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		0F9DD7D7F831C47FBC14AF252192E91E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A92512136256224502CC7DA33984A0B /* Pods-XAbstractionLibrary-UICommon_Example.release.xcconfig */;
@@ -2769,6 +2734,55 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1A3113A66B714AB1D7B451036E0E66CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 402FC43488CFBE4352147508864AE42A /* XAbstractionLibrary-UICommon.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XAbstractionLibrary-UICommon";
+				IBSC_MODULE = XAbstractionLibrary_UICommon;
+				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/ResourceBundle-XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = "XAbstractionLibrary-UICommon";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		33D8E75C1349D3512F827A6E6EDA5489 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC3E8B5A32AA3482BE9D233362088A9E /* XXNibBridge.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XXNibBridge/XXNibBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XXNibBridge/XXNibBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XXNibBridge/XXNibBridge.modulemap";
+				PRODUCT_MODULE_NAME = XXNibBridge;
+				PRODUCT_NAME = XXNibBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3003,9 +3017,9 @@
 			};
 			name = Debug;
 		};
-		76B10CB2DDFDA295DA6E158F0CD881C3 /* Release */ = {
+		75F646D65F0559791C1E84FCA216FA67 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC3E8B5A32AA3482BE9D233362088A9E /* XXNibBridge.release.xcconfig */;
+			baseConfigurationReference = 402FC43488CFBE4352147508864AE42A /* XAbstractionLibrary-UICommon.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
@@ -3017,14 +3031,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XXNibBridge/XXNibBridge-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XXNibBridge/XXNibBridge-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XXNibBridge/XXNibBridge.modulemap";
-				PRODUCT_MODULE_NAME = XXNibBridge;
-				PRODUCT_NAME = XXNibBridge;
+				MODULEMAP_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon.modulemap";
+				PRODUCT_MODULE_NAME = XAbstractionLibrary_UICommon;
+				PRODUCT_NAME = XAbstractionLibrary_UICommon;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -3066,37 +3080,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		79BE0CA5B3E9F15204FBCAB66462CC81 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA41A6B9189F32E22B20B7B81CFEC3E0 /* XXNibBridge.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XXNibBridge/XXNibBridge-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XXNibBridge/XXNibBridge-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XXNibBridge/XXNibBridge.modulemap";
-				PRODUCT_MODULE_NAME = XXNibBridge;
-				PRODUCT_NAME = XXNibBridge;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		79F1F62DC1B92F1199170892525C67AC /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3227,37 +3210,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Prerelease;
-		};
-		8A5EA2486514C0D3242B055FC6763CB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F22987B47A2C6C606E99444C107E5102 /* XAbstractionLibrary-UICommon.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon.modulemap";
-				PRODUCT_MODULE_NAME = XAbstractionLibrary_UICommon;
-				PRODUCT_NAME = XAbstractionLibrary_UICommon;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3415,71 +3367,24 @@
 			};
 			name = Release;
 		};
-		9FEBB55F3955F74EEBF17A2F945D61AC /* Prerelease */ = {
+		94D3C8AD76D491559CEC3027562A4060 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC3E8B5A32AA3482BE9D233362088A9E /* XXNibBridge.release.xcconfig */;
+			baseConfigurationReference = F22987B47A2C6C606E99444C107E5102 /* XAbstractionLibrary-UICommon.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XXNibBridge/XXNibBridge-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XXNibBridge/XXNibBridge-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XXNibBridge/XXNibBridge.modulemap";
-				PRODUCT_MODULE_NAME = XXNibBridge;
-				PRODUCT_NAME = XXNibBridge;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Prerelease;
-		};
-		A1741F0E137C17A97B117375EDE80E4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 402FC43488CFBE4352147508864AE42A /* XAbstractionLibrary-UICommon.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XAbstractionLibrary-UICommon";
+				IBSC_MODULE = XAbstractionLibrary_UICommon;
+				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/ResourceBundle-XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon.modulemap";
-				PRODUCT_MODULE_NAME = XAbstractionLibrary_UICommon;
-				PRODUCT_NAME = XAbstractionLibrary_UICommon;
+				PRODUCT_NAME = "XAbstractionLibrary-UICommon";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
-		A902C4EE3EC0AF356D9820C19455EE01 /* Prerelease */ = {
+		9D6AD1651FA1C2FF8869D38A7F07DC74 /* Prerelease */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 402FC43488CFBE4352147508864AE42A /* XAbstractionLibrary-UICommon.release.xcconfig */;
 			buildSettings = {
@@ -3605,6 +3510,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		DD115AC390DD36FDA56F8ECE1F34070C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F22987B47A2C6C606E99444C107E5102 /* XAbstractionLibrary-UICommon.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XAbstractionLibrary-UICommon/XAbstractionLibrary-UICommon.modulemap";
+				PRODUCT_MODULE_NAME = XAbstractionLibrary_UICommon;
+				PRODUCT_NAME = XAbstractionLibrary_UICommon;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		DD50AD49B96A035E3BD51F23C0BEBB99 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3855,9 +3791,9 @@
 			};
 			name = Debug;
 		};
-		EE9AB4DE9FE960C31F960C867C3A7865 /* Debug */ = {
+		F9D18C76EC1183A4AE37E1A6C2B5C4F2 /* Prerelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F22987B47A2C6C606E99444C107E5102 /* XAbstractionLibrary-UICommon.debug.xcconfig */;
+			baseConfigurationReference = 402FC43488CFBE4352147508864AE42A /* XAbstractionLibrary-UICommon.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XAbstractionLibrary-UICommon";
@@ -3868,7 +3804,71 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = bundle;
+			};
+			name = Prerelease;
+		};
+		FAAF1662357DF61813C9D4C26FB905ED /* Prerelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC3E8B5A32AA3482BE9D233362088A9E /* XXNibBridge.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XXNibBridge/XXNibBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XXNibBridge/XXNibBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XXNibBridge/XXNibBridge.modulemap";
+				PRODUCT_MODULE_NAME = XXNibBridge;
+				PRODUCT_NAME = XXNibBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Prerelease;
+		};
+		FF7D8A5EF6CE2A01A4E2D63357190E57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA41A6B9189F32E22B20B7B81CFEC3E0 /* XXNibBridge.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XXNibBridge/XXNibBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XXNibBridge/XXNibBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XXNibBridge/XXNibBridge.modulemap";
+				PRODUCT_MODULE_NAME = XXNibBridge;
+				PRODUCT_NAME = XXNibBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -3881,6 +3881,16 @@
 				02A8D894BA6D7363EB2F1B276A2FC0A1 /* Debug */,
 				455E004A0CF5DF08E8D93E2DA97B5C47 /* Prerelease */,
 				D0D0AEC4DBE7489EB429275507EBCF1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A8FCE89A3B8C1963AD54379B7CA304 /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D3C8AD76D491559CEC3027562A4060 /* Debug */,
+				F9D18C76EC1183A4AE37E1A6C2B5C4F2 /* Prerelease */,
+				1A3113A66B714AB1D7B451036E0E66CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3905,6 +3915,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1836362743F5F299839C4B89A5C0A99D /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD115AC390DD36FDA56F8ECE1F34070C /* Debug */,
+				9D6AD1651FA1C2FF8869D38A7F07DC74 /* Prerelease */,
+				75F646D65F0559791C1E84FCA216FA67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		247E4D4DAE0EE9245DEF1CD73AB82926 /* Build configuration list for PBXNativeTarget "Pods-XAbstractionLibrary-UICommon_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3925,26 +3945,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53776F4678E6DCA1E5929F4AF5AFD43C /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8A5EA2486514C0D3242B055FC6763CB5 /* Debug */,
-				A902C4EE3EC0AF356D9820C19455EE01 /* Prerelease */,
-				A1741F0E137C17A97B117375EDE80E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		66C2DDE1A3BFD61339AD5B28F799EF62 /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-UICommon-XAbstractionLibrary-UICommon" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EE9AB4DE9FE960C31F960C867C3A7865 /* Debug */,
-				0180383A105BAFE2CF79A7C48E91C858 /* Prerelease */,
-				0ADD8875B93BB0E0EE999A315E140102 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B1590AF69B1B0DAB97C6E2F95B7F3DE5 /* Build configuration list for PBXNativeTarget "XAbstractionLibrary-NetWork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3955,22 +3955,22 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B33D208319A5667E6711A9869933289E /* Build configuration list for PBXNativeTarget "XXNibBridge" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79BE0CA5B3E9F15204FBCAB66462CC81 /* Debug */,
-				9FEBB55F3955F74EEBF17A2F945D61AC /* Prerelease */,
-				76B10CB2DDFDA295DA6E158F0CD881C3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CAC6014297596AB3A667491C95F009F4 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE0FE0D52DF9254FE8D47C754BC4F67B /* Debug */,
 				0816518BC6488FE0B5C606AED549AB03 /* Prerelease */,
 				79F1F62DC1B92F1199170892525C67AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC77EF94AD88FAAB06601B5D76AAAFC5 /* Build configuration list for PBXNativeTarget "XXNibBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF7D8A5EF6CE2A01A4E2D63357190E57 /* Debug */,
+				FAAF1662357DF61813C9D4C26FB905ED /* Prerelease */,
+				33D8E75C1349D3512F827A6E6EDA5489 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
